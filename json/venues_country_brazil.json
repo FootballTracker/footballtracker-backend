@@ -1,0 +1,4984 @@
+{
+    "get": "venues",
+    "parameters": {
+        "country": "Brazil"
+    },
+    "errors": [],
+    "results": 497,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "id": 204,
+            "name": "Estadio Jornalista M\u00e1rio Filho (Maracan\u00e3)",
+            "address": "Rua Professor Eurico Rabelo, Maracan\u00e3",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 78838,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/204.png"
+        },
+        {
+            "id": 216,
+            "name": "Arena Fonte Nova",
+            "address": "Rua Lions Club, Nazar\u00e9",
+            "city": "Salvador, Bahia",
+            "country": "Brazil",
+            "capacity": 56500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/216.png"
+        },
+        {
+            "id": 244,
+            "name": "Est\u00e1dio Jos\u00e9 Pinheiro Borda",
+            "address": "Avenida Padre Cacique 891, Bairro Menino Deus",
+            "city": "Porto Alegre, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 50128,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/244.png"
+        },
+        {
+            "id": 218,
+            "name": "Est\u00e1dio Nilton Santos",
+            "address": "Rua Arquias Cordeiro, Engenho de Dentro",
+            "city": "Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 46931,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/218.png"
+        },
+        {
+            "id": 258,
+            "name": "Allianz Parque",
+            "address": "Rua Turia\u00e7u 1840, Perdizes",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 43713,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/258.png"
+        },
+        {
+            "id": 259,
+            "name": "Est\u00e1dio Durival de Britto e Silva",
+            "address": "Rua Engenheiro Rebou\u00e7as, Barrio Rebou\u00e7as, Vila Capanema",
+            "city": "Curitiba, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 20083,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/259.png"
+        },
+        {
+            "id": 253,
+            "name": "Itaipava Arena Pernambuco",
+            "address": "BR 408, S\u00e3o Louren\u00e7o da Mata,",
+            "city": "Recife, Pernambuco",
+            "country": "Brazil",
+            "capacity": 46154,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/253.png"
+        },
+        {
+            "id": 206,
+            "name": "Est\u00e1dio Raimundo Sampaio",
+            "address": "Avenida Ism\u00eania Tunes, Bairro Horto",
+            "city": "Belo Horizonte, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 23018,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/206.png"
+        },
+        {
+            "id": 269,
+            "name": "Est\u00e1dio C\u00edcero Pompeu de Toledo (Morumbi)",
+            "address": "Praca Roberto Gomes Pedrosa 1, Morumbi",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 66795,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/269.png"
+        },
+        {
+            "id": 10494,
+            "name": "Est\u00e1dio Urbano Caldeira",
+            "address": "Rue Princesa Isabel 77, Vila Belmiro",
+            "city": "Santos, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 21256,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/10494.png"
+        },
+        {
+            "id": 225,
+            "name": "Est\u00e1dio Governador Pl\u00e1cido Aderaldo Castelo",
+            "address": "Avenida Alberto Craveiro, Passar\u00e9",
+            "city": "Fortaleza, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 63903,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/225.png"
+        },
+        {
+            "id": 241,
+            "name": "Arena do Gr\u00eamio",
+            "address": "Bairro Humait\u00e1",
+            "city": "Porto Alegre, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 60540,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/241.png"
+        },
+        {
+            "id": 11531,
+            "name": "Neo Qu\u00edmica Arena",
+            "address": "Avenida Miguel In\u00e1cio Curi, 111, Vila Carmosina, Itaquera",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 49205,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11531.png"
+        },
+        {
+            "id": 227,
+            "name": "Arena Cond\u00e1",
+            "address": "Rua Clevel\u00e2ndia, Bairro Centro",
+            "city": "Chapec\u00f3, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 22600,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/227.png"
+        },
+        {
+            "id": 19377,
+            "name": "Est\u00e1dio S\u00e3o Janu\u00e1rio",
+            "address": "Rua Gal Alm\u00e9rio de Moura 131, Bairro Vasco da Gama",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 24584,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19377.png"
+        },
+        {
+            "id": 10493,
+            "name": "Arena da Baixada",
+            "address": "Rua Buenos Aires 1260, \u00c1gua Verde",
+            "city": "Curitiba, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 43981,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/10493.png"
+        },
+        {
+            "id": 234,
+            "name": "Est\u00e1dio Governador Magalh\u00e3es Pinto",
+            "address": "Avenida Antonio Abrah\u00e3o Car\u00e3 1001, Pampulhas",
+            "city": "Belo Horizonte, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 62170,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/234.png"
+        },
+        {
+            "id": 281,
+            "name": "Est\u00e1dio Manoel Barradas",
+            "address": "Rua Art\u00eamio Castro Valente 1, Bairro Nossa Senhora da Vit\u00f3ria",
+            "city": "Salvador, Bahia",
+            "country": "Brazil",
+            "capacity": 35980,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/281.png"
+        },
+        {
+            "id": 7126,
+            "name": "Est\u00e1dio Orlando Scarpelli",
+            "address": "Rua Humait\u00e1 194, Bairro Estreito",
+            "city": "Florian\u00f3polis, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 19584,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7126.png"
+        },
+        {
+            "id": 242,
+            "name": "Est\u00e1dio Brinco de Ouro da Princesa",
+            "address": "Avenida Imperatriz Tereza Cristina 11, Bairro Jardim Para\u00edso",
+            "city": "Campinas, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 29130,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/242.png"
+        },
+        {
+            "id": 261,
+            "name": "Est\u00e1dio Mois\u00e9s Lucarelli",
+            "address": "Pra\u00e7a Dr. Francisco Ursaia 1900 / Rua Proen\u00e7a, Jardim Proen\u00e7a",
+            "city": "Campinas, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 17728,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/261.png"
+        },
+        {
+            "id": 233,
+            "name": "Est\u00e1dio Heriberto H\u00fclse",
+            "address": "Rua Treze de Maio, Bairro Comerci\u00e1rio",
+            "city": "Crici\u00fama, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 19300,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/233.png"
+        },
+        {
+            "id": 2797,
+            "name": "Est\u00e1dio Bento da Silva Freitas",
+            "address": "Rua Jo\u00e3o Pessoa 694, Bairro Centro",
+            "city": "Pelotas, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 18000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2797.png"
+        },
+        {
+            "id": 280,
+            "name": "Est\u00e1dio On\u00e9sio Brasileiro Alvarenga",
+            "address": "Rua 256 354, Setor Universit\u00e1rio, Bairro Centro",
+            "city": "Goi\u00e2nia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 11788,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/280.png"
+        },
+        {
+            "id": 20728,
+            "name": "Est\u00e1dio Municipal de Santana do Parna\u00edba",
+            "address": "R. Jo\u00e3o Santana Leite - Ch\u00e1cara das Garcas",
+            "city": "Santana de Parna\u00edba, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20728.png"
+        },
+        {
+            "id": 211,
+            "name": "Est\u00e1dio Ant\u00f4nio Accioly",
+            "address": "Avenida Perimetral 923 / Avenida 24 de Outubro, Bairro Campinas",
+            "city": "Goi\u00e2nia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 12500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/211.png"
+        },
+        {
+            "id": 214,
+            "name": "Est\u00e1dio Aderbal Ramos da Silva",
+            "address": "Avenida Deputado Diom\u00edcio Freitas 1000, Bairro Carianos",
+            "city": "Florian\u00f3polis, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 19000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/214.png"
+        },
+        {
+            "id": 232,
+            "name": "Est\u00e1dio Rei Pel\u00e9",
+            "address": "Avenida Siqueira Campos, Bairro Trapiche da Barra",
+            "city": "Macei\u00f3, Alagoas",
+            "country": "Brazil",
+            "capacity": 20801,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/232.png"
+        },
+        {
+            "id": 230,
+            "name": "Est\u00e1dio Major Ant\u00f4nio Couto Pereira",
+            "address": "Rua Ubaldino do Amaral 37, Bairro Alto da Gl\u00f3ria",
+            "city": "Curitiba, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 45563,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/230.png"
+        },
+        {
+            "id": 249,
+            "name": "Est\u00e1dio Municipal Jacy Scaff",
+            "address": "Avenida Henrique Mansano",
+            "city": "Londrina, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 31019,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/249.png"
+        },
+        {
+            "id": 260,
+            "name": "Est\u00e1dio Le\u00f4nidas Sodr\u00e9 de Castro",
+            "address": "Avenida Almirante Barroso 654, Bairro S\u00e3o Braz",
+            "city": "Bel\u00e9m, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 17700,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/260.png"
+        },
+        {
+            "id": 240,
+            "name": "Est\u00e1dio de Hail\u00e9 Pinheiro",
+            "address": "Avenida Edmundo Pinheiro de Abreu 721, Setor Bela Vista",
+            "city": "Goi\u00e2nia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 14525,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/240.png"
+        },
+        {
+            "id": 248,
+            "name": "Est\u00e1dio Alfredo Jaconi",
+            "address": "Rua H\u00e9rcules Gall\u00f3 1547",
+            "city": "Caxias do Sul, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 19924,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/248.png"
+        },
+        {
+            "id": 246,
+            "name": "Est\u00e1dio Municipal Prefeito Dilzon Luiz de Melo",
+            "address": "Avenida Ruth de Carvalho",
+            "city": "Varginha, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 15471,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/246.png"
+        },
+        {
+            "id": 265,
+            "name": "Est\u00e1dio Governador Jo\u00e3o Castelo",
+            "address": "Complexo Esportivo Castel\u00e3o, Travessa Guaxenduba",
+            "city": "S\u00e3o Lu\u00eds, Maranh\u00e3o",
+            "country": "Brazil",
+            "capacity": 75263,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/265.png"
+        },
+        {
+            "id": 7061,
+            "name": "Est\u00e1dio Dr. Augusto Schmidt Filho",
+            "address": "Rua Onze 122, Bairro Est\u00e1dio",
+            "city": "Rio Claro, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 9352,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7061.png"
+        },
+        {
+            "id": 250,
+            "name": "Est\u00e1dio Municipal Passo Das Emas",
+            "address": "Rua Umuarama, Bairro Menino Deus",
+            "city": "Lucas do Rio Verde, Mato Grosso",
+            "country": "Brazil",
+            "capacity": 9500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/250.png"
+        },
+        {
+            "id": 7803,
+            "name": "Est\u00e1dio J\u00f3se do Rego Maciel",
+            "address": "Avenida Beberibe 1285, Bairro Arruda",
+            "city": "Recife, Pernambuco",
+            "country": "Brazil",
+            "capacity": 60044,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7803.png"
+        },
+        {
+            "id": 205,
+            "name": "Est\u00e1dio Maria Lamas Farache",
+            "address": "Avenida Ant\u00f4nio Flor\u00eancio de Queiroz, Bairro Ponta Negra",
+            "city": "Natal, Rio Grande do Norte",
+            "country": "Brazil",
+            "capacity": 18017,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/205.png"
+        },
+        {
+            "id": 12670,
+            "name": "Est\u00e1dio El\u00e1dio de Barros Carvalho",
+            "address": "Avenida Conselheiro Rosa e Silva 1085, Bairro dos Afiltos",
+            "city": "Recife, Pernambuco",
+            "country": "Brazil",
+            "capacity": 22856,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12670.png"
+        },
+        {
+            "id": 7138,
+            "name": "Est\u00e1dio Raimundo Ribeiro de Souza",
+            "address": "Avenida Nossa Senhora de Nazar\u00e9 781, Bairro Tancredo Neves",
+            "city": "Boa Vista, Roraima",
+            "country": "Brazil",
+            "capacity": 3300,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7138.png"
+        },
+        {
+            "id": 220,
+            "name": "Est\u00e1dio Nabi Abi Chedid",
+            "address": "Rua Em\u00edlio Coleta",
+            "city": "Bragan\u00e7a Paulista, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 17128,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/220.png"
+        },
+        {
+            "id": 247,
+            "name": "Arena Joinville",
+            "address": "Rua In\u00e1cio Basto 1084, Bairro Bucarein",
+            "city": "Joinville, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 22400,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/247.png"
+        },
+        {
+            "id": 277,
+            "name": "Est\u00e1dio Municipal Radialista M\u00e1rio Hel\u00eanio",
+            "address": "Avenida Eug\u00eanio do Nascimento 10, Parque da Laj",
+            "city": "Juiz de Fora, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 31863,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/277.png"
+        },
+        {
+            "id": 21427,
+            "name": "Arena MRV",
+            "address": "Av. Pres. Juscelino Kubitschek - Calif\u00f3rnia",
+            "city": "Belo Horizonte, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 47465,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21427.png"
+        },
+        {
+            "id": 235,
+            "name": "Arena Pantanal",
+            "address": null,
+            "city": "Cuiab\u00e1, Mato Grosso",
+            "country": "Brazil",
+            "capacity": 44003,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/235.png"
+        },
+        {
+            "id": 228,
+            "name": "Est\u00e1dio Municipal Ol\u00edmpico Albino Turbay",
+            "address": "Pra\u00e7a Ol\u00edmpica",
+            "city": "Cianorte, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/228.png"
+        },
+        {
+            "id": 237,
+            "name": "Est\u00e1dio Municipal Presidente Get\u00falio Vargas",
+            "address": "Rua Marechal Deodoro 1187, Gentil\u00e2ndia",
+            "city": "Fortaleza, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 20062,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/237.png"
+        },
+        {
+            "id": 278,
+            "name": "Est\u00e1dio Municipal Jo\u00e3o Havelange",
+            "address": "Avenida Anselmo Alves dos Santos",
+            "city": "Uberl\u00e2ndia, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 72000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/278.png"
+        },
+        {
+            "id": 8247,
+            "name": "Est\u00e1dio Jos\u00e9 Am\u00e9rico de Almeida Filho",
+            "address": "Contorno da BR-230",
+            "city": "Jo\u00e3o Pessoa, Para\u00edba",
+            "country": "Brazil",
+            "capacity": 25770,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8247.png"
+        },
+        {
+            "id": 262,
+            "name": "Est\u00e1dio Estadual Jornalista Edgar Augusto Proen\u00e7a",
+            "address": "Rodovia Augusto Montenegro 3101, Mangueir\u00e3o",
+            "city": "Bel\u00e9m, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 53635,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/262.png"
+        },
+        {
+            "id": 254,
+            "name": "Est\u00e1dio do Vale",
+            "address": "Rua Santa Tereza 420, Bairro Liberdade",
+            "city": "Novo Hamburgo, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/254.png"
+        },
+        {
+            "id": 238,
+            "name": "Est\u00e1dio Alberto Oliveira",
+            "address": "Rua Gon\u00e7alo Alves, Bairro do Cruzeiro",
+            "city": "Feira de Santana, Bahia",
+            "country": "Brazil",
+            "capacity": 16274,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/238.png"
+        },
+        {
+            "id": 243,
+            "name": "Est\u00e1dio Major Jos\u00e9 Levy Sobrinho",
+            "address": "Avenida Dr. Belmiro Fanelli 270, Bairro Jardim Bandeirantes",
+            "city": "Limeira, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 23475,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/243.png"
+        },
+        {
+            "id": 209,
+            "name": "Est\u00e1dio Annibal Batista de Toledo",
+            "address": "Rua Onze de Maio",
+            "city": "Aparecida de Goi\u00e2nia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/209.png"
+        },
+        {
+            "id": 264,
+            "name": "Est\u00e1dio Municipal Lindolfo Monteiro",
+            "address": "Rua Jo\u00e3o Cabral",
+            "city": "Teresina, Piau\u00ed",
+            "country": "Brazil",
+            "capacity": 5760,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/264.png"
+        },
+        {
+            "id": 213,
+            "name": "Est\u00e1dio Domingos Silveira Gonzales",
+            "address": "R. dos Ferrovi\u00e1rios, 1500 - Oficinas",
+            "city": "Tubar\u00e3o, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/213.png"
+        },
+        {
+            "id": 2934,
+            "name": "Est\u00e1dio Corn\u00e9lio de Barros Muniz",
+            "address": "Avenida Aurora de Carvalho Rosa, Bairro Santo Antonio",
+            "city": "Salgueiro, Pernambuco",
+            "country": "Brazil",
+            "capacity": 10126,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2934.png"
+        },
+        {
+            "id": 231,
+            "name": "Est\u00e1dio Artur Marinho",
+            "address": "Rua Ciriaco de Toledo",
+            "city": "Corumb\u00e1, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/231.png"
+        },
+        {
+            "id": 210,
+            "name": "Est\u00e1dio Municipal Coaracy da Mata Fonseca",
+            "address": "Avenida Ventura de Farias, Bairro Colorado",
+            "city": "Arapiraca, Alagoas",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/210.png"
+        },
+        {
+            "id": 2940,
+            "name": "Est\u00e1dio Gilberto Resende Rocha",
+            "address": "Rua Quinze 520, Bairro Centro",
+            "city": "Gurupi, Tocantins",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2940.png"
+        },
+        {
+            "id": 2935,
+            "name": "Est\u00e1dio Jos\u00e9 Gomes da Costa",
+            "address": "Rua M\u00e1rio Le\u00e3o, Bairro Centro",
+            "city": "Murici, Alagoas",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2935.png"
+        },
+        {
+            "id": 223,
+            "name": "Est\u00e1dio Augusto Bauer",
+            "address": "Avenida Lauro Muller 13",
+            "city": "Brusque, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 5603,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/223.png"
+        },
+        {
+            "id": 2941,
+            "name": "Est\u00e1dio Municipal Ubirajara Medeiros",
+            "address": "Av. Bar\u00e3o do Rio Branco",
+            "city": "Corn\u00e9lio Proc\u00f3pio, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2941.png"
+        },
+        {
+            "id": 2936,
+            "name": "Est\u00e1dio Dr. Oswaldo Teixeira Duarte",
+            "address": "Rua Comendador Nestor Pereira 33",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 25470,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2936.png"
+        },
+        {
+            "id": 2942,
+            "name": "Est\u00e1dio Mauro Sampaio",
+            "address": "Avenida Castelo Branco",
+            "city": "Juazeiro do Norte, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 16000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2942.png"
+        },
+        {
+            "id": 2939,
+            "name": "Est\u00e1dio Municipal Prefeito Jos\u00e9 Liberatti",
+            "address": "Rua J\u00falio Ad\u00e3o",
+            "city": "Osasco, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 12900,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2939.png"
+        },
+        {
+            "id": 270,
+            "name": "Est\u00e1dio Flamarion Vasconcelos",
+            "address": "Pra\u00e7a Centro C\u00edvico 471, Bairro Canarinho",
+            "city": "Boa Vista, Roraima",
+            "country": "Brazil",
+            "capacity": 9980,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/270.png"
+        },
+        {
+            "id": 2938,
+            "name": "Est\u00e1dio Jader Fontenelle Barbalho",
+            "address": "Avenida Muiraquit\u00e3, Bairro Interventoria",
+            "city": "Santar\u00e9m, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 19524,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2938.png"
+        },
+        {
+            "id": 6317,
+            "name": "Est\u00e1dio Marco Ant\u00f4nio Maciel",
+            "address": "Rua Ebenezer Furtado Gueiros, Bairro Industrial",
+            "city": "Garanhuns, Pernambuco",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/6317.png"
+        },
+        {
+            "id": 282,
+            "name": "Est\u00e1dio Ol\u00edmpico Colosso da Lagoa",
+            "address": "Avenida Sete de Setembro 193",
+            "city": "Erechim, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 30000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/282.png"
+        },
+        {
+            "id": 2944,
+            "name": "Est\u00e1dio Walmir Campelo Bezerra",
+            "address": "Quadra Eq 55/56",
+            "city": "Gama, Distrito Federal",
+            "country": "Brazil",
+            "capacity": 20310,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2944.png"
+        },
+        {
+            "id": 256,
+            "name": "Est\u00e1dio Germano Kr\u00fcger",
+            "address": "Rua Padre N\u00f3brega 265, Bairro Vila Oficinas",
+            "city": "Ponta Grossa, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 8679,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/256.png"
+        },
+        {
+            "id": 272,
+            "name": "Est\u00e1dio Adauto Moraes",
+            "address": null,
+            "city": "Juazeiro, Bahia",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/272.png"
+        },
+        {
+            "id": 2945,
+            "name": "Est\u00e1dio Lomanto J\u00fanior",
+            "address": "Avenida Luis Eduardo Magalh\u00e3es, Bairro Alto da Boa Vista",
+            "city": "Vit\u00f3ria da Conquista, Bahia",
+            "country": "Brazil",
+            "capacity": 12934,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2945.png"
+        },
+        {
+            "id": 1778,
+            "name": "Est\u00e1dio Ant\u00f4nio Aquino Lopes",
+            "address": "Estrada da Floresta",
+            "city": "Rio Branco, Acre",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/1778.png"
+        },
+        {
+            "id": 2943,
+            "name": "Est\u00e1dio Alu\u00edzio Ferreira de Oliveira",
+            "address": "Rua Rui Barbosa 953",
+            "city": "Porto Velho, Rond\u00f4nia",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2943.png"
+        },
+        {
+            "id": 7140,
+            "name": "Est\u00e1dio Olival Elias de Morais",
+            "address": "Rua Jose Ant\u00e3o 236, Bairro Vila Santana",
+            "city": "Boca da Mata, Alagoas",
+            "country": "Brazil",
+            "capacity": 2500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7140.png"
+        },
+        {
+            "id": 208,
+            "name": "Est\u00e1dio Ant\u00f4nio Ferreira de Medeiros",
+            "address": null,
+            "city": "Cardoso Moreira, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/208.png"
+        },
+        {
+            "id": 245,
+            "name": "Est\u00e1dio Etelvino Mendon\u00e7a",
+            "address": "Avenida Manuel Francisco Teles",
+            "city": "Itabaiana, Sergipe",
+            "country": "Brazil",
+            "capacity": 14123,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/245.png"
+        },
+        {
+            "id": 215,
+            "name": "Est\u00e1dio dos Eucaliptos",
+            "address": "Rua S\u00e3o Jos\u00e9 487",
+            "city": "Santa Cruz do Sul, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/215.png"
+        },
+        {
+            "id": 217,
+            "name": "Est\u00e1dio Elcyr Resende de Mendon\u00e7a",
+            "address": "Rua Capit\u00e3o Nunes 575, Bairro Bacax\u00e1",
+            "city": "Saquarema, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/217.png"
+        },
+        {
+            "id": 221,
+            "name": "Est\u00e1dio Leandro Pinheiro",
+            "address": "Rua Sebasti\u00e3o de Freitas, Bairro Centro",
+            "city": "Capanema, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 1500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/221.png"
+        },
+        {
+            "id": 222,
+            "name": "Est\u00e1dio Maria de Lourdes Abadia",
+            "address": "Via N Dois, Bairro da Guariroba",
+            "city": "Ceil\u00e2ndia, Distrito Federal",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/222.png"
+        },
+        {
+            "id": 224,
+            "name": "Est\u00e1dio Governador Ernani S\u00e1tyro",
+            "address": "Rua Vig\u00e1rio Calixto, Bairro Catol\u00e9",
+            "city": "Campina Grande, Para\u00edba",
+            "country": "Brazil",
+            "capacity": 45000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/224.png"
+        },
+        {
+            "id": 226,
+            "name": "Est\u00e1dio Luiz Jos\u00e9 de Lacerda",
+            "address": "Avenida Agamenon Magalh\u00e3es 425",
+            "city": "Caruaru, Pernambuco",
+            "country": "Brazil",
+            "capacity": 19478,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/226.png"
+        },
+        {
+            "id": 236,
+            "name": "Est\u00e1dio Roberto Simonsen",
+            "address": "Al. Cosme Ferreira",
+            "city": "Manaus, Amazonas",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/236.png"
+        },
+        {
+            "id": 239,
+            "name": "Est\u00e1dio do ABC",
+            "address": "Rua Anita Garibaldi",
+            "city": "Foz do Igua\u00e7u, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 12565,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/239.png"
+        },
+        {
+            "id": 271,
+            "name": "Est\u00e1dio Frei Epif\u00e2nio D'Abadia",
+            "address": "Rua Coriolano Milhomen",
+            "city": "Imperatriz, Maranh\u00e3o",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/271.png"
+        },
+        {
+            "id": 10520,
+            "name": "Arena da Amaz\u00f4nia",
+            "address": "Avenida Constantino Nery",
+            "city": "Manaus, Amazonas",
+            "country": "Brazil",
+            "capacity": 44896,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/10520.png"
+        },
+        {
+            "id": 251,
+            "name": "Est\u00e1dio Presidente Eurico Gaspar Dutra",
+            "address": "Rua Joaquim Murtinho, Bairro do Centro Sul",
+            "city": "Cuiab\u00e1, Mato Grosso",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/251.png"
+        },
+        {
+            "id": 252,
+            "name": "Est\u00e1dio Municipal Nhozinho Santos",
+            "address": "Rua Vinte e Um de Abril",
+            "city": "S\u00e3o Lu\u00eds, Maranh\u00e3o",
+            "country": "Brazil",
+            "capacity": 11429,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/252.png"
+        },
+        {
+            "id": 257,
+            "name": "Est\u00e1dio Municipal N\u00edlton Santos",
+            "address": "Avenida Teot\u00f4nio Segurado",
+            "city": "Palmas, Tocantins",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/257.png"
+        },
+        {
+            "id": 1869,
+            "name": "Est\u00e1dio Municipal Gentil Val\u00e9rio",
+            "address": "Avenida Juscelino Kubitschek",
+            "city": "Ariquemes, Rond\u00f4nia",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/1869.png"
+        },
+        {
+            "id": 11532,
+            "name": "Arena Acreana",
+            "address": "Avenida Chico Mendes, Bairro Corrente",
+            "city": "Rio Branco, Acre",
+            "country": "Brazil",
+            "capacity": 13534,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11532.png"
+        },
+        {
+            "id": 273,
+            "name": "Est\u00e1dio Estadual Lourival Baptista",
+            "address": "Rua Cedro, Bairro Treze de Julho",
+            "city": "Aracaju, Sergipe",
+            "country": "Brazil",
+            "capacity": 15575,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/273.png"
+        },
+        {
+            "id": 8348,
+            "name": "Est\u00e1dio Nildo Pereira de Menezes",
+            "address": null,
+            "city": "Serra Talhada, Pernambuco",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8348.png"
+        },
+        {
+            "id": 275,
+            "name": "Est\u00e1dio Augustinho Pires de Lima",
+            "address": "Rua Tres",
+            "city": "Sobradinho, Distrito Federal",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/275.png"
+        },
+        {
+            "id": 8268,
+            "name": "Est\u00e1dio Soares de Azevedo",
+            "address": "Rodovia BR 356, Km 274",
+            "city": "Muria\u00e9, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 13971,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8268.png"
+        },
+        {
+            "id": 1708,
+            "name": "Est\u00e1dio Zama Maciel",
+            "address": "Avenida Brasil 1085, Bairro Centro",
+            "city": "Patos de Minas, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 5500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/1708.png"
+        },
+        {
+            "id": 1743,
+            "name": "Est\u00e1dio Municipal Dr. Pl\u00ednio Marin",
+            "address": "Rua das Am\u00e9ricas 3456, Bairro Vila Marim",
+            "city": "Votuporanga, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 9227,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/1743.png"
+        },
+        {
+            "id": 1724,
+            "name": "Est\u00e1dio Milton Corr\u00eaa",
+            "address": "Avenida Equatorial",
+            "city": "Macap\u00e1, Amap\u00e1",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/1724.png"
+        },
+        {
+            "id": 268,
+            "name": "Est\u00e1dio Francisco Novelletto Neto",
+            "address": "Rua Padre Hildebrando 1100, Bairro Passo d&apos;Areia",
+            "city": "Porto Alegre, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/268.png"
+        },
+        {
+            "id": 207,
+            "name": "Arena das Dunas",
+            "address": "Avenida Senador Salgado Filho, Bairro Lagoa Nova",
+            "city": "Natal, Rio Grande do Norte",
+            "country": "Brazil",
+            "capacity": 42623,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/207.png"
+        },
+        {
+            "id": 219,
+            "name": "Est\u00e1dio Santa Cruz",
+            "address": "Avenida Cost\u00e1bile Romano, Ribeir\u00e3nia",
+            "city": "Ribeir\u00e3o Preto, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 28562,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/219.png"
+        },
+        {
+            "id": 3680,
+            "name": "Est\u00e1dio do Trabalhador",
+            "address": "Rua Augusto Xavier de Lima 251, Bairro Jardim Jalisco",
+            "city": "Resende, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 9500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/3680.png"
+        },
+        {
+            "id": 5623,
+            "name": "Est\u00e1dio Jo\u00e3o Corr\u00eaa da Silveira",
+            "address": "Rua Santo In\u00e1cio",
+            "city": "S\u00e3o Leopoldo, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5623.png"
+        },
+        {
+            "id": 5624,
+            "name": "Est\u00e1dio Dr. Ronaldo Junqueira",
+            "address": "Avenida Chafik Frahya, Bairro Vila Olimpica",
+            "city": "Po\u00e7os de Caldas, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 14000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5624.png"
+        },
+        {
+            "id": 5625,
+            "name": "Est\u00e1dio Francisco St\u00e9dile",
+            "address": "Rua Thomas Beltr\u00e3o de Queir\u00f3z 898, Marechal Floriano",
+            "city": "Caxias do Sul, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 30822,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5625.png"
+        },
+        {
+            "id": 5626,
+            "name": "Est\u00e1dio Municipal Leandro Cl\u00e1udio da Silva",
+            "address": null,
+            "city": "Barra do Corda, Maranh\u00e3o",
+            "country": "Brazil",
+            "capacity": 1400,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5626.png"
+        },
+        {
+            "id": 7831,
+            "name": "Est\u00e1dio Ol\u00edmpico Hor\u00e1cio Domingos de Sousa",
+            "address": "Rua Baturit\u00e9, Bairro Planalto",
+            "city": "Horizonte, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 10500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7831.png"
+        },
+        {
+            "id": 11961,
+            "name": "Est\u00e1dio Manoel Dantas Barretto",
+            "address": null,
+            "city": "Ceara-Mirim, Rio Grande do Norte",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11961.png"
+        },
+        {
+            "id": 5629,
+            "name": "Est\u00e1dio Municipal Ant\u00f4nio Dias",
+            "address": "Avenida Navegant\u00e3o",
+            "city": "Tucuru\u00ed, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 8200,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5629.png"
+        },
+        {
+            "id": 5630,
+            "name": "Est\u00e1dio General Sampaio",
+            "address": "Rua da Feira",
+            "city": "Porto Nacional, Tocantins",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5630.png"
+        },
+        {
+            "id": 5631,
+            "name": "Est\u00e1dio M\u00e1rio Monteiro",
+            "address": "Rua Estrela do Norte, Bairro Sumar\u00e9",
+            "city": "Cachoeiro de Itapemirim, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 6600,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5631.png"
+        },
+        {
+            "id": 5632,
+            "name": "Est\u00e1dio Municipal Dr. Novelli J\u00fanior",
+            "address": "Avenida Dr. Prudente de Moraes 435, Vila Nova",
+            "city": "Itu, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 18560,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5632.png"
+        },
+        {
+            "id": 5633,
+            "name": "Est\u00e1dio Aniceto Moscoso",
+            "address": "Rua Conselheiro Galv\u00e3o 130, Bairro Madureira",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 3314,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5633.png"
+        },
+        {
+            "id": 5634,
+            "name": "Est\u00e1dio Ismael Benigno",
+            "address": "Avenida Presidente Dutra, Bairro de Santo Ant\u00f4nio",
+            "city": "Manaus, Amazonas",
+            "country": "Brazil",
+            "capacity": 16000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5634.png"
+        },
+        {
+            "id": 5635,
+            "name": "Est\u00e1dio J\u00e2nio de Moraes",
+            "address": "Avenida Governador Roberto Silveira 1357, Bairro Centro",
+            "city": "Nova Igua\u00e7u, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5635.png"
+        },
+        {
+            "id": 5636,
+            "name": "Est\u00e1dio Estadual Jacques da Luz",
+            "address": "Parque Jacques da Luz, Bairro Moreninhas",
+            "city": "Campo Grande, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 4500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5636.png"
+        },
+        {
+            "id": 5637,
+            "name": "Est\u00e1dio Municipal Pedro Alelaf",
+            "address": "Rua Trinta e Oito",
+            "city": "Parna\u00edba, Piau\u00ed",
+            "country": "Brazil",
+            "capacity": 4700,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5637.png"
+        },
+        {
+            "id": 5638,
+            "name": "Est\u00e1dio Municipal Anacleto Campanella",
+            "address": "Rua Walter Tom\u00e9 64, Bairro Ol\u00edmpico",
+            "city": "S\u00e3o Caetano do Sul, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 22738,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5638.png"
+        },
+        {
+            "id": 5640,
+            "name": "Est\u00e1dio Municipal Engenheiro Luthero Lopes",
+            "address": "Avenida Bandeirantes, Bairro Centro",
+            "city": "Rondon\u00f3polis, Mato Grosso",
+            "country": "Brazil",
+            "capacity": 18720,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5640.png"
+        },
+        {
+            "id": 5650,
+            "name": "Est\u00e1dio Municipal General Raulino de Oliveira",
+            "address": "Rua Major Aviador Rubens Vaz, Bairro Jardim Para\u00edba",
+            "city": "Volta Redonda, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 20255,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5650.png"
+        },
+        {
+            "id": 5651,
+            "name": "Est\u00e1dio Cla\u00fadio Moacir de Azevedo",
+            "address": "Rodovia Amaral Peixoto, Km 04, Barra de Maca\u00e9",
+            "city": "Maca\u00e9, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 20000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5651.png"
+        },
+        {
+            "id": 5652,
+            "name": "Est\u00e1dio Vail Chaves",
+            "address": "Rua Dr. Ferreira de Lima 150, Centro",
+            "city": "Mogi Mirim, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 19900,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5652.png"
+        },
+        {
+            "id": 5653,
+            "name": "Est\u00e1dio Municipal Professor Dario Rodrigues Leite",
+            "address": "Pra\u00e7a da B\u00edblia 100, Bairro Vila Para\u00edba",
+            "city": "Guaratinguet\u00e1, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 16095,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5653.png"
+        },
+        {
+            "id": 12672,
+            "name": "Est\u00e1dio Ademir Cunha",
+            "address": "Rua Santo Ant\u00f4nio, Bairro Centro",
+            "city": "Paulista, Pernambuco",
+            "country": "Brazil",
+            "capacity": 10498,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12672.png"
+        },
+        {
+            "id": 5655,
+            "name": "Est\u00e1dio Municipal Jonas Duarte",
+            "address": "Avenida Brasil Sul",
+            "city": "An\u00e1polis, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 17800,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5655.png"
+        },
+        {
+            "id": 5656,
+            "name": "Est\u00e1dio Pedro Alves do Nascimento",
+            "address": "Avenida Juscelino Kubistcheck",
+            "city": "Patroc\u00ednio, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 8500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5656.png"
+        },
+        {
+            "id": 5657,
+            "name": "Est\u00e1dio Municipal G\u00e9rson do Amaral",
+            "address": "212, R. Jos\u00e9 de Souza Nascimento, 62 - Conj. Hab. Dr. Fialho",
+            "city": "Coruripe, Alagoas",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5657.png"
+        },
+        {
+            "id": 5658,
+            "name": "Est\u00e1dio Doutor Adhemar de Barros",
+            "address": "Pra\u00e7a Scalamandr\u00e9 Sobrinho, Vila Ferrovi\u00e1ria",
+            "city": "Araraquara, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 20287,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5658.png"
+        },
+        {
+            "id": 19635,
+            "name": "Bsbios Arena",
+            "address": "Avenida, Estr. Perimetral Sul(Deputado Guaraci Marinho) - Boqueir\u00e3o",
+            "city": "Passo Fundo, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19635.png"
+        },
+        {
+            "id": 11102,
+            "name": "Est\u00e1dio An\u00edbal Torres Costa",
+            "address": "Avenida Pedro Zapelini",
+            "city": "Tubar\u00e3o, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11102.png"
+        },
+        {
+            "id": 5660,
+            "name": "Est\u00e1dio Francisco Jos\u00e9 Ferreira",
+            "address": "Rua Terra Roxa 252",
+            "city": "Ipor\u00e1, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5660.png"
+        },
+        {
+            "id": 5662,
+            "name": "Est\u00e1dio Eliel Martins",
+            "address": null,
+            "city": "Riach\u00e3o do Jacu\u00edpe, Bahia",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5662.png"
+        },
+        {
+            "id": 5663,
+            "name": "Est\u00e1dio Regional Willie Davids",
+            "address": "Avenida Prudente de Moraes",
+            "city": "Maring\u00e1, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 21600,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5663.png"
+        },
+        {
+            "id": 5664,
+            "name": "Est\u00e1dio Dr. Jorge Ismael de Biasi",
+            "address": "Avenida Domingos Baraldo 2879, Vila Patti",
+            "city": "Novo Horizonte, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 16000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5664.png"
+        },
+        {
+            "id": 5665,
+            "name": "Est\u00e1dio Luso-Brasileiro",
+            "address": "Rua Haroldo Lobo 400, Bairro Ilha do Governador",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 20113,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5665.png"
+        },
+        {
+            "id": 5666,
+            "name": "Est\u00e1dio Salvador Ven\u00e2ncio da Costa",
+            "address": "Avenida Joubert de Barros 333, Bairro Bento Ferreira",
+            "city": "Vit\u00f3ria, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5666.png"
+        },
+        {
+            "id": 5667,
+            "name": "Est\u00e1dio Municipal de Ytacoatiara",
+            "address": "Rua Le\u00f4nidas Melo",
+            "city": "Piripiri, Piau\u00ed",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5667.png"
+        },
+        {
+            "id": 5668,
+            "name": "Est\u00e1dio Edgar Borges Montenegro",
+            "address": "Rua Major Ov\u00eddio Melo Montenegro, Bairro Quintal do Farol",
+            "city": "Ass\u00fa, Rio Grande do Norte",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5668.png"
+        },
+        {
+            "id": 5669,
+            "name": "Est\u00e1dio da Vila Ol\u00edmpica Roberto Marinho",
+            "address": "Avenida Olimpica",
+            "city": "Boa Vista, Roraima",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5669.png"
+        },
+        {
+            "id": 5670,
+            "name": "Est\u00e1dio Jos\u00e9 Bezerra de Mendon\u00e7a",
+            "address": null,
+            "city": "Belo Jardim, Pernambuco",
+            "country": "Brazil",
+            "capacity": 6500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5670.png"
+        },
+        {
+            "id": 5671,
+            "name": "Est\u00e1dio Davino Matos",
+            "address": "Avenida Davino Matos 230",
+            "city": "Guarapari, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5671.png"
+        },
+        {
+            "id": 5672,
+            "name": "Est\u00e1dio Municipal \u00c1ureo Bradley",
+            "address": null,
+            "city": "Arcoverde, Pernambucano",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5672.png"
+        },
+        {
+            "id": 5673,
+            "name": "Est\u00e1dio Vidal Ramos J\u00fanior",
+            "address": "Rua Jairo Lu\u00eds Ramos",
+            "city": "Lages, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 11800,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5673.png"
+        },
+        {
+            "id": 21185,
+            "name": "Est\u00e1dio Gilmar Alves de Oliveira",
+            "address": "Avenida Bercholina, Bairro Planalto",
+            "city": "Bom Jesus de Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21185.png"
+        },
+        {
+            "id": 5675,
+            "name": "Est\u00e1dio Municipal Gilberto Siqueira Lopes",
+            "address": "Rua Leopoldina 188, Bairro Morumbi",
+            "city": "Lins, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 15770,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5675.png"
+        },
+        {
+            "id": 5676,
+            "name": "Est\u00e1dio Jos\u00e9 Maria de Campos Maia",
+            "address": "Avenida Lauro Luchesi 2650, Centro",
+            "city": "Mirassol, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 14534,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5676.png"
+        },
+        {
+            "id": 5677,
+            "name": "Est\u00e1dio Municipal Newton Agibert",
+            "address": "Rua L\u00e9cia Ukrainka, Bairro Vila Nova",
+            "city": "Prudent\u00f3polis, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5677.png"
+        },
+        {
+            "id": 5678,
+            "name": "Est\u00e1dio Municipal de Carpina",
+            "address": null,
+            "city": "Carpina, Pernambuco",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5678.png"
+        },
+        {
+            "id": 5679,
+            "name": "Est\u00e1dio Prolet\u00e1rio Guilherme da Silveira Filho",
+            "address": "Rua Sul Am\u00e9rica 950, Bangu",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 9564,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5679.png"
+        },
+        {
+            "id": 5680,
+            "name": "Est\u00e1dio Engenheiro Alencar Araripe",
+            "address": "Rodovia BR 262 km 0, Bairro Jardim Am\u00e9rica",
+            "city": "Cariacica, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 13410,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5680.png"
+        },
+        {
+            "id": 5681,
+            "name": "Est\u00e1dio Municipal Pl\u00e1cido Aderaldo Castelo",
+            "address": "Rua Dr. Raimundo Lima Neto",
+            "city": "Sobral, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 20000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5681.png"
+        },
+        {
+            "id": 5682,
+            "name": "Est\u00e1dio Municipal Jos\u00e9 Rocha",
+            "address": null,
+            "city": "Jacobina, Bahia",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5682.png"
+        },
+        {
+            "id": 5683,
+            "name": "Est\u00e1dio Zequinha Roriz",
+            "address": null,
+            "city": "Luzi\u00e2nia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 21564,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5683.png"
+        },
+        {
+            "id": 19631,
+            "name": "Est\u00e1dio Gen\u00e9sio Ayres Marchetti",
+            "address": "Rua M\u00e9xico 70, Bairro Centro",
+            "city": "Ibirama, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19631.png"
+        },
+        {
+            "id": 5685,
+            "name": "Est\u00e1dio Leonardo Nogueira",
+            "address": "Rua Jo\u00e3o da Esc\u00f3cia",
+            "city": "Mossor\u00f3, Rio Grande do Norte",
+            "country": "Brazil",
+            "capacity": 10400,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5685.png"
+        },
+        {
+            "id": 5686,
+            "name": "Est\u00e1dio Ol\u00edmpico Municipal Gilberto Mestrinho",
+            "address": "Rua Mau\u00e9s",
+            "city": "Manacapuru, Amazonas",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5686.png"
+        },
+        {
+            "id": 5687,
+            "name": "Est\u00e1dio Governador Ant\u00f4nio Mariz",
+            "address": "Rua Capit\u00e3o Manoel Gadelha Filho 57",
+            "city": "Sousa, Para\u00edba",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5687.png"
+        },
+        {
+            "id": 5688,
+            "name": "Est\u00e1dio Primeiro de Maio",
+            "address": "Rua Olavo Bilac 240",
+            "city": "S\u00e3o Bernardo do Campo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 17054,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5688.png"
+        },
+        {
+            "id": 5689,
+            "name": "Est\u00e1dio Aldo Dapuzzo",
+            "address": "Avenida Presidente Vargas 518",
+            "city": "Rio Grande, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5689.png"
+        },
+        {
+            "id": 5690,
+            "name": "Est\u00e1dio Castanheir\u00e3o",
+            "address": "R. Bela Vista",
+            "city": "Miracema do Tocantins",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5690.png"
+        },
+        {
+            "id": 5691,
+            "name": "Est\u00e1dio Municipal Castor de Cifuentes",
+            "address": "Rua Major Felizardo, Bairro Centro",
+            "city": "Nova Lima, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5691.png"
+        },
+        {
+            "id": 5692,
+            "name": "Est\u00e1dio Bar\u00e3o de Serra Negra",
+            "address": "Rua Silva Jardim 849",
+            "city": "Piracicaba, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 26568,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5692.png"
+        },
+        {
+            "id": 5693,
+            "name": "Est\u00e1dio Ant\u00f4nio Afonso de Melo",
+            "address": "Rua Santa Rita",
+            "city": "Alto Araguaia, Mato Grosso",
+            "country": "Brazil",
+            "capacity": 4500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5693.png"
+        },
+        {
+            "id": 5694,
+            "name": "Est\u00e1dio Waldeir Jos\u00e9 de Oliveira",
+            "address": "Avenida Goi\u00e1s 230",
+            "city": "Goian\u00e9sia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5694.png"
+        },
+        {
+            "id": 5695,
+            "name": "Est\u00e1dio Janguito Malucelli",
+            "address": "Rodovia Br-277 Curitiba Ponta Grossa 119, Bairro Mossungu\u00ea",
+            "city": "Curitiba, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 6500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5695.png"
+        },
+        {
+            "id": 5696,
+            "name": "Est\u00e1dio Jo\u00e3o Ribeiro",
+            "address": null,
+            "city": "Tocantin\u00f3polis, Tocantins",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5696.png"
+        },
+        {
+            "id": 5697,
+            "name": "Est\u00e1dio Municipal Zinho de Oliveira",
+            "address": "Avenida Ant\u00f4nio Maia",
+            "city": "Marab\u00e1, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 4500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5697.png"
+        },
+        {
+            "id": 6315,
+            "name": "Est\u00e1dio Edson Matias",
+            "address": null,
+            "city": "Olho d&apos;\u00c1gua das Flores, Alagoas",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/6315.png"
+        },
+        {
+            "id": 20795,
+            "name": "Est\u00e1dio Municipal Manoel Ferreira de Amorim",
+            "address": "AL-420, 156 - Lot. Esther Torres I",
+            "city": "S\u00e3o Miguel dos Campos, Alagoas",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20795.png"
+        },
+        {
+            "id": 6316,
+            "name": "Est\u00e1dio Municipal Juca Sampaio",
+            "address": "Rua 15 de Novembro",
+            "city": "Palmeira dos \u00cdndios, Alagoas",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/6316.png"
+        },
+        {
+            "id": 20442,
+            "name": "Est\u00e1dio Alfredo Leahy",
+            "address": "Pra\u00e7a Clementino do Monte 151, Bairro Cantro",
+            "city": "Penedo, Alagoas",
+            "country": "Brazil",
+            "capacity": 5500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20442.png"
+        },
+        {
+            "id": 7038,
+            "name": "Est\u00e1dio Municipal 14 de Dezembro",
+            "address": "Rua da Faculdade, Bairro Jardim Santa Maria",
+            "city": "Toledo, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 15280,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7038.png"
+        },
+        {
+            "id": 7039,
+            "name": "Est\u00e1dio Valdemar Viana de Ara\u00fajo",
+            "address": null,
+            "city": "Afogados da Ingazeira, Pernambuco",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7039.png"
+        },
+        {
+            "id": 7040,
+            "name": "Est\u00e1dio da Noroeste",
+            "address": "Rua Assis Ribeiro, Bairro Alto",
+            "city": "Aquidauana, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7040.png"
+        },
+        {
+            "id": 7041,
+            "name": "Est\u00e1dio Ant\u00f4nio de Figueiredo Carneiro",
+            "address": "Pra\u00e7a Professor M\u00e1rio Laerte, Bairro Centro",
+            "city": "Alagoinhas, Bahia",
+            "country": "Brazil",
+            "capacity": 18000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7041.png"
+        },
+        {
+            "id": 7042,
+            "name": "Est\u00e1dio Ant\u00f4nio L\u00edrio Callou",
+            "address": null,
+            "city": "Barbalha, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7042.png"
+        },
+        {
+            "id": 7043,
+            "name": "Est\u00e1dio Municipal Raimundo de Oliveira Filho",
+            "address": "Rua Tobias da Mota Correia, Bairro Vicente Arruda",
+            "city": "Caucaia, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7043.png"
+        },
+        {
+            "id": 7044,
+            "name": "Est\u00e1dio Paulo Barreto de Menezes",
+            "address": null,
+            "city": "Lagarto, Sergipe",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7044.png"
+        },
+        {
+            "id": 7045,
+            "name": "Est\u00e1dio Bruno Jos\u00e9 Daniel",
+            "address": "Rua 24 de Maio, Vila Pires",
+            "city": "Santo Andr\u00e9, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 15517,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7045.png"
+        },
+        {
+            "id": 7046,
+            "name": "Est\u00e1dio 19 de Outubro",
+            "address": "Rua Henrique Kopf",
+            "city": "Iju\u00ed, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7046.png"
+        },
+        {
+            "id": 7047,
+            "name": "Est\u00e1dio Ili\u00ea Vidal",
+            "address": "Rua J\u00falio Siqueira Maia 1440, Bairro Centro",
+            "city": "Rio Brilhante, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7047.png"
+        },
+        {
+            "id": 10540,
+            "name": "Est\u00e1dio Distrital do Jardim Inamar",
+            "address": "Avenida Ns. dos Navegantes, Inamar, Diadema",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "artificial turf",
+            "image": "https://media.api-sports.io/football/venues/10540.png"
+        },
+        {
+            "id": 7056,
+            "name": "Est\u00e1dio Conde Rodolfo Crespi",
+            "address": "Rua Javari 117, Mooca",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 5256,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7056.png"
+        },
+        {
+            "id": 11106,
+            "name": "Est\u00e1dio Municipal Dr. M\u00e1rio Martins Pereira",
+            "address": "Rua Ana Gon\u00e7alves da Cunha 340, Bairro Jardim Jussara",
+            "city": "S\u00e3o Jos\u00e9 dos Campos, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 15317,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11106.png"
+        },
+        {
+            "id": 7058,
+            "name": "Est\u00e1dio Otac\u00edlia Patr\u00edcio Arroyo",
+            "address": "Rua Monteiro Lobato 33, Centro",
+            "city": "Monte Azul Paulista, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 11109,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7058.png"
+        },
+        {
+            "id": 7059,
+            "name": "Est\u00e1dio Municipal Tenente Carri\u00e7o",
+            "address": "Avenida do Est\u00e1dio 910",
+            "city": "Pen\u00e1polis, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 11914,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7059.png"
+        },
+        {
+            "id": 7060,
+            "name": "Est\u00e1dio \u00dalrico Mursa",
+            "address": "Avenida Senador Pinheiro Machado 240, Bairro Jabaquara",
+            "city": "Santos, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 9139,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7060.png"
+        },
+        {
+            "id": 7062,
+            "name": "Est\u00e1dio Municipal Frederico Dalmazo",
+            "address": "Rua Guilherme Volpe 1350, Jardim Sumar\u00e9",
+            "city": "Sert\u00e3ozinho, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 15074,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7062.png"
+        },
+        {
+            "id": 7063,
+            "name": "Est\u00e1dio Joaquim de Morais Filho",
+            "address": "Avenida John Fitzgerald Kennedy 250, Bairro Jardim das Na\u00e7\u00f5es",
+            "city": "Taubat\u00e9, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 20000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7063.png"
+        },
+        {
+            "id": 7064,
+            "name": "Est\u00e1dio Municipal Maria Teresa Breda",
+            "address": "Rua Professor Maria Ubaldina de Barros Furquim 92",
+            "city": "Ol\u00edmpia, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 15022,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7064.png"
+        },
+        {
+            "id": 7065,
+            "name": "Est\u00e1dio Ant\u00f4nio Gomes Martins",
+            "address": "Rua 20",
+            "city": "Barretos, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 13996,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7065.png"
+        },
+        {
+            "id": 7066,
+            "name": "Est\u00e1dio Doutor Oswaldo Scatena",
+            "address": "Rua Manoel Gustavo Simioni 414, Bairro Centro",
+            "city": "Batatais, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 8540,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7066.png"
+        },
+        {
+            "id": 7067,
+            "name": "Arena Capivari",
+            "address": "Rua Aracaj\u00fa",
+            "city": "Capivari, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 19000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7067.png"
+        },
+        {
+            "id": 7068,
+            "name": "Est\u00e1dio Dr. Francisco de Palma Travassos",
+            "address": "Avenida Dr. Pl\u00ednio de Castro Prado 1000, Jardim Paulista",
+            "city": "Ribeir\u00e3o Preto, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 18998,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7068.png"
+        },
+        {
+            "id": 7069,
+            "name": "Est\u00e1dio Ernesto Rocco",
+            "address": "Avenida Dr. Silvio Brand Corr\u00eaa 2591",
+            "city": "Porto Feliz, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 2500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7069.png"
+        },
+        {
+            "id": 20208,
+            "name": "Est\u00e1dio Municipal G\u00edglio Portugal Pichinin",
+            "address": "Avenida Armando \u00cdtalo Setti 901, Baeta Neves",
+            "city": "S\u00e3o Bernardo do Campo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 6315,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20208.png"
+        },
+        {
+            "id": 7071,
+            "name": "Est\u00e1dio Municipal Bento de Abreu Sampaio Vidal",
+            "address": "Avenida Vicente Ferreira 152, Bairro Tangar\u00e1",
+            "city": "Mar\u00edlia, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 17963,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7071.png"
+        },
+        {
+            "id": 7072,
+            "name": "Est\u00e1dio Nicolau Alayon",
+            "address": "Rua Comendador de Souza 348, Barra Funda",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 9660,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7072.png"
+        },
+        {
+            "id": 7073,
+            "name": "Est\u00e1dio Dr. Alfredo de Castilho",
+            "address": "Rua Benedito Eleut\u00e9rio, Quadra 3, Bairro Vila Pac\u00edfico",
+            "city": "Bauru, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 18840,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7073.png"
+        },
+        {
+            "id": 7074,
+            "name": "Est\u00e1dio Dr. Jayme Pinheiro de Ulh\u00f4a Cintra",
+            "address": "Avenida Jurandyr de Souza Lima",
+            "city": "Jundia\u00ed, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 14771,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7074.png"
+        },
+        {
+            "id": 7057,
+            "name": "Est\u00e1dio \u00cdtalo M\u00e1rio Limongi",
+            "address": "Rua Jos\u00e9 Escodro 107",
+            "city": "Indaiatuba, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 9542,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7057.png"
+        },
+        {
+            "id": 7075,
+            "name": "Est\u00e1dio An\u00edsio Hadad",
+            "address": "Rua Joaquim Manoel Pires 777",
+            "city": "S\u00e3o Jos\u00e9 do Rio Preto, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 18670,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7075.png"
+        },
+        {
+            "id": 7076,
+            "name": "Est\u00e1dio Benito Agnelo Castellano",
+            "address": "Rua 3 116",
+            "city": "Rio Claro, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 8198,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7076.png"
+        },
+        {
+            "id": 7077,
+            "name": "Est\u00e1dio Parque Esportivo Montanha dos Vinhedos",
+            "address": "Rua Julieta Sassi Dreher 303, Barrio S\u00e3o Jo\u00e3o",
+            "city": "Bento Gon\u00e7alves, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 15276,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7077.png"
+        },
+        {
+            "id": 7078,
+            "name": "Est\u00e1dio Boca do Lobo",
+            "address": "Pra\u00e7a J\u00falio Castilho 300",
+            "city": "Pelotas, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 23336,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7078.png"
+        },
+        {
+            "id": 7079,
+            "name": "Est\u00e1dio Pedra Moura",
+            "address": "Avenida L\u00edbio Vinhas 129, Bairro Menino Deus",
+            "city": "Bag\u00e9, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": null,
+            "image": "https://media.api-sports.io/football/venues/7079.png"
+        },
+        {
+            "id": 7080,
+            "name": "Est\u00e1dio das Castanheiras",
+            "address": "Avenida Alvorada, Parque Centen\u00e1rio, Bairro Cinquenten\u00e1rio",
+            "city": "Farroupilha, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7080.png"
+        },
+        {
+            "id": 7081,
+            "name": "Arena Cruzeiro",
+            "address": "Rua Ary Rosa dos Santos, 745",
+            "city": "Cachoeirinha, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 16000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7081.png"
+        },
+        {
+            "id": 7082,
+            "name": "Est\u00e1dio Altos da Gl\u00f3ria",
+            "address": "Avenida Militar 5010",
+            "city": "Vacaria, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7082.png"
+        },
+        {
+            "id": 7083,
+            "name": "Est\u00e1dio Edmundo Feix",
+            "address": "Rua Jacob Becker 730",
+            "city": "Ven\u00e2ncio Aires, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7083.png"
+        },
+        {
+            "id": 7084,
+            "name": "Est\u00e1dio Ant\u00f4nio Magalh\u00e3es Rossel",
+            "address": "Rua Gaspar Silveira Martins 70, Bairro Estrela D&apos;Alva",
+            "city": "Bag\u00e9, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7084.png"
+        },
+        {
+            "id": 7085,
+            "name": "Est\u00e1dio Alberto Carlos Schwingler",
+            "address": "Tv. Delta, 432 - Centro",
+            "city": "Igrejinha, Rio Grando do Sul",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7085.png"
+        },
+        {
+            "id": 19637,
+            "name": "Est\u00e1dio Presidente Vargas",
+            "address": "Rua Ana Nery 390",
+            "city": "Santa Maria, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 6554,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19637.png"
+        },
+        {
+            "id": 7086,
+            "name": "Est\u00e1dio Alviazul",
+            "address": "Rua Bernardo Bento / RS-130, km 2",
+            "city": "Lajeado, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7086.png"
+        },
+        {
+            "id": 5659,
+            "name": "Est\u00e1dio Vermelh\u00e3o da Serra",
+            "address": "Avenida Presidente Vargas, Bairro S\u00e3o Crist\u00f3v\u00e3o",
+            "city": "Passo Fundo, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 18000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5659.png"
+        },
+        {
+            "id": 7087,
+            "name": "Est\u00e1dio S\u00edlvio de Faria C\u00f4rrea",
+            "address": "R. Prof. Hostim, 30, Rio Grande do Sul",
+            "city": "S\u00e3o Gabriel",
+            "country": "Brazil",
+            "capacity": 8500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7087.png"
+        },
+        {
+            "id": 7088,
+            "name": "Est\u00e1dio Municipal Rubro-Negro",
+            "address": "Rua Boa Vista",
+            "city": "Crissiumal, Rio Grando do Sul",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7088.png"
+        },
+        {
+            "id": 7089,
+            "name": "Arena do Uni\u00e3o Frederiquense",
+            "address": "Estrada Santo Caeran - Bairro Faguense",
+            "city": "Frederico Westphalen, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7089.png"
+        },
+        {
+            "id": 7090,
+            "name": "Est\u00e1dio Ant\u00f4nio David Farina",
+            "address": "Rodovia RST-470, Bairro Medianeira",
+            "city": "Veran\u00f3polis, Rio Grande do Su",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7090.png"
+        },
+        {
+            "id": 7307,
+            "name": "Est\u00e1dio Perp\u00e9tuo Corr\u00eaa Lima",
+            "address": "Rua Francisco Apr\u00edgio Nogueira, Bairro Capoeiras",
+            "city": "Cajazeiras, Para\u00edba",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7307.png"
+        },
+        {
+            "id": 7308,
+            "name": "Est\u00e1dio Genervino Evangelista da Fonseca",
+            "address": "Rua Araguaia, Bairro Centro",
+            "city": "Catal\u00e3o, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7308.png"
+        },
+        {
+            "id": 7309,
+            "name": "Est\u00e1dio Alair C\u00f4rrea",
+            "address": "Rua Treze de Novembro 386, Bairro S\u00e3o Crist\u00f3v\u00e3o",
+            "city": "Cabo Frio, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7309.png"
+        },
+        {
+            "id": 20766,
+            "name": "Est\u00e1dio Ol\u00edmpico Regional Jacy Miguel Scanagatta",
+            "address": "Rua Chaparral",
+            "city": "Cascavel, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 42350,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20766.png"
+        },
+        {
+            "id": 7311,
+            "name": "Est\u00e1dio Ol\u00edmpico Pedro Ludovico Teixeira",
+            "address": "Avenida Para\u00edba esq. Rua 74, Setor Central",
+            "city": "Goi\u00e2nia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 13500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7311.png"
+        },
+        {
+            "id": 7312,
+            "name": "Est\u00e1dio Municipal Jos\u00e9 de Abreu Bianco",
+            "address": null,
+            "city": "Ji-Paran\u00e1, Rond\u00f4nia",
+            "country": "Brazil",
+            "capacity": 4400,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7312.png"
+        },
+        {
+            "id": 11099,
+            "name": "Est\u00e1dio Municipal Marcos Pinheiro Neto",
+            "address": "-973 - R. Nova, 827",
+            "city": "S\u00e3o Mateus, Maranh\u00e3o",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11099.png"
+        },
+        {
+            "id": 7313,
+            "name": "Est\u00e1dio Doutor Herc\u00edlio Luz",
+            "address": null,
+            "city": "Itaja\u00ed, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7313.png"
+        },
+        {
+            "id": 7314,
+            "name": "Estadio Municipal Ol\u00edmpico Erich George",
+            "address": "Rua Manoel Carreira Bernardino, Bairro Centro",
+            "city": "Rol\u00e2ndia, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 2200,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7314.png"
+        },
+        {
+            "id": 7315,
+            "name": "Est\u00e1dio Jos\u00e9 Ol\u00edmpio da Rocha",
+            "address": "Rua Henrique Santana, Bairro C\u00f3rrego do Caf\u00e9",
+            "city": "\u00c1guia Branca, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7315.png"
+        },
+        {
+            "id": 7317,
+            "name": "Est\u00e1dio Elmo Serejo Farias",
+            "address": "Avenida Elmo Serejo 2871",
+            "city": "Taguatinga, Distrito Federal",
+            "country": "Brazil",
+            "capacity": 32000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7317.png"
+        },
+        {
+            "id": 7318,
+            "name": "Est\u00e1dio Governador Augusto Franco",
+            "address": null,
+            "city": "Est\u00e2ncia, Sergipe",
+            "country": "Brazil",
+            "capacity": 8639,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7318.png"
+        },
+        {
+            "id": 7319,
+            "name": "Est\u00e1dio Luis Saraiva Vieira",
+            "address": "Rua Duque de Caxias, Quadra 28, Bairro Guirai",
+            "city": "Ivinhema, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 4600,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7319.png"
+        },
+        {
+            "id": 7320,
+            "name": "Est\u00e1dio Municipal F\u00e9lix Bel\u00e9m de Castro",
+            "address": "Avenida Sendor At\u00edlio Fontana",
+            "city": "Campo Verde, Mato Grosso",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7320.png"
+        },
+        {
+            "id": 7321,
+            "name": "Est\u00e1dio Jos\u00e9 Raimundo Roseno Ara\u00fajo",
+            "address": null,
+            "city": "Parauapebas, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7321.png"
+        },
+        {
+            "id": 7359,
+            "name": "Est\u00e1dio Jos\u00e9 de Melo",
+            "address": "Avenida Cear\u00e1 1356",
+            "city": "Rio Branco, Acre",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7359.png"
+        },
+        {
+            "id": 7360,
+            "name": "Arena do Juru\u00e1",
+            "address": "Km. 09 Rodovia AC-405",
+            "city": "Cruzeiro do Sul, Acre",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7360.png"
+        },
+        {
+            "id": 7361,
+            "name": "Est\u00e1dio Ant\u00f4nio Ara\u00fajo Lopes",
+            "address": "Rodovia BR 317, 392 - Aeroporto",
+            "city": "Epit\u00e1ciol\u00e2ndia, Acre",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7361.png"
+        },
+        {
+            "id": 20767,
+            "name": "Est\u00e1dio Municipal Carlos Zamith",
+            "address": "Alameda Cosme Ferreira, Coroado 2",
+            "city": "Manaus, Amazonas",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20767.png"
+        },
+        {
+            "id": 7362,
+            "name": "Est\u00e1dio Tenente \u00c1lvaro Maranh\u00e3o",
+            "address": null,
+            "city": "Iranduba, Amazonas",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7362.png"
+        },
+        {
+            "id": 7363,
+            "name": "Est\u00e1dio Floro de Mendon\u00e7a",
+            "address": null,
+            "city": "Itacoatiara, Amazonas",
+            "country": "Brazil",
+            "capacity": 2710,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7363.png"
+        },
+        {
+            "id": 7364,
+            "name": "Est\u00e1dio Flavia de Oliveira",
+            "address": "Auxiliadora",
+            "city": "Manicor\u00e9, Amazonas",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7364.png"
+        },
+        {
+            "id": 7365,
+            "name": "Est\u00e1dio Francisco Garcia",
+            "address": null,
+            "city": "Rio Preto da Eva, Amazonas",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7365.png"
+        },
+        {
+            "id": 21276,
+            "name": "Est\u00e1dio da G\u00e1vea",
+            "address": "Avenida Borges de Medeiros 1111, Lagoa",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21276.png"
+        },
+        {
+            "id": 7814,
+            "name": "Est\u00e1dio Jo\u00e3o Lamego Neto",
+            "address": "Avenida Roberto Burle Marx, Parque Ipanema",
+            "city": "Ipatinga, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 24500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7814.png"
+        },
+        {
+            "id": 7815,
+            "name": "Est\u00e1dio Rom\u00e1rio de Souza Faria",
+            "address": "Estrada de Ferro Xer\u00e9m 278, Bairro Xer\u00e9m",
+            "city": "Duque de Caxias, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7815.png"
+        },
+        {
+            "id": 7816,
+            "name": "Est\u00e1dio Portal da Amaz\u00f4nia",
+            "address": "Avenida Brigadeiro Eduardo Gomes 5631 , Bairro Setor 04",
+            "city": "Vilhena, Rond\u00f4nia",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7816.png"
+        },
+        {
+            "id": 7817,
+            "name": "Est\u00e1dio Renato Silveira",
+            "address": "Rua Caetano Silveira de Matios",
+            "city": "Palho\u00e7a, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7817.png"
+        },
+        {
+            "id": 7818,
+            "name": "Est\u00e1dio Francisco Chaves Filho",
+            "address": "Rua Antonio Jo\u00e3o Ribeiro, Bairro Centro",
+            "city": "Itapor\u00e3, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7818.png"
+        },
+        {
+            "id": 7819,
+            "name": "Est\u00e1dio Eug\u00eanio Ant\u00f4nio Bitti",
+            "address": "Rua Prof. Berilo Basilio dos Santos",
+            "city": "Aracruz, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7819.png"
+        },
+        {
+            "id": 21242,
+            "name": "Est\u00e1dio Municipal Fausto Alvim",
+            "address": "Rua Melch\u00edades da Cunha",
+            "city": "Arax\u00e1, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21242.png"
+        },
+        {
+            "id": 7821,
+            "name": "Arena Verde",
+            "address": null,
+            "city": "Paragominas, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7821.png"
+        },
+        {
+            "id": 7822,
+            "name": "Est\u00e1dio Alcides Santos",
+            "address": "Avenida Senador Fernandez T\u00e1vora 200 e Rua Rio Grande do Sul, Pici",
+            "city": "Fortaleza, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 7150,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7822.png"
+        },
+        {
+            "id": 7823,
+            "name": "Est\u00e1dio Ot\u00e1vio Limeira Alves",
+            "address": "Rua Major Negrinho 120, Bairro Novo",
+            "city": "Santa Cruz do Capibaribe, Pernambuco",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7823.png"
+        },
+        {
+            "id": 7824,
+            "name": "Est\u00e1dio Le\u00f4ncio de Souza Miranda",
+            "address": "Avenida Bernardo Say\u00e3o",
+            "city": "Aragua\u00edna, Tocantins",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7824.png"
+        },
+        {
+            "id": 19596,
+            "name": "Est\u00e1dio Municipal Jos\u00e9 Chiappin",
+            "address": "Rua Mageluro",
+            "city": "Arapongas, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 10440,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19596.png"
+        },
+        {
+            "id": 7826,
+            "name": "Est\u00e1dio Arena da Paz",
+            "address": "Bairro Los Angeles",
+            "city": "Campo Grande, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 2800,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7826.png"
+        },
+        {
+            "id": 7827,
+            "name": "Est\u00e1dio Ant\u00f4nio Vieira Ramos",
+            "address": "Avenida Jos\u00e9 Loureiro da Silva 2123",
+            "city": "Gravata\u00ed, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7827.png"
+        },
+        {
+            "id": 7828,
+            "name": "Est\u00e1dio Deusdeth Melo",
+            "address": null,
+            "city": "Campo Maior, Piau\u00ed",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7828.png"
+        },
+        {
+            "id": 7829,
+            "name": "Est\u00e1dio Eduardo Guinle",
+            "address": "Rua Jardel Hottz, Bairro Olaria",
+            "city": "Nova Friburgo, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 6550,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7829.png"
+        },
+        {
+            "id": 7830,
+            "name": "Est\u00e1dio Waldemar Teixeira de Faria",
+            "address": "Rua do Contorno",
+            "city": "Divin\u00f3polis, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 9000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7830.png"
+        },
+        {
+            "id": 7832,
+            "name": "Est\u00e1dio Bernardo Rubinger de Queiroz",
+            "address": "Avenida Juscelino Kubistschek de Oliveira, Bairro Ipanema / Planalto",
+            "city": "Patos de Minas, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7832.png"
+        },
+        {
+            "id": 7833,
+            "name": "Est\u00e1dio Paulo de Souza Coelho",
+            "address": null,
+            "city": "Petrolina, Pernambuco",
+            "country": "Brazil",
+            "capacity": 5500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7833.png"
+        },
+        {
+            "id": 7834,
+            "name": "Est\u00e1dio Domingos Machado de Lima",
+            "address": "Rua Abrahamo Eberle",
+            "city": "Conc\u00f3rdia, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7834.png"
+        },
+        {
+            "id": 20813,
+            "name": "MorumBIS",
+            "address": "Praca Roberto Gomes Pedrosa 1, Morumbi",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 66795,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20813.png"
+        },
+        {
+            "id": 8245,
+            "name": "Est\u00e1dio Municipal Pedro Caetano",
+            "address": "R. S\u00e3o Roque, 389",
+            "city": "Ipia\u00fa, Bahia",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8245.png"
+        },
+        {
+            "id": 1692,
+            "name": "Est\u00e1dio Leonardo Vinagre da Silveira",
+            "address": "Rua Porfirio Costa, Bairro Cruz das Armas",
+            "city": "Jo\u00e3o Pessoa, Para\u00edba",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/1692.png"
+        },
+        {
+            "id": 8246,
+            "name": "Est\u00e1dio Jos\u00e9 Cavalcanti",
+            "address": "Rua Pedro Firmino, Bairro Centro",
+            "city": "Patos, Para\u00edba",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8246.png"
+        },
+        {
+            "id": 8248,
+            "name": "Est\u00e1dio Jo\u00e3o Marcatto",
+            "address": "Rua Mathias Jos\u00e9 Martins 337, Bairro Jaragu\u00e1 Esquerdo",
+            "city": "Jaragu\u00e1 do Sul, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8248.png"
+        },
+        {
+            "id": 8249,
+            "name": "Est\u00e1dio Municipal Amadores Theodoro Colombelli",
+            "address": "Rua Aparecida do Norte",
+            "city": "Cascavel, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8249.png"
+        },
+        {
+            "id": 8250,
+            "name": "Complexo Poliespotivo Fernando Scharbub Farah",
+            "address": "Rua Jo\u00e3o Estev\u00e3o, Bairro Aterro do Mercado",
+            "city": "Paranagu\u00e1, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 12218,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8250.png"
+        },
+        {
+            "id": 21212,
+            "name": "Est\u00e1dio Anilado",
+            "address": "Nossa Senhora Aparecida",
+            "city": "Francisco Beltr\u00e3o, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 10200,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21212.png"
+        },
+        {
+            "id": 21580,
+            "name": "Estadio Municipal Costa Rodrigues",
+            "address": "R. Dom Afonso, 2",
+            "city": "Pinheiro, Maranh\u00e3o",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21580.png"
+        },
+        {
+            "id": 19642,
+            "name": "Estadio Municipal Jo\u00e3o Ronaldo",
+            "address": "R. C\u00f4nego Eduardo Araripe",
+            "city": "Pacajus, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19642.png"
+        },
+        {
+            "id": 8251,
+            "name": "Est\u00e1dio Ant\u00f4nio Otoni Filho",
+            "address": "Qe 23",
+            "city": "Guar\u00e1, Distrito Federal",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8251.png"
+        },
+        {
+            "id": 8252,
+            "name": "Est\u00e1dio Diogo Francisco Gomes",
+            "address": "Rua Doutor Sinval Gon\u00e7alves de Oliveir 111, Bairro Setor Bosque",
+            "city": "Formosa, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8252.png"
+        },
+        {
+            "id": 8253,
+            "name": "Est\u00e1dio Juscelino Kubitschek",
+            "address": null,
+            "city": "Parano\u00e1, Distrito Federal",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8253.png"
+        },
+        {
+            "id": 8254,
+            "name": "Est\u00e1dio Vasco Viana de Andrade",
+            "address": "Rua Cinco",
+            "city": "N\u00facleo Bandeirante, Distrito Federal",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8254.png"
+        },
+        {
+            "id": 8255,
+            "name": "Est\u00e1dio Frei Norberto",
+            "address": "R. Tiradentes, 83-271",
+            "city": "Paracatu, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8255.png"
+        },
+        {
+            "id": 8256,
+            "name": "Est\u00e1dio Joaquim Calmon",
+            "address": "Avenida Samuel Batista Cruz",
+            "city": "Linhares, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8256.png"
+        },
+        {
+            "id": 8257,
+            "name": "Est\u00e1dio Ol\u00edmpio Perim",
+            "address": "Av. Domingos Perim, 13",
+            "city": "Venda Nova do Imigrante, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 2100,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8257.png"
+        },
+        {
+            "id": 8258,
+            "name": "Est\u00e1dio Manoel Moreira Sobrinho",
+            "address": "Rua Reginaldo Santos, Bairro Sernamby",
+            "city": "S\u00e3o Mateus, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 7500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8258.png"
+        },
+        {
+            "id": 11287,
+            "name": "Est\u00e1dio Governador Roberto Santos",
+            "address": "Avenida Lu\u00eds Viana Filho, Bairro Paralela",
+            "city": "Salvador de Bahia, Bahia",
+            "country": "Brazil",
+            "capacity": 32157,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11287.png"
+        },
+        {
+            "id": 8259,
+            "name": "Est\u00e1dio At\u00edlio Gion\u00e9dis",
+            "address": "Rua Oswaldo Cruz 500",
+            "city": "Campo Largo, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8259.png"
+        },
+        {
+            "id": 8260,
+            "name": "Est\u00e1dio Municipal Ol\u00edmpio Barreto",
+            "address": "Avenida Minas Gerais, Bairro Vila Nova",
+            "city": "Apucarana, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 13000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8260.png"
+        },
+        {
+            "id": 20482,
+            "name": "Est\u00e1dio Os Pioneiros",
+            "address": null,
+            "city": "Pato Branco, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20482.png"
+        },
+        {
+            "id": 8261,
+            "name": "Est\u00e1dio Waldomiro Gelinski",
+            "address": "Rua Amapor\u00e3, 2-238 - Dos Estados",
+            "city": "Guarapuava",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8261.png"
+        },
+        {
+            "id": 19643,
+            "name": "Est\u00e1dio Municipal Cilmar Pedro Goergen",
+            "address": "Rua Ant\u00f4nio Moro 105, Bairro Xing\u00fa",
+            "city": "S\u00e3o Jos\u00e9 dos Pinhais, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 5200,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19643.png"
+        },
+        {
+            "id": 8262,
+            "name": "Est\u00e1dio Municipal Jo\u00e3o Saldanha",
+            "address": "Av. 15 de Novembro, 2774-3012 - Setor 03",
+            "city": "Guajar\u00e1-Mirim, Rond\u00f4nia",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8262.png"
+        },
+        {
+            "id": 8263,
+            "name": "Est\u00e1dio Luiz Alves Atha\u00edde",
+            "address": null,
+            "city": "Pimenta Bueno, Rond\u00f4nia",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8263.png"
+        },
+        {
+            "id": 8264,
+            "name": "Est\u00e1dio Municipal Aglair Tonelli Nogueira",
+            "address": "Avenida S\u00e3o Paulo 2861, Bairro Centro",
+            "city": "Cacoal, Rond\u00f4nia",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8264.png"
+        },
+        {
+            "id": 8265,
+            "name": "Est\u00e1dio Jos\u00e9 Nazareno do Nascimento",
+            "address": null,
+            "city": "Goianinha, Rio Grande do Norte",
+            "country": "Brazil",
+            "capacity": 6500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8265.png"
+        },
+        {
+            "id": 20708,
+            "name": "Est\u00e1dio das Alterosas",
+            "address": "R. Maria Borboleta, s/n - Novo Let\u00edcia",
+            "city": "Belo Horizonte, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20708.png"
+        },
+        {
+            "id": 21496,
+            "name": "Centro de Forma\u00e7\u00e3o de Atletas do Ava\u00ed Futebol Clube",
+            "address": "R. Jo\u00e3o Sallum, 215 - Carianos",
+            "city": "Florian\u00f3polis, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21496.png"
+        },
+        {
+            "id": 21277,
+            "name": "CT Evaristo de Macedo",
+            "address": "Catu de Abrantes",
+            "city": "Lauro de Freitas, Bahia",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": null,
+            "image": "https://media.api-sports.io/football/venues/21277.png"
+        },
+        {
+            "id": 21278,
+            "name": "Centro de Treinamento Bayard Osna",
+            "address": "R. Estr. da Graciosa, 2687 - Canguiri, Colombo",
+            "city": "Curitiba, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21278.png"
+        },
+        {
+            "id": 21279,
+            "name": "Centro de Treinamento Edmo Pinheiro",
+            "address": "Av. Ipanema, 37 - Jardim Atl\u00e2ntico",
+            "city": "Goi\u00e2nia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21279.png"
+        },
+        {
+            "id": 21245,
+            "name": "Est\u00e1dio Morada dos Quero-Queros",
+            "address": "Avenida Get\u00falio Vargas 111 / Rua Sete",
+            "city": "Alvorada, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21245.png"
+        },
+        {
+            "id": 20792,
+            "name": "Est\u00e1dio El\u00edsio da Silva Maia",
+            "address": "Av. Jos\u00e9 de Freitas Machado",
+            "city": "P\u00e3o de A\u00e7\u00facar, Alagoas",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20792.png"
+        },
+        {
+            "id": 21280,
+            "name": "Academia de Futbol Palmeiras",
+            "address": "Av. Lauro de Gusm\u00e3o Silveira, 593, Bairro Jd. S\u00e3o Geraldo",
+            "city": "Guarulhos, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21280.png"
+        },
+        {
+            "id": 21497,
+            "name": "Centro de Treinamento Presidente Jos\u00e9 de Andrade M\u00e9dicis",
+            "address": "R. Catagu\u00e1ses, 2-914 - Guabiraba",
+            "city": "Paulista",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21497.png"
+        },
+        {
+            "id": 21281,
+            "name": "Centro de Forma\u00e7\u00e3o de Atletas Presidente Laudo Natel",
+            "address": "Avenida Dr. Odair Pacheco Pedroso 1700, Vila Montserrat",
+            "city": "Cotia, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 1500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21281.png"
+        },
+        {
+            "id": 8283,
+            "name": "Est\u00e1dio Nivaldo Pereira",
+            "address": "Rodovia Presidente Dutra 24500 (BR 116), Bairro Austin",
+            "city": "Nova Igua\u00e7u, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8283.png"
+        },
+        {
+            "id": 21498,
+            "name": "CT do Caju- Centro de Treinamentos Alfredo Gottardi",
+            "address": "Estr. do Ganchinho, 1451 - Umbar\u00e1",
+            "city": "Curitiba, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21498.png"
+        },
+        {
+            "id": 21499,
+            "name": "Est\u00e1dio Municipal Jorge Jos\u00e9 de Oliveira",
+            "address": null,
+            "city": "Damol\u00e2ndia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21499.png"
+        },
+        {
+            "id": 20793,
+            "name": "Complexo de Treinamentos Presidente Marcos Barbosa",
+            "address": "CT nest Cock Rodovia AL 101 - Zona Rural",
+            "city": "Barra de S\u00e3o Miguel, Alagoas",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20793.png"
+        },
+        {
+            "id": 20794,
+            "name": "Est\u00e1dio Gustavo Paiva",
+            "address": "Avenida Major C\u00edcero de Goes Monteiro 2593, Mutange",
+            "city": "Macei\u00f3, Alagoas",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20794.png"
+        },
+        {
+            "id": 21500,
+            "name": "Est\u00e1dio Joviniano Dourado Lopes",
+            "address": "Avenida Santos Lopes",
+            "city": "Irec\u00ea, Bahia",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21500.png"
+        },
+        {
+            "id": 21501,
+            "name": "Parque S\u00e3o Jorge",
+            "address": "R. S\u00e3o Jorge, 777 - Tatuap\u00e9",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 18386,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21501.png"
+        },
+        {
+            "id": 21282,
+            "name": "Centro de Treinamentos do Crici\u00fama Esporte Clube",
+            "address": "R. Beija-Flor, 205 - Cristo Redentor",
+            "city": "Crici\u00fama, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21282.png"
+        },
+        {
+            "id": 21740,
+            "name": "Centro de Treinamento Toca da Raposa I",
+            "address": "Av. Otac\u00edlio Negr\u00e3o de Lima, 7100 - Bandeirantes (Pampulha)",
+            "city": "Belo Horizonte, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21740.png"
+        },
+        {
+            "id": 21502,
+            "name": "Centro de Treinamento Desportivo Brasil",
+            "address": "Rodovia Marechal Rondon Km 128,8 - S/N - Avecuia",
+            "city": "Porto Feliz, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21502.png"
+        },
+        {
+            "id": 21503,
+            "name": "Arena Mario Lima Santos",
+            "address": "R. Domingos Gomes de Carvalho",
+            "city": "Brodowski, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 1500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21503.png"
+        },
+        {
+            "id": 20696,
+            "name": "Est\u00e1dio Municipal Ant\u00f4nio Soares de Oliveira",
+            "address": "Rua Bezerra de Menezes 250, Bairro de Jardim Tranquilidade",
+            "city": "Guarulhos, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 6235,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20696.png"
+        },
+        {
+            "id": 21504,
+            "name": "Est\u00e1dio Marcelo Vieira",
+            "address": "Avenida, R. Dr. Sabino \u00c1rias, 859 - Xer\u00e9m",
+            "city": "Duque de Caxias, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21504.png"
+        },
+        {
+            "id": 20536,
+            "name": "Est\u00e1dio Municipal Dr. Jos\u00e9 Lancha Filho",
+            "address": "Avenida L\u00e1zaro Souza Campos 750",
+            "city": "Franca, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 22835,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20536.png"
+        },
+        {
+            "id": 21246,
+            "name": "Est\u00e1dio Airton Ferreira da Silva",
+            "address": "Estrada Municipal, Medianeira",
+            "city": "Eldoraldo do Sul, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21246.png"
+        },
+        {
+            "id": 21505,
+            "name": "Centro de Treinamento do Guarani",
+            "address": "Av. Imperatriz Dona Tereza Cristina, 260 - Jardim Guarani",
+            "city": "Campinas, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21505.png"
+        },
+        {
+            "id": 19343,
+            "name": "Est\u00e1dio Municipal Coronel Francisco Vieira",
+            "address": "Rua Duque de Caxias, Bairro Boa Vista",
+            "city": "Itapira, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 4285,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19343.png"
+        },
+        {
+            "id": 21506,
+            "name": "Campo Auxiliar Dr. Novelli Junior",
+            "address": "R. Gildo Guarnieri, 346 - Vila Leis",
+            "city": "Itu, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21506.png"
+        },
+        {
+            "id": 21677,
+            "name": "CT Manoel Pontes Tanajura",
+            "address": "R. Art\u00eamio Castro Valente, 346 - Canabrava",
+            "city": "Salvador, Bahia",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21677.png"
+        },
+        {
+            "id": 21247,
+            "name": "Centro de Forma\u00e7\u00e3o de Atletas do Juventude",
+            "address": "Rua At\u00edlio Andreazza, 3321",
+            "city": "Caxias do Sul, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 1500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21247.png"
+        },
+        {
+            "id": 21507,
+            "name": "Centro de Treinamento Wilson Campos",
+            "address": "R. S D 3467, S/n - Guabiraba",
+            "city": "Recife, Pernambuco",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21507.png"
+        },
+        {
+            "id": 21508,
+            "name": "Centro de Treinamento do Nova Igua\u00e7u Futebol Clube",
+            "address": "R. Morro Agudo, 211 - Jardim Santa Eugenia",
+            "city": "Nova Igua\u00e7u, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21508.png"
+        },
+        {
+            "id": 21509,
+            "name": "Centro de Treinamento Vila Porto",
+            "address": "R. Jardim Suspenso, 139 - Vila Porto",
+            "city": "Barueri, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21509.png"
+        },
+        {
+            "id": 21510,
+            "name": "Centro de Treinamento Universidade Estadual de Ponta Grossa",
+            "address": "Uvaranas",
+            "city": "Ponta Grossa, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21510.png"
+        },
+        {
+            "id": 21283,
+            "name": "Centro de Treinamento 1 do Retr\u00f4 Futebol Clube Brasil",
+            "address": "Estr. do Borralho - Borralho",
+            "city": "Camaragibe, Pernambuco",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21283.png"
+        },
+        {
+            "id": 21511,
+            "name": "Centro de Treinamento Ninho das Cobras",
+            "address": "Estr. da Mumbeca, 6501 - KM 07 - Guabirab",
+            "city": "Recife, Pernambuco",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21511.png"
+        },
+        {
+            "id": 21512,
+            "name": "Centro de Treinamento Rei Pel\u00e9",
+            "address": null,
+            "city": "Santos, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21512.png"
+        },
+        {
+            "id": 10541,
+            "name": "Est\u00e1dio Municipal Walter Ribeiro",
+            "address": "Avenida Pereira da Silva 700, Jardim Santa Ros\u00e1li",
+            "city": "Sorocaba, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 13722,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/10541.png"
+        },
+        {
+            "id": 20700,
+            "name": "Est\u00e1dio Prefeito Alberto V\u00edctolo",
+            "address": "Rua Moacir Terra S\u00f3ssio",
+            "city": "Tanabi, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 11617,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20700.png"
+        },
+        {
+            "id": 20634,
+            "name": "Est\u00e1dio Abr\u00e3o Manoel da Costa",
+            "address": "Rua 11 esq. Rua 02, Bairro Vila Pai Eterno",
+            "city": "Trindade, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20634.png"
+        },
+        {
+            "id": 21513,
+            "name": "Centro de Treinamento Marconi Perilo",
+            "address": "Rua Ubirajara B. Leite - St. Rasmussem",
+            "city": "Goi\u00e2nia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21513.png"
+        },
+        {
+            "id": 21514,
+            "name": "Estadio Edvaldo Flores",
+            "address": "Av. Bruno Bacelar, 45 - Alto Maron",
+            "city": "Vit\u00f3ria da Conquista, Bahia",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "artificial turf",
+            "image": "https://media.api-sports.io/football/venues/21514.png"
+        },
+        {
+            "id": 20541,
+            "name": "Est\u00e1dio Municipal Zezinho Magalh\u00e3es",
+            "address": "Avenida Caetano Perlatti, Bairro Jardim Est\u00e1dio",
+            "city": "Ja\u00fa, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 13040,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20541.png"
+        },
+        {
+            "id": 8266,
+            "name": "Est\u00e1dio Jos\u00e9 Mammoud Abbas",
+            "address": "Rua Osvaldo Cruz 534, Bairro Centro",
+            "city": "Governador Valadares, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 8678,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8266.png"
+        },
+        {
+            "id": 8267,
+            "name": "Arena do Jacar\u00e9",
+            "address": "R. Sd 33, 215 - Morro do Claro",
+            "city": "Sete Lagoas, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 28000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8267.png"
+        },
+        {
+            "id": 8269,
+            "name": "Est\u00e1dio Senador Zez\u00e9 Perrella",
+            "address": "R. Rio Juru\u00e1, 443",
+            "city": "Nova Serrana, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8269.png"
+        },
+        {
+            "id": 8270,
+            "name": "Est\u00e1dio Municipal Jos\u00e9 de Oliveira Bandeira",
+            "address": "Rua Lim\u00e9rio Osterne 720",
+            "city": "Limoeiro do Norte, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8270.png"
+        },
+        {
+            "id": 8271,
+            "name": "Est\u00e1dio Ant\u00f4nio Cruz",
+            "address": "Rua Paulo Parente 325, Bairro Lagoa Redonda",
+            "city": "Fortaleza, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8271.png"
+        },
+        {
+            "id": 8272,
+            "name": "Est\u00e1dio Francisco Cardoso de Morais",
+            "address": "Rua Rod Senador Almir Pinto, Novo Maranguape",
+            "city": "Maranguape, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 5500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8272.png"
+        },
+        {
+            "id": 8273,
+            "name": "Est\u00e1dio Municipal Governador Virg\u00edlio T\u00e1vora",
+            "address": "Rua Louro Macedo 1089, Bairro do Mirand\u00e3o",
+            "city": "Crato, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 10000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8273.png"
+        },
+        {
+            "id": 8274,
+            "name": "Est\u00e1dio Municipal Helv\u00eddio Nunes de Barros",
+            "address": null,
+            "city": "Picos, Piau\u00ed",
+            "country": "Brazil",
+            "capacity": 5400,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8274.png"
+        },
+        {
+            "id": 8275,
+            "name": "Est\u00e1dio Arthur Tavares Melo",
+            "address": "R. Jos\u00e9, 1-273",
+            "city": "Bonito, Pernambucano",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8275.png"
+        },
+        {
+            "id": 8276,
+            "name": "Est\u00e1dio da SERC",
+            "address": "Avenida Dezesseis, Bairro Esperan\u00e7a",
+            "city": "Chapad\u00e3o do Sul, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 6500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8276.png"
+        },
+        {
+            "id": 8277,
+            "name": "Est\u00e1dio Municipal Luiz Gonzaga Prata Braga",
+            "address": null,
+            "city": "Maracaju, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8277.png"
+        },
+        {
+            "id": 8278,
+            "name": "Estadio Municipal Evandro Brembatti Calvoso",
+            "address": "1322 R. Pres. Vargas, 1220 - Centro Andradina",
+            "city": "Andradina, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8278.png"
+        },
+        {
+            "id": 8279,
+            "name": "Est\u00e1dio Municipal Aral Moreira",
+            "address": "Rua Rio Branco",
+            "city": "Ponta Por\u00e3, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8279.png"
+        },
+        {
+            "id": 8280,
+            "name": "Est\u00e1dio Municipal Laerte Paes Coelho",
+            "address": "Avenida Palmas, Bairro Vila Alvorada",
+            "city": "Costa Rica, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8280.png"
+        },
+        {
+            "id": 8281,
+            "name": "Est\u00e1dio Giulite Coutinho",
+            "address": "Rua Cosmorama 200, Bairro Cosmorama, Mesquita",
+            "city": "Mesquita, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 13544,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8281.png"
+        },
+        {
+            "id": 8282,
+            "name": "Est\u00e1dio Jair Carneiro Toscano de Brito",
+            "address": "Rua Comandante Castelo Branco, Bairro Jardim Balne\u00e1rio",
+            "city": "Angra dos Reis, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8282.png"
+        },
+        {
+            "id": 8285,
+            "name": "Est\u00e1dio Le\u00f4nidas da Silva",
+            "address": "Avenida Teixeira de Castro 54, Bairro Bonsucesso",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 9000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8285.png"
+        },
+        {
+            "id": 8286,
+            "name": "Est\u00e1dio \u00c2ngelo de Carvalho",
+            "address": null,
+            "city": "Campos dos Goytacazes, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8286.png"
+        },
+        {
+            "id": 5661,
+            "name": "Est\u00e1dio Municipal Alziro de Almeida",
+            "address": "Rua Dr, Mesquita",
+            "city": "Itabora\u00ed, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 800,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/5661.png"
+        },
+        {
+            "id": 8287,
+            "name": "Est\u00e1dio Ary de Oliveira e Souza",
+            "address": "Rua dos Goytacazes 331",
+            "city": "Campos de Goytacaz",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8287.png"
+        },
+        {
+            "id": 8288,
+            "name": "Est\u00e1dio Joaquim de Almeida Flores",
+            "address": "R. Arnaldo Tav\u00e1res, 262 - Nova Cidade",
+            "city": "Nil\u00f3polis, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8288.png"
+        },
+        {
+            "id": 8289,
+            "name": "Est\u00e1dio Mour\u00e3o Filho",
+            "address": "Rua Bariri 251, Bairro Olaria",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 5141,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8289.png"
+        },
+        {
+            "id": 8290,
+            "name": "Est\u00e1dio Lourival Gomes de Almeida",
+            "address": null,
+            "city": "Saquarema, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8290.png"
+        },
+        {
+            "id": 8291,
+            "name": "Est\u00e1dio At\u00edlio Marotti",
+            "address": "Rua Madre Francisca Pia 400, Quarteir\u00e3o Ingelheim",
+            "city": "Petr\u00f3polis, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 8500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8291.png"
+        },
+        {
+            "id": 8292,
+            "name": "Est\u00e1dio de Los L\u00e1rios",
+            "address": "Estrada Rio D\u2019Ouro 3855, km 49, Bairro Xer\u00e9m",
+            "city": "Duque de Caxias, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 11000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8292.png"
+        },
+        {
+            "id": 8293,
+            "name": "Est\u00e1dio Luiz Omar Pinheiro",
+            "address": "Estr. do Outeiro, 2930 - Campina de Icoaraci (Icoaraci)",
+            "city": "Bel\u00e9m, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8293.png"
+        },
+        {
+            "id": 8294,
+            "name": "Est\u00e1dio Maximino Porpino Filho",
+            "address": "Avenida Maximino Porpino da Silva 5560, Bairro Estrela",
+            "city": "Castanhal, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8294.png"
+        },
+        {
+            "id": 20101,
+            "name": "Estadio Municipal Dr. Amintas de Freitas",
+            "address": "GO-427 - Bairro S\u00e3o Sebastiao",
+            "city": "Jaragu\u00e1, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20101.png"
+        },
+        {
+            "id": 18541,
+            "name": "Centro de Treinamento Fl\u00e1vio Pentagna Guimar\u00e3es",
+            "address": "Av. Diamante, 30 - Sapucaia II",
+            "city": "Contagem, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 1500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/18541.png"
+        },
+        {
+            "id": 8295,
+            "name": "Est\u00e1dio Valdir Doilho Wons",
+            "address": "198, R. dos Tamarindos, 134 - Colina Dois",
+            "city": "Nova Mutum, Mato Grosso",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8295.png"
+        },
+        {
+            "id": 8296,
+            "name": "Est\u00e1dio Municipal Neco Falc\u00e3o",
+            "address": "Estr. Cap\u00e3o do \u00c2ngico, 255-719",
+            "city": "Pocon\u00e9, Mato Grosso",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8296.png"
+        },
+        {
+            "id": 8297,
+            "name": "Arena Ta\u00e7a",
+            "address": "97, R. Manoel Ata\u00edde, 1",
+            "city": "Araguacema, Tocantins",
+            "country": "Brazil",
+            "capacity": 1500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8297.png"
+        },
+        {
+            "id": 10545,
+            "name": "Est\u00e1dio Joaquim Portugal",
+            "address": "R. Jo\u00e3o Hallack, 204 - Matozinhos",
+            "city": "S\u00e3o Jo\u00e3o Del Rei, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/10545.png"
+        },
+        {
+            "id": 20721,
+            "name": "Centro de Treinamento Jo\u00e3o Saldanha",
+            "address": "Rua General Severiano 97, Botafogo",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20721.png"
+        },
+        {
+            "id": 18552,
+            "name": "Est\u00e1dio Waldomiro Borges",
+            "address": null,
+            "city": "Jequi\u00e9, Bahia",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/18552.png"
+        },
+        {
+            "id": 10799,
+            "name": "Est\u00e1dio Municipal Ant\u00f4nio Rodrigues Santana",
+            "address": "Avenida Presidente Get\u00falio Vargas, Bairro Bela Vista",
+            "city": "Teixeira de Freitas, Bahia",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/10799.png"
+        },
+        {
+            "id": 10800,
+            "name": "Est\u00e1dio M\u00e1rio Pessoa",
+            "address": "Pra\u00e7a Guadalajara, Bairro Centro",
+            "city": "Ilh\u00e9us, Bahia",
+            "country": "Brazil",
+            "capacity": 5300,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/10800.png"
+        },
+        {
+            "id": 19644,
+            "name": "Est\u00e1dio Municipal Jo\u00e3o Elmo Moreno Cavalcante",
+            "address": "Rua Juscelino Kubistchek 207-237 - Sete de Setembro",
+            "city": "Iguatu, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19644.png"
+        },
+        {
+            "id": 11062,
+            "name": "Est\u00e1dio Perilo Teixeira",
+            "address": "Rua Frei Cassiano 824",
+            "city": "Itapipoca, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11062.png"
+        },
+        {
+            "id": 11063,
+            "name": "Est\u00e1dio Alberto Oliveira Sobrinho",
+            "address": "Rua Cap. Manoel Medeiros",
+            "city": "Pacatuba, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11063.png"
+        },
+        {
+            "id": 12673,
+            "name": "Est\u00e1dio Universit\u00e1rio da UFAL",
+            "address": "Cidade Universit\u00e1ria",
+            "city": "Macei\u00f3, Alagoas",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "artificial turf",
+            "image": "https://media.api-sports.io/football/venues/12673.png"
+        },
+        {
+            "id": 11098,
+            "name": "Est\u00e1dio Governador Ant\u00f4nio Carlos Valadares",
+            "address": null,
+            "city": "Maruim, Sergipe",
+            "country": "Brazil",
+            "capacity": 10235,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11098.png"
+        },
+        {
+            "id": 11101,
+            "name": "Est\u00e1dio Francisco Vasques",
+            "address": "Avenida Almirante Barroso 4110, Bairro Souza",
+            "city": "Bel\u00e9m, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 5760,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11101.png"
+        },
+        {
+            "id": 12657,
+            "name": "Est\u00e1dio Governador Alberto Tavares Silva",
+            "address": "Avenida Industrial Gil Martins",
+            "city": "Teresina, Piau\u00ed",
+            "country": "Brazil",
+            "capacity": 52216,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12657.png"
+        },
+        {
+            "id": 11105,
+            "name": "Est\u00e1dio Municipal Pedro Marin Berbel",
+            "address": "Avenida Antonio da Silva Nunes 1500",
+            "city": "Birigui, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 15519,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11105.png"
+        },
+        {
+            "id": 11308,
+            "name": "Est\u00e1dio C\u00edcero Pompeu de Toledo (Morumbi)",
+            "address": "Praca Roberto Gomes Pedrosa 1, Morumbi",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 73501,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11308.png"
+        },
+        {
+            "id": 11497,
+            "name": "Est\u00e1dio Jos\u00e9 Lu\u00eds Nery Corr\u00eaa",
+            "address": "Rua Carlos Dutra",
+            "city": "Bacabal, Maranh\u00e3o",
+            "country": "Brazil",
+            "capacity": 7856,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11497.png"
+        },
+        {
+            "id": 12671,
+            "name": "Est\u00e1dio Ant\u00f4nio In\u00e1cio de Souza",
+            "address": "Rua Heleno Feij\u00f3 50, Bairro S\u00e3o Francisco",
+            "city": "Caruaru, Pernambuco",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12671.png"
+        },
+        {
+            "id": 11523,
+            "name": "Est\u00e1dio Municpal Nelson Ant\u00f4nio da Silva",
+            "address": null,
+            "city": "Jata\u00ed, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 17000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11523.png"
+        },
+        {
+            "id": 19636,
+            "name": "Est\u00e1dio dos Pl\u00e1tanos",
+            "address": "Rua Gaspar Silveira Martins 1448, Bairro Centro",
+            "city": "Santa Cruz do Sul, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19636.png"
+        },
+        {
+            "id": 2937,
+            "name": "Est\u00e1dio Fredis Saldivar",
+            "address": "Rua Coronel Ponciano 300, Bairro Parque Nova Dourados",
+            "city": "Dourados, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 18780,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/2937.png"
+        },
+        {
+            "id": 11570,
+            "name": "Est\u00e1dio Armando Oliveira",
+            "address": "Avenida Dom Avelar, Bairro Centro",
+            "city": "Cama\u00e7ari, Bahia",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11570.png"
+        },
+        {
+            "id": 18542,
+            "name": "Est\u00e1dio Afonso de Carvalho",
+            "address": null,
+            "city": "Ub\u00e1, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/18542.png"
+        },
+        {
+            "id": 18543,
+            "name": "Est\u00e1dio Municipal Victor Andrade de Brito",
+            "address": "Av. Onze, 608 - Carreira Comprida S\u00e3o Benedito",
+            "city": "Santa Luzia, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/18543.png"
+        },
+        {
+            "id": 18523,
+            "name": "Est\u00e1dio Municipal Antiocho Pereira",
+            "address": "Avenida Coronel Amazonas 269",
+            "city": "Uni\u00e3o da Vit\u00f3ria, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 4087,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/18523.png"
+        },
+        {
+            "id": 18524,
+            "name": "Est\u00e1dio Municipal Vila do Mar",
+            "address": "Rodovia Vereador Pedro Jos\u00e9 da Silva",
+            "city": "Ver\u00ea, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 2900,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/18524.png"
+        },
+        {
+            "id": 12389,
+            "name": "Est\u00e1dio Antonio Gomes Viana",
+            "address": null,
+            "city": "Carapebus, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12389.png"
+        },
+        {
+            "id": 12541,
+            "name": "Est\u00e1dio Le\u00e3o do Sul",
+            "address": "Rua Crist\u00f3v\u00e3o Leal 149, Bairro Col\u00f4nia Santo Ant\u00f4nio",
+            "city": "Barra Mansa, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 12000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12541.png"
+        },
+        {
+            "id": 12658,
+            "name": "Est\u00e1dio Municipal Tib\u00e9rio Barbosa Nunes",
+            "address": null,
+            "city": "Floriano, Piau\u00ed",
+            "country": "Brazil",
+            "capacity": 4500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12658.png"
+        },
+        {
+            "id": 21485,
+            "name": "Est\u00e1dio Municipal Gerson Campos",
+            "address": "R. Comadre Ana",
+            "city": "Oeiras, Piau\u00ed",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21485.png"
+        },
+        {
+            "id": 12662,
+            "name": "Est\u00e1dio Divino Garcia Rosa",
+            "address": null,
+            "city": "Goiatuba, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 15000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12662.png"
+        },
+        {
+            "id": 12663,
+            "name": "Est\u00e1dio do Centro Esportivo Jo\u00e3o Vilela",
+            "address": "Rua Dr. Pedro Nunes",
+            "city": "Morrinhos, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 5040,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12663.png"
+        },
+        {
+            "id": 12664,
+            "name": "Est\u00e1dio Durval Feitosa",
+            "address": "Rua do Am\u00e9rica 1500, Bairro Am\u00e9rica",
+            "city": "Propri\u00e1, Sergipe",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12664.png"
+        },
+        {
+            "id": 12665,
+            "name": "Est\u00e1dio Dr. Hudson Buck Pereira",
+            "address": "Avenida 15 de Novembro, Bairro Centro",
+            "city": "Mat\u00e3o, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 8758,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12665.png"
+        },
+        {
+            "id": 12666,
+            "name": "Est\u00e1dio Municipal Francisco Marques Figueira",
+            "address": "Avenida Taiacupeba",
+            "city": "Suzano, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 3445,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12666.png"
+        },
+        {
+            "id": 20440,
+            "name": "Est\u00e1dio Municipal Zenor Pedrosa Rocha",
+            "address": "R. do Esporte, 99 - Centro",
+            "city": "Nova Ven\u00e9cia, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20440.png"
+        },
+        {
+            "id": 12669,
+            "name": "Est\u00e1dio Coronel Jos\u00e9 Bezerra",
+            "address": "Rua Bernadete Xavier, Bairro Centro",
+            "city": "Currais Novos, Rio Grande do Norte",
+            "country": "Brazil",
+            "capacity": 5100,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12669.png"
+        },
+        {
+            "id": 21581,
+            "name": "Est\u00e1dio Rafael Seabra",
+            "address": "R. Jos\u00e9 Petronilio, 13",
+            "city": "Tuntum, Maranh\u00e3o",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21581.png"
+        },
+        {
+            "id": 21644,
+            "name": "CT Goi\u00e1s Esporte Clube - Buriti Sereno",
+            "address": "Av. Mal. Rondon, 1008-1144 - Jardim Buriti Sereno",
+            "city": "Aparecida de Goi\u00e2nia, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21644.png"
+        },
+        {
+            "id": 20796,
+            "name": "Campo de Futebol Tadeuz\u00e3o",
+            "address": "R. Arlisson C\u00e2mara Costa, 95",
+            "city": "Barra de Santo Ant\u00f4nio, Alagoas",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20796.png"
+        },
+        {
+            "id": 21515,
+            "name": "Ibrachina Arena",
+            "address": "R. Borges de Figueiredo - Mooca",
+            "city": "S\u00e3o Paulo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "artificial turf",
+            "image": "https://media.api-sports.io/football/venues/21515.png"
+        },
+        {
+            "id": 21516,
+            "name": "CT do Red Bull Bragantino",
+            "address": "Ressaca",
+            "city": "Atibaia, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21516.png"
+        },
+        {
+            "id": 20699,
+            "name": "Est\u00e1dio Prof. Lu\u00eds Augusto de Oliveira",
+            "address": "Rua Desembargador J\u00falio de Faria 800, Bairro Boa Vista",
+            "city": "S\u00e3o Carlos, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 14359,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20699.png"
+        },
+        {
+            "id": 12674,
+            "name": "Est\u00e1dio Jos\u00e9 Candido dos Santos",
+            "address": "Avenida Dourados 50, Bairro Centro",
+            "city": "Navira\u00ed, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 4500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12674.png"
+        },
+        {
+            "id": 12707,
+            "name": "Est\u00e1dio Nabor J\u00fanior",
+            "address": null,
+            "city": "Senador Guiomard, Acre",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/12707.png"
+        },
+        {
+            "id": 20445,
+            "name": "Est\u00e1dio Municipal Andr\u00e9 Borges",
+            "address": null,
+            "city": "Coxim, Mato Grosso do Sul",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20445.png"
+        },
+        {
+            "id": 7820,
+            "name": "Est\u00e1dio Municipal Engenheiro Jo\u00e3o Guido",
+            "address": "Avenida Maria Carmelita Castro Cunha, Vila Ol\u00edmpica, Bairro Fabr\u00edcio",
+            "city": "Uberaba, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 13060,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/7820.png"
+        },
+        {
+            "id": 18553,
+            "name": "Est\u00e1dio 2 de Julho",
+            "address": "Bairro Paraiso",
+            "city": "Guanamb\u00ed, Bahia",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/18553.png"
+        },
+        {
+            "id": 18554,
+            "name": "Est\u00e1dio Luiz Viana Filho",
+            "address": "Avenida Manoel Chaves / Avenida Pressidente Kennedy, Bairro Centro",
+            "city": "Itabuna, Bahia",
+            "country": "Brazil",
+            "capacity": 11745,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/18554.png"
+        },
+        {
+            "id": 20703,
+            "name": "Est\u00e1dio Jodilton Souza",
+            "address": "Tv. Santo Ant\u00f4nio, 1 - 35\u00ba BI",
+            "city": "Feira de Santana, Bahia",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "artificial turf",
+            "image": "https://media.api-sports.io/football/venues/20703.png"
+        },
+        {
+            "id": 20632,
+            "name": "Est\u00e1dio Zico Brand\u00e3o",
+            "address": null,
+            "city": "Inhumas, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 4380,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20632.png"
+        },
+        {
+            "id": 19342,
+            "name": "Est\u00e1dio Paulo Constantino",
+            "address": "Avenida Presidente Juscelino Kubitscheck 44500",
+            "city": "Presidente Prudente, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 45954,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19342.png"
+        },
+        {
+            "id": 19344,
+            "name": "Est\u00e1dio Municipal Luiz Geraldo da Silva",
+            "address": "Rua Santa Maria",
+            "city": "C\u00e1ceres, Mato Grosso",
+            "country": "Brazil",
+            "capacity": 6500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19344.png"
+        },
+        {
+            "id": 20691,
+            "name": "Est\u00e1dio Kleber Jos\u00e9 de Andrade",
+            "address": "Rodovia BR 262 km 3, Bairro Campo Grande",
+            "city": "Cariacica, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 21255,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20691.png"
+        },
+        {
+            "id": 19345,
+            "name": "Est\u00e1dio Municipal Orfelino Martins Valente",
+            "address": "Travessa Benjamin Constant",
+            "city": "Camet\u00e1, Par\u00e1",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19345.png"
+        },
+        {
+            "id": 20710,
+            "name": "Complexo Esportivo da UIT",
+            "address": "Av. S\u00e3o Jo\u00e3o, 3741 - Vargem Verde",
+            "city": "Ita\u00fana, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20710.png"
+        },
+        {
+            "id": 20797,
+            "name": "Est\u00e1dio Municipal Orlando Gomes de Barros",
+            "address": null,
+            "city": "Uni\u00e3o dos Palmares, Alagoas",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20797.png"
+        },
+        {
+            "id": 19349,
+            "name": "Est\u00e1dio Juvenal Melo",
+            "address": "Rua Luiz Chaves Melo",
+            "city": "Crate\u00fas, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19349.png"
+        },
+        {
+            "id": 19569,
+            "name": "Est\u00e1dio Municipal Lindolfo Monteiro",
+            "address": null,
+            "city": null,
+            "country": "Brazil",
+            "capacity": 5760,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19569.png"
+        },
+        {
+            "id": 20627,
+            "name": "Est\u00e1dio Jos\u00e9 Maria de Melo",
+            "address": "Rua S\u00e3o Jos\u00e9",
+            "city": "Montes Claros, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20627.png"
+        },
+        {
+            "id": 19597,
+            "name": "Est\u00e1dio Lu\u00eds Eduardo Magalh\u00e3es",
+            "address": "BA-515",
+            "city": "Terra Nova, Bahia",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19597.png"
+        },
+        {
+            "id": 20631,
+            "name": "Est\u00e1dio Ant\u00f4nio Ra\u00fal Gon\u00e7alves Fraga",
+            "address": "Avenida Edgar Pires de Castro 11100, Bairro Lami",
+            "city": "Porto Alegre, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20631.png"
+        },
+        {
+            "id": 19638,
+            "name": "Est\u00e1dio Durval Ferreira Franco",
+            "address": null,
+            "city": "Ipor\u00e1, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/19638.png"
+        },
+        {
+            "id": 20633,
+            "name": "Est\u00e1dio Municipal Valdir C\u00e2ndido de Queiroz",
+            "address": "Jardim Imperial",
+            "city": "Guap\u00f3, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20633.png"
+        },
+        {
+            "id": 20102,
+            "name": "Est\u00e1dio Pedro Romualdo Cabral",
+            "address": "Estacionamento",
+            "city": "Santa Helena de Goi\u00e1s, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20102.png"
+        },
+        {
+            "id": 8013,
+            "name": "Est\u00e1dio Municipal S\u00edlvio Porto",
+            "address": null,
+            "city": "Guarabira, Para\u00edba",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/8013.png"
+        },
+        {
+            "id": 20439,
+            "name": "Est\u00e1dio Denison Fontes Souza",
+            "address": "Rua Jos\u00e9 Maria Costa 243, Bairro Centro",
+            "city": "Itabaianinha, Sergipe",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20439.png"
+        },
+        {
+            "id": 20441,
+            "name": "Est\u00e1dio Jefferson de Freitas",
+            "address": null,
+            "city": "Jaboat\u00e3o dos Guararapes, Pernambuco",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20441.png"
+        },
+        {
+            "id": 21517,
+            "name": "Centro de Excel\u00eancia e Treinamento de Futebol Dr. Joaquim Grava",
+            "address": "Rodovia Parque",
+            "city": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "artificial turf",
+            "image": "https://media.api-sports.io/football/venues/21517.png"
+        },
+        {
+            "id": 20446,
+            "name": "Est\u00e1dio Municipal Bruno Lazzarini",
+            "address": "Rua Jos\u00e9 Ant\u00f4nio Fercen 20",
+            "city": "Leme, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 7659,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20446.png"
+        },
+        {
+            "id": 20491,
+            "name": "Est\u00e1dio Municipal S\u00edlvio Salles",
+            "address": "Avenida Ant\u00f4nio Gol\u00e7alves de Oliveira, Bairro Vila Soto",
+            "city": "Catanduva, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 16474,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20491.png"
+        },
+        {
+            "id": 20447,
+            "name": "Est\u00e1dio Dr. Herm\u00ednio Ometto",
+            "address": "Avenida Augusta Viola da Costa 801",
+            "city": "Araras, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 16096,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20447.png"
+        },
+        {
+            "id": 21518,
+            "name": "Centro de Forma\u00e7\u00e3o de Atletas TROPS",
+            "address": "Estrada It\u00e1lia, 2",
+            "city": "V\u00e1rzea das Mo\u00e7as Niter\u00f3i, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 4500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21518.png"
+        },
+        {
+            "id": 20535,
+            "name": "Est\u00e1dio Benedito Teixeira",
+            "address": "Avenida Eng. Ant\u00f4nio Pereira Lima 900, Jardim Bela Vista",
+            "city": "S\u00e3o Jos\u00e9 do Rio Preto, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 36426,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20535.png"
+        },
+        {
+            "id": 20537,
+            "name": "Est\u00e1dio Comendador Agostinho Prada",
+            "address": null,
+            "city": "Limeira, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 9907,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20537.png"
+        },
+        {
+            "id": 20538,
+            "name": "Est\u00e1dio Espanha",
+            "address": "Avenida Dr. Francisco Ferreira Conte 351, Bairro Caneleira",
+            "city": "Santos, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 8031,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20538.png"
+        },
+        {
+            "id": 11257,
+            "name": "Est\u00e1dio D\u00e9cio Vitta",
+            "address": "Avenida Carmine Fe\u00f3la 1073, Catarina Zanaga",
+            "city": "Americana, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 16300,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11257.png"
+        },
+        {
+            "id": 20539,
+            "name": "Est\u00e1dio Municipal Adail Nunes da Silva",
+            "address": "Avenida Jo\u00e3o Periassionotti",
+            "city": "Taquaritinga, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 18805,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20539.png"
+        },
+        {
+            "id": 20540,
+            "name": "Est\u00e1dio Ant\u00f4nio Lins Ribeiro Guimar\u00e3es",
+            "address": "Rua dos Girass\u00f3is 21",
+            "city": "Santa B\u00e1rbara d&apos;Oeste, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 14913,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20540.png"
+        },
+        {
+            "id": 21519,
+            "name": "CT Gralha Azul",
+            "address": "Linha Faxinal - S\u00e3o Cristovao",
+            "city": "Marmeleiro, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21519.png"
+        },
+        {
+            "id": 21520,
+            "name": "Est\u00e1dio Associa\u00e7\u00e3o Atl\u00e9tica Coopavel",
+            "address": "BR-467, s/n - Parque S\u00e3o Paulo",
+            "city": "Cascavel, Parana",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21520.png"
+        },
+        {
+            "id": 20628,
+            "name": "Est\u00e1dio Israel Pinheiro",
+            "address": "Avenida Jo\u00e3o Soares da Silva 1341, Bairro Penha",
+            "city": "Itabira, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20628.png"
+        },
+        {
+            "id": 21678,
+            "name": "Est\u00e1dio Jos\u00e9 Fontoura",
+            "address": "R. Manoel Mendes Costa, 314-328",
+            "city": "Itagib\u00e1, Bahia",
+            "country": "Brazil",
+            "capacity": 2500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21678.png"
+        },
+        {
+            "id": 21679,
+            "name": "Estadio Wet\u2019n Wild",
+            "address": "Avenida Lu\u00eds Viana",
+            "city": "Salvador, Bahia",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "artificial turf",
+            "image": "https://media.api-sports.io/football/venues/21679.png"
+        },
+        {
+            "id": 21680,
+            "name": "Est\u00e1dio Deputado Galdino Leite",
+            "address": "R. Direta do Ypiranga, 24 - Vila Can\u00e1ria",
+            "city": "Salvador, Bahia",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "artificial turf",
+            "image": "https://media.api-sports.io/football/venues/21680.png"
+        },
+        {
+            "id": 20635,
+            "name": "Est\u00e1dio Municipal Dr. Waldemiro Wagner",
+            "address": "Avenida Presidente Tancredo Neves",
+            "city": "Paranava\u00ed, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 23725,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20635.png"
+        },
+        {
+            "id": 21521,
+            "name": "CFT Barra FC",
+            "address": null,
+            "city": "Cambori\u00fa, Santa Catarina",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21521.png"
+        },
+        {
+            "id": 21522,
+            "name": "Est\u00e1dio Municipal Herm\u00ednio Esp\u00f3sito",
+            "address": "Alameda Fernando Batista Medina 120",
+            "city": "Embu das Artes, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 5048,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21522.png"
+        },
+        {
+            "id": 20692,
+            "name": "Est\u00e1dio Virg\u00edlio Grassi",
+            "address": "Rua Querino Gilbert",
+            "city": "Rio Bananal, Esp\u00edrito Santo",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": null,
+            "image": "https://media.api-sports.io/football/venues/20692.png"
+        },
+        {
+            "id": 20693,
+            "name": "Est\u00e1dio Municipal Dr. Adhemar de Barros",
+            "address": "Avenida da Saudade, Bairro Vila Estadio",
+            "city": "Ara\u00e7atuba, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 15011,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20693.png"
+        },
+        {
+            "id": 20694,
+            "name": "Est\u00e1dio Municipal Francisco Ribeiro Nogueira",
+            "address": "Rua Roberto Nani Jafet 1100",
+            "city": "Mogi das Cruzes, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 10380,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20694.png"
+        },
+        {
+            "id": 20695,
+            "name": "Est\u00e1dio Municipal Cl\u00e1udio Rodante",
+            "address": "Avenida Moacir Ribeiro 326, Barrio Jardim Esplanada",
+            "city": "Fernand\u00f3polis, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 7850,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20695.png"
+        },
+        {
+            "id": 20697,
+            "name": "Est\u00e1dio S\u00f3crates Stamato",
+            "address": "Rua Mauro de Abreu Izique",
+            "city": "Bebedouro, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 15300,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20697.png"
+        },
+        {
+            "id": 20698,
+            "name": "Est\u00e1dio Municipal Pedro Benedetti",
+            "address": "Avenida Papa Jo\u00e3o XXIII 528, Vila No\u00eamia",
+            "city": "Mau\u00e1, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 10590,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20698.png"
+        },
+        {
+            "id": 20701,
+            "name": "Est\u00e1dio Alonso de Carvalho Braga",
+            "address": "Rua Chavantes",
+            "city": "Tup\u00e3, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 5515,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20701.png"
+        },
+        {
+            "id": 21725,
+            "name": "Arena Vera Cruz",
+            "address": "Rua Jos\u00e9 Bas\u00edlio",
+            "city": "Betim, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 1834,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21725.png"
+        },
+        {
+            "id": 21726,
+            "name": "Centro de Treinamento Boston City FC",
+            "address": "Rua Caldas Carlos",
+            "city": "Manhua\u00e7u, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21726.png"
+        },
+        {
+            "id": 21727,
+            "name": "Est\u00e1dio Municipal de Ibirit\u00e9",
+            "address": "R. do Barreirinho, s/n - Jardim Ibirit\u00e9",
+            "city": "Ibirit\u00e9, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21727.png"
+        },
+        {
+            "id": 21728,
+            "name": "Arena Santa Luzia",
+            "address": "R. Jo\u00e3o Gualberto Costa, 495 - Vila Santa Luzia",
+            "city": "Contagem, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21728.png"
+        },
+        {
+            "id": 21729,
+            "name": "Est\u00e1dio Popular",
+            "address": "R. Izolck Miranda - Santa Maria",
+            "city": "Monte Alegre de Minas, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21729.png"
+        },
+        {
+            "id": 20722,
+            "name": "Est\u00e1dio Ronaldo Lu\u00eds Naz\u00e1rio de Lima",
+            "address": "Rua Figueira de Melo 200, Bairro S\u00e3o Crist\u00f3v\u00e3o",
+            "city": "Rio de Janeiro, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20722.png"
+        },
+        {
+            "id": 20812,
+            "name": "Est\u00e1dio Jos\u00e9 Ant\u00f4nio Abilio de Lima",
+            "address": "Avenida Presidente Vargas 870, Campo Novo",
+            "city": "Quixad\u00e1, Cear\u00e1",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20812.png"
+        },
+        {
+            "id": 11122,
+            "name": "Est\u00e1dio Gileno de Carli",
+            "address": "Avenida Arthur Rui de Carvalho, Bairro da Destilaria",
+            "city": "Cabo de Santo Agostinho, Pernambuco",
+            "country": "Brazil",
+            "capacity": 5476,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/11122.png"
+        },
+        {
+            "id": 20816,
+            "name": "Est\u00e1dio Jos\u00e9 Vareda",
+            "address": null,
+            "city": "Limoeiro, Pernambuco",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/20816.png"
+        },
+        {
+            "id": 21090,
+            "name": "Est\u00e1dio Jos\u00e9 Barros Sobrinho",
+            "address": null,
+            "city": null,
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21090.png"
+        },
+        {
+            "id": 21186,
+            "name": "Est\u00e1dio Odilon Flores",
+            "address": null,
+            "city": "Mineiros, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21186.png"
+        },
+        {
+            "id": 21187,
+            "name": "Est\u00e1dio Mozart Veloso do Carmo",
+            "address": "Rua 8 esq. Rua11, Vila Am\u00e1lia",
+            "city": "Rio Verde, Goi\u00e1s",
+            "country": "Brazil",
+            "capacity": 8000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21187.png"
+        },
+        {
+            "id": 21204,
+            "name": "Est\u00e1dio Vivaldo Lima",
+            "address": "Avenida Constantino Nery",
+            "city": "Manaus, Amazonas",
+            "country": "Brazil",
+            "capacity": 43000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21204.png"
+        },
+        {
+            "id": 21208,
+            "name": "Est\u00e1dio Municipal Ant\u00f4nio Brejeiro",
+            "address": "Rua Padre Ant\u00f4nio de Barros Padilha 182, Bairro Centro",
+            "city": "Tobias Barreto, Sergipe",
+            "country": "Brazil",
+            "capacity": 7000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21208.png"
+        },
+        {
+            "id": 21209,
+            "name": "Est\u00e1dio Andr\u00e9 Avelino",
+            "address": null,
+            "city": "Canind\u00e9 de S\u00e3o Francisco, Sergipe",
+            "country": "Brazil",
+            "capacity": 2200,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21209.png"
+        },
+        {
+            "id": 21210,
+            "name": "Est\u00e1dio Caio Feitosa",
+            "address": "Rua Manoel Messias de Freitas 155, Bairro Centro",
+            "city": "Porto da Folha, Sergipe",
+            "country": "Brazil",
+            "capacity": 3000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21210.png"
+        },
+        {
+            "id": 21211,
+            "name": "Est\u00e1dio Wellington Elias",
+            "address": "Bairro Conjunto Residencial Marcos Freire III",
+            "city": "Nossa Senhora do Socorro, Sergipe",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21211.png"
+        },
+        {
+            "id": 21213,
+            "name": "Est\u00e1dio Jos\u00e9 Garbelini",
+            "address": null,
+            "city": "Camb\u00e9, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 1700,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21213.png"
+        },
+        {
+            "id": 21214,
+            "name": "Complexo Esportivo Roberto Brzezinski",
+            "address": "Rua Mambor\u00ea",
+            "city": "Campo Mour\u00e3o, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 3948,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21214.png"
+        },
+        {
+            "id": 21215,
+            "name": "Est\u00e1dio Coronel Em\u00edlio Gomes",
+            "address": "Avenida Dr. Vicente Machado 966",
+            "city": "Irati, Paran\u00e1",
+            "country": "Brazil",
+            "capacity": 4579,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21215.png"
+        },
+        {
+            "id": 21243,
+            "name": "Est\u00e1dio Nassari Mattar",
+            "address": "Rua Jo\u00e3o Leonardo Hollerbach 415, Bairro Centro",
+            "city": "Te\u00f3filo Otoni, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21243.png"
+        },
+        {
+            "id": 21244,
+            "name": "Est\u00e1dio Louis Ensch",
+            "address": "Rua S\u00e3o Sebasti\u00e3o 673",
+            "city": "Coronel Fabriciano, Minas Gerais",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21244.png"
+        },
+        {
+            "id": 21739,
+            "name": "Campo Funda\u00e7\u00e3o Marcopolo",
+            "address": "RS 453, KM 73 Linha - S\u00e3o Gi\u00e1como",
+            "city": "S\u00e3o Gi\u00e1como, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21739.png"
+        },
+        {
+            "id": 21272,
+            "name": "Est\u00e1dio Municipal Zequinha Barbosa",
+            "address": "R. S\u00e3o Paulo",
+            "city": "Igaci, Alagoas",
+            "country": "Brazil",
+            "capacity": 1000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21272.png"
+        },
+        {
+            "id": 21273,
+            "name": "Est\u00e1dio Em\u00edlio Nemer",
+            "address": null,
+            "city": "Castelo",
+            "country": "Brazil",
+            "capacity": 2000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21273.png"
+        },
+        {
+            "id": 21305,
+            "name": "Est\u00e1dio General Nicolau Fico",
+            "address": "Avenida Duque de Caxias 837",
+            "city": "Pelotas, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 5441,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21305.png"
+        },
+        {
+            "id": 21306,
+            "name": "Est\u00e1dio Arthur Lawson",
+            "address": "Avenida It\u00e1lia",
+            "city": "Rio Grande, Rio Grande do Sul",
+            "country": "Brazil",
+            "capacity": 3500,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21306.png"
+        },
+        {
+            "id": 21307,
+            "name": "Est\u00e1dio Joaquim Jos\u00e9 de Brito",
+            "address": null,
+            "city": "Pesqueira, Pernambuco",
+            "country": "Brazil",
+            "capacity": 6000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21307.png"
+        },
+        {
+            "id": 21394,
+            "name": "Est\u00e1dio Daniel Rodrigues Leal",
+            "address": null,
+            "city": "Santa Quit\u00e9ria, Maranh\u00e3o",
+            "country": "Brazil",
+            "capacity": 1650,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21394.png"
+        },
+        {
+            "id": 21538,
+            "name": "Est\u00e1dio Augusto Antunes",
+            "address": null,
+            "city": "Santana, Amap\u00e1",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21538.png"
+        },
+        {
+            "id": 21543,
+            "name": "Est\u00e1dio Municipal Jos\u00e9 \u00c2ngelo Cassol",
+            "address": "Rua Esperantina y Avenida Macap\u00e1",
+            "city": "Rolim de Moura, Rond\u00f4nia",
+            "country": "Brazil",
+            "capacity": 5000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21543.png"
+        },
+        {
+            "id": 21664,
+            "name": "Est\u00e1dio Municipal Ant\u00f4nio Viana da Silva",
+            "address": "Rua Antonio Zuardi",
+            "city": "Assis, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 9090,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21664.png"
+        },
+        {
+            "id": 21665,
+            "name": "Est\u00e1dio Municipal Le\u00f4nidas Camarinha",
+            "address": null,
+            "city": "Santa Cruz do Rio Pardo, S\u00e3o Paulo",
+            "country": "Brazil",
+            "capacity": 10058,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21665.png"
+        },
+        {
+            "id": 21746,
+            "name": "Est\u00e1dio Ni\u00e9lsen Louzada",
+            "address": "Rua Zeferino 1111, Bairro Vila Emil",
+            "city": "Mesquita, Rio de Janeiro",
+            "country": "Brazil",
+            "capacity": 4000,
+            "surface": "grass",
+            "image": "https://media.api-sports.io/football/venues/21746.png"
+        }
+    ]
+}
