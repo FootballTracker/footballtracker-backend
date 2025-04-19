@@ -19,6 +19,7 @@ from models import (
     player_season_stat,
     venue,
 )
+from routes import auth
 
 app = FastAPI()
 
@@ -92,3 +93,6 @@ async def save_venues_in_db(background_tasks: BackgroundTasks):
 @app.get("/")
 async def root(db: AsyncSession = Depends(get_db_session)):
     return {"message": "Conexão establecida com o banco de dados"}
+
+
+app.include_router(auth.router, prefix="/auth", tags=["auth"])
