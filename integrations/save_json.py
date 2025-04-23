@@ -14,6 +14,10 @@ def fetch_and_save_to_json(endpoint: str, filename: str, params: Optional[dict] 
 
     file_path = os.path.join(json_dir, filename)
 
+    if os.path.exists(file_path):
+        print(f"Arquivo {file_path} já existe. Pulando chamada da API para {endpoint}.")
+        return
+
     try:
         response = requests.get(url, headers=HEADERS, params=params)
         response.raise_for_status()
