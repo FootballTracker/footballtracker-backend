@@ -48,3 +48,6 @@ parts/
 sdist/
 var/
 wheels/
+
+pgConnect.json
+ca.pem
