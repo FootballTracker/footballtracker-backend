@@ -24,7 +24,7 @@ from models import (
     venue,
 )
 
-# from routes import auth
+from routes import auth
 
 app = FastAPI()
 
@@ -390,4 +390,4 @@ async def root(db: AsyncSession = Depends(get_db_session)):
     return {"message": "Conexão establecida com o banco de dados"}
 
 
-# app.include_router(auth.router, prefix="/auth", tags=["auth"])
+app.include_router(auth.router, prefix="/auth", tags=["auth"])
