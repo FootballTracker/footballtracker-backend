@@ -10,6 +10,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import relationship
 from database.database import Base
 from models.league_team import LeagueTeam
+from models.fixture_event import FixtureEvent
 
 
 class BaseTeam(Base):
@@ -27,3 +28,6 @@ class BaseTeam(Base):
     league_teams = relationship("LeagueTeam", back_populates="team")
     league_standings = relationship("LeagueClassification", back_populates="team")
     country = relationship("Country", back_populates="base_teams")
+    fixture_events = relationship(
+        "FixtureEvent", back_populates="team", foreign_keys=[FixtureEvent.team_api_id]
+    )
