@@ -18,6 +18,9 @@ from models import (
     league_team,
     player_season_stat,
     venue,
+    fixture_event,
+    user_favorite_league,
+    user,
 )
 
 import asyncio

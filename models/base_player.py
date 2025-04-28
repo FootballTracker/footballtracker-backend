@@ -11,6 +11,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import relationship
 from database.database import Base
 from models.player_season_stat import PlayerSeasonStat
+from models.fixture_event import FixtureEvent
 
 
 class BasePlayer(Base):
@@ -39,3 +40,13 @@ class BasePlayer(Base):
     )
     player_season_stats = relationship("PlayerSeasonStat", back_populates="player")
     fixture_player_stats = relationship("FixturePlayerStat", back_populates="player")
+    fixture_events_as_player = relationship(
+        "FixtureEvent",
+        back_populates="player",
+        foreign_keys=[FixtureEvent.player_api_id],
+    )
+    fixture_events_as_assist = relationship(
+        "FixtureEvent",
+        back_populates="assist",
+        foreign_keys=[FixtureEvent.assist_player_api_id],
+    )
