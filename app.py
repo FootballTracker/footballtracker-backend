@@ -34,7 +34,7 @@ async def fetch_countries(background_tasks: BackgroundTasks):
     """Endpoint para obter os paises e guardar num arquivo Json"""
     try:
         background_tasks.add_task(
-            fetch_and_save_to_json("/countries", "countries.json")
+            fetch_and_save_to_json, "/countries", "countries.json"
         )
         return {"message": "Download dos países iniciada em segundo plano"}
     except Exception as e:
