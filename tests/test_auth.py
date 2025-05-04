@@ -10,7 +10,7 @@ signup_data = {
 }
 
 signin_email = {
-    "email": "test@example.com",
+    "username": "test@example.com",
     "password": "securepassword"
 }
 
@@ -21,12 +21,11 @@ signin_username = {
 
 signin_both = {
     "username": "testuser",
-    "email": "test@example.com",
     "password": "securepassword"
 }
 
 signin_wrong_password = {
-    "email": "test@example.com",
+    "username": "test@example.com",
     "password": "wrongpassword"
 }
 

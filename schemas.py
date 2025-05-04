@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-from typing import Optional
+from typing import Optional, Union
 
 class UserCreate(BaseModel):
     username: str
@@ -17,6 +17,5 @@ class UserResponse(BaseModel):
         orm_mode = True
 
 class UserLogin(BaseModel):
-    username: Optional[str] = None
-    email: Optional[EmailStr] = None
+    username: Optional[Union[EmailStr, str]] = None
     password: str
