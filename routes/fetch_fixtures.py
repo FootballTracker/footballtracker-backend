@@ -1,6 +1,8 @@
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Query
 from typing import Optional
-from integrations.save_json import fetch_and_save_to_json
+import os
+import json
+from integrations.save_json import fetch_and_save_to_json, is_rate_limit_reached
 from integrations.fixtures_processor import process_fixtures_json_and_save_to_db
 
 router = APIRouter(prefix="/fixtures", tags=["Fixtures"])
@@ -133,3 +135,58 @@ async def process_fixtures(
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# Rota para automatizar a coleta de dados de cada uma das partidas desde um arquivo json
+
+
+@router.post("/fetch_from_json")
+async def fetch_from_json_file(
+    background_task: BackgroundTasks,
+    source_file: str = Query(
+        ..., description="Nome do arquivo JSON base (obrigatório)"
+    ),
+):
+    file_path = os.path.join("json", source_file)
+
+    if not os.path.exists(file_path):
+        raise HTTPException(
+            status_code=404, detail=f"Arquivo {source_file} não encontrado."
+        )
+
+    with open(file_path, "r") as file:
+        data = json.load(file)
+
+    fixtures = data.get("response", [])
+    if not fixtures:
+        raise HTTPException(
+            status_code=404, detail="Nenhuma partida encontrada no arquivo."
+        )
+
+    ids_list = [
+        fixture["fixture"]["id"]
+        for fixture in fixtures
+        if isinstance(fixture.get("fixture", {}).get("id"), int)
+    ]
+
+    folder = "fetched"
+    os.makedirs(folder, exist_ok=True)
+
+    for fixture_id in ids_list:
+        if is_rate_limit_reached():
+            print("Limite atingido, parando o agendamento de tarefas.")
+            break
+        filename = f"fixture_{fixture_id}.json"
+        filepath = os.path.join(folder, filename)
+        background_task.add_task(
+            fetch_and_save_to_json,
+            "/fixtures",
+            filepath,
+            {"id": fixture_id},
+        )
+
+    return {
+        "message": "Tarefas iniciadas para download de partidas a partir do JSON.",
+        "arquivo_origem": source_file,
+        "quantidade_ids": len(ids_list),
+    }
