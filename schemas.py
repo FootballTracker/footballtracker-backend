@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from typing import Optional, Union
+from datetime import datetime
 
 class UserCreate(BaseModel):
     username: str
@@ -17,5 +18,18 @@ class UserResponse(BaseModel):
         orm_mode = True
 
 class UserLogin(BaseModel):
+    user_id: Optional[int] = None
     username: Optional[Union[EmailStr, str]] = None
     password: str
+
+class LeagueResponse(BaseModel):
+    id: int
+    name: str
+    country_id: int
+    season: int
+    start_date: datetime
+    end_date: datetime
+    logo_url: str
+    last_updated: datetime
+
+

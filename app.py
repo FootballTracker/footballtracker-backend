@@ -24,7 +24,7 @@ from models import (
     venue,
 )
 
-from routes import auth
+from routes import auth, leagues
 
 app = FastAPI()
 
@@ -391,3 +391,4 @@ async def root(db: AsyncSession = Depends(get_db_session)):
 
 
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
+app.include_router(leagues.router, prefix="/leagues", tags=['league'])
