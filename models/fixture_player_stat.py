@@ -28,7 +28,6 @@ class FixturePlayerStat(Base):
         Integer, ForeignKey("base_players.api_id"), nullable=False, index=True
     )
     jersey_number = Column(SmallInteger)
-    formation_grid = Column(String(10))
     is_starter = Column(Boolean)
     game_minute = Column(SmallInteger)
     game_number = Column(SmallInteger)
@@ -53,7 +52,7 @@ class FixturePlayerStat(Base):
     duels_won = Column(SmallInteger)
     dribbles_attempts = Column(SmallInteger)
     dribbles_success = Column(SmallInteger)
-    dribbles_completed = Column(SmallInteger)
+    dribbles_past = Column(SmallInteger)
     fouls_drawn = Column(SmallInteger)
     fouls_committed = Column(SmallInteger)
     cards_yellow = Column(SmallInteger)
