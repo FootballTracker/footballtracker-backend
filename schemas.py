@@ -33,3 +33,12 @@ class LeagueResponse(BaseModel):
     last_updated: datetime
 
 
+class TeamInfo(BaseModel):
+    score: int
+    logo: str | None 
+    name: str
+
+class MatchResponse(BaseModel):
+    home_team: TeamInfo
+    away_team: TeamInfo
+    timestamp_match: datetime
