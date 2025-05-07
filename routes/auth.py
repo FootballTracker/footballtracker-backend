@@ -42,10 +42,11 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
 
 @router.post("/signin")
 async def signin(user_data: UserLogin, db: AsyncSession = Depends(get_db_session)):
-    if user_data.email:
-        stmt = select(User).where(User.email == user_data.email)
-    else:
-        stmt = select(User).where(User.username == user_data.username)
+
+    stmt = select(User).where(
+        or_(User.username == user_data.username, User.email == user_data.username)
+    )
+
 
     result = await db.execute(stmt)
     user = result.scalar_one_or_none()
@@ -55,4 +56,24 @@ async def signin(user_data: UserLogin, db: AsyncSession = Depends(get_db_session
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password"
         )
 
-    return {"message": f"Welcome back, {user.username}!"}
+    return {"message": f"Welcome back, {user.username}!",
+            "user_id": user.id}
+
+
+@router.post("/user_delete")
+async def user_delete(user_data: UserLogin, db: AsyncSession = Depends(get_db_session)):
+    
+    stmt = select(User).where(User.id == user_data.user_id)
+
+    result = await db.execute(stmt)
+    user = result.scalar_one_or_none()
+
+    # TO BE DECIDED IF MAKES SENSE
+    if not user or not verify_password(user_data.password, user.password):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid user_id or password")
+
+
+    await db.delete(user)
+    await db.commit()
+
+    return {"message": f"User {user.username} has been deleted successfully."}

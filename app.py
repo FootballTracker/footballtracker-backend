@@ -9,6 +9,7 @@ from routes import (
     link_teams,
 )
 
+
 app = FastAPI()
 
 
@@ -19,3 +20,4 @@ app.include_router(fetch_leagues.router)
 app.include_router(fetch_teams.router)
 app.include_router(link_teams.router)
 app.include_router(fetch_fixtures.router)
+
