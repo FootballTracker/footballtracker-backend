@@ -19,7 +19,7 @@ class BasePlayer(Base):
 
     api_id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), nullable=False)
-    firstname = Column(String(255), nullable=False)
+    firstname = Column(String(255))
     lastname = Column(String(255))
     age = Column(SmallInteger)
     birth_date = Column(Date)
