@@ -6,7 +6,8 @@ from schemas import UserCreate, UserResponse, UserLogin, UserUpdate
 from database.database import get_db_session
 from utils.security import hash_password, verify_password
 
-router = APIRouter()
+router = APIRouter(prefix="/auth", tags=["auth"])
+
 
 @router.post("/signup", response_model=UserResponse)
 async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_session)):
@@ -18,7 +19,10 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
     existing_user = result.scalar_one_or_none()
 
     if existing_user:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Username or email already exists")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Username or email already exists",
+        )
 
     hashed_pw = hash_password(user_data.password)
 
@@ -26,7 +30,7 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
         username=user_data.username,
         email=user_data.email,
         password=hashed_pw,
-        favorite_team=user_data.favorite_team
+        favorite_team=user_data.favorite_team,
     )
 
     db.add(new_user)
@@ -38,15 +42,19 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
 
 @router.post("/signin")
 async def signin(user_data: UserLogin, db: AsyncSession = Depends(get_db_session)):
+
     stmt = select(User).where(
         or_(User.username == user_data.username, User.email == user_data.username)
     )
+
 
     result = await db.execute(stmt)
     user = result.scalar_one_or_none()
 
     if not user or not verify_password(user_data.password, user.password):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password")
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password"
+        )
 
     return {"user_id":  user.id,
             "username": user.username,
