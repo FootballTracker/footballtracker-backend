@@ -39,6 +39,14 @@ class TeamInfo(BaseModel):
     name: str
 
 class MatchResponse(BaseModel):
+    id: int
     home_team: TeamInfo
     away_team: TeamInfo
     timestamp_match: datetime
+
+class UserUpdate(BaseModel):
+    id: int
+    username: Optional[str]
+    email: Optional[str]
+    password: Optional[str]
+    old_password: Optional[str]
