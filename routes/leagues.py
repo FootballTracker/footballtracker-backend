@@ -93,7 +93,11 @@ async def get_league(
     league = result.scalar_one_or_none()
 
     if user_id:
-        stmt = select(League).where(UserFavoriteLeague.user_id == user_id)
+        stmt = (
+            select(League)
+            .join(UserFavoriteLeague)
+            .where(UserFavoriteLeague.user_id == user_id)
+        )
         result = await db.execute(stmt)
         favorite_leagues = result.scalars().all()
         favorite_league_ids = {league.id for league in favorite_leagues}
