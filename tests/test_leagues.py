@@ -1,65 +1,67 @@
 import unittest
 import requests
 
-BASE_URL = "http://localhost:8000/leagues"
+BASE_URL = "http://localhost:8000/"
 
 class TestLeagueEndpoints(unittest.TestCase):
 
     def test_get_leagues(self):
-        print("\nTesting GET /leagues/leagues ...")
+        print("\nTesting GET /leagues ...")
         res = requests.get(f"{BASE_URL}/leagues")
         print("➡️ Status:", res.status_code)
-        print("➡️ Response:", res.json())
-
         self.assertEqual(res.status_code, 200)
 
-        leagues = res.json()
-        self.assertIsInstance(leagues, list)
-        if leagues:
-            league = leagues[0]
-            self.assertIn("id", league)
-            self.assertIn("name", league)
-            self.assertIn("country_id", league)
-            self.assertIn("season", league)
-            self.assertIn("start_date", league)
-            self.assertIn("end_date", league)
-            self.assertIn("logo_url", league)
-            self.assertIn("last_updated", league)
+        data = res.json()
+        print("➡️ Response Keys:", data.keys())
+        self.assertIn("favorite_leagues", data)
+        self.assertIn("all_leagues", data)
 
-            # Optionally, assert values/types
-            self.assertIsInstance(league["id"], int)
-            self.assertIsInstance(league["name"], str)
-            self.assertIsInstance(league["country_id"], int)
+        for key in ["favorite_leagues", "all_leagues"]:
+            leagues = data[key]
+            self.assertIsInstance(leagues, list)
+            for league in leagues:
+                self.assertIn("id", league)
+                self.assertIn("name", league)
+                self.assertIn("season", league)
+                self.assertIn("logo_url", league)
+                self.assertIn("is_favorite", league)
+                self.assertIn("api_id", league)
 
     def test_get_matches_by_league(self):
-        print("\nTesting GET /leagues/matches?league_id=1 ...")
-        res = requests.get(f"{BASE_URL}/matches?league_id=1")
-        print("➡️ Status:", res.status_code)
+        print("\nTesting GET /leagues/matches?id=1&season=2023&round=1 ...")
 
+        params = {
+            "id": 1,        
+            "season": 2023, 
+            "round": 1      
+        }
+        res = requests.get(f"{BASE_URL}/matches", params=params)
+        print("➡️ Status:", res.status_code)
         self.assertEqual(res.status_code, 200)
 
-        matches = res.json()
-        print(f"➡️ Total matches: {len(matches)}")
+        matches_by_day = res.json()
+        self.assertIsInstance(matches_by_day, list)
 
-        self.assertIsInstance(matches, list)
-        self.assertEqual(len(matches), 380)  # Expecting 380 matches
+        for day_group in matches_by_day:
+            self.assertIn("day", day_group)
+            self.assertIn("matches", day_group)
+            self.assertIsInstance(day_group["matches"], list)
 
-        if matches:
-            match = matches[0]
-            self.assertIn("home_team", match)
-            self.assertIn("away_team", match)
-            self.assertIn("timestamp_match", match)
+            for match in day_group["matches"]:
+                self.assertIn("home_team", match)
+                self.assertIn("away_team", match)
+                self.assertIn("time", match)
 
-            self.assertIn("name", match["home_team"])
-            self.assertIn("score", match["home_team"])
-            self.assertIn("logo", match["home_team"])
+                for team in ["home_team", "away_team"]:
+                    self.assertIn("name", match[team])
+                    self.assertIn("score", match[team])
+                    self.assertIn("logo", match[team])
+                    self.assertIsInstance(match[team]["name"], str)
 
-            self.assertIn("name", match["away_team"])
-            self.assertIn("score", match["away_team"])
-            self.assertIn("logo", match["away_team"])
+                self.assertIsInstance(match["time"], str)
 
-            self.assertIsInstance(match["timestamp_match"], str)
 
+    #TODO: Missing the tests of the routes /league and /favorite_leagues
 
 if __name__ == "__main__":
     unittest.main()
