@@ -37,7 +37,11 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
     await db.commit()
     await db.refresh(new_user)
 
-    return new_user
+    return {
+        "id":  new_user.id,
+        "username": new_user.username,
+        "email": new_user.email
+    }
 
 
 @router.post("/signin")
@@ -56,9 +60,11 @@ async def signin(user_data: UserLogin, db: AsyncSession = Depends(get_db_session
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password"
         )
 
-    return {"user_id":  user.id,
-            "username": user.username,
-            "email":    user.email}
+    return {
+        "id": user.id,
+        "username": user.username,
+        "email": user.email
+    }
 
 
 @router.post("/user_delete")
