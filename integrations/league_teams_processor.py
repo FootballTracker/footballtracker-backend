@@ -1,8 +1,5 @@
-import asyncio
-import requests
 import json
 import os
-from config import API_HOST, HEADERS
 from database.database import async_session_factory
 from datetime import datetime, timezone
 from models.league_team import LeagueTeam

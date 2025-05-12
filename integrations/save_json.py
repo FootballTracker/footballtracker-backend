@@ -40,15 +40,15 @@ def load_rate_limit_data():
     if os.path.exists(RATE_LIMIT_FILE):
         with open(RATE_LIMIT_FILE, "r") as f:
             return json.load(f)
-    return {"last_id": None, "current_requests": 0}
+    return {"current_requests": 0, "timestamp": None, "last_page": 0}
 
 
-def save_rate_limit_data(last_id, current_requests):
+def save_rate_limit_data(current_requests, last_page):
     with open(RATE_LIMIT_FILE, "w") as f:
         json.dump(
             {
-                "last_id": last_id,
                 "current_requests": current_requests,
+                "last_page": last_page,
                 "timestamp": datetime.now().isoformat(),
             },
             f,
