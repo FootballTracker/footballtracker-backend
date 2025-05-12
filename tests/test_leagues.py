@@ -7,7 +7,7 @@ class TestLeagueEndpoints(unittest.TestCase):
 
     def test_get_leagues(self):
         print("\nTesting GET /leagues ...")
-        res = requests.get(f"{BASE_URL}/leagues")
+        res = requests.get(f"{BASE_URL}/leagues?user_id=1")
         print("➡️ Status:", res.status_code)
         self.assertEqual(res.status_code, 200)
 
