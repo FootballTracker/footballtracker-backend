@@ -19,7 +19,7 @@ ssl_context = ssl.create_default_context(cafile="database/ca.pem")
 
 Base = declarative_base()
 
-engine = create_async_engine(DATABASE_URL, connect_args={"ssl": ssl_context})
+engine = create_async_engine(DATABASE_URL)
 async_session_factory = async_sessionmaker(
     engine, class_=AsyncSession, expire_on_commit=False
 )

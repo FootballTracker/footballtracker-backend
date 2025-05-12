@@ -3,7 +3,7 @@ from typing import Optional
 from integrations.save_json import fetch_and_save_to_json
 from integrations.league_processor import process_league_json_and_save_to_db
 
-router = APIRouter(prefix="/leagues", tags=["Leagues"])
+router = APIRouter(prefix="/leagues", tags=["Leagues Fetch"])
 
 
 @router.post("/fetch")
