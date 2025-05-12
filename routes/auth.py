@@ -79,11 +79,18 @@ async def user_delete(user_data: UserLogin, db: AsyncSession = Depends(get_db_se
 
     return {"message": f"User {user.username} has been deleted successfully."}
 
-
 @router.put("/update_user")
-async def update_user(UserUpdate, db: AsyncSession = Depends(get_db_session)):
+async def update_user(
+        user_id: int,
+        password: str,
+        username: str | None = None,
+        email: str | None = None,
+        new_password: str | None = None,
+        db: AsyncSession = Depends(get_db_session)
+    ):
+
     # Fetch user by ID
-    stmt = select(User).where(User.id == id)
+    stmt = select(User).where(User.id == user_id)
     result = await db.execute(stmt)
     user = result.scalar_one_or_none()
 
@@ -94,7 +101,7 @@ async def update_user(UserUpdate, db: AsyncSession = Depends(get_db_session)):
 
     # Handle username or email update
     if username or email:
-        if not old_password or not verify_password(old_password, user.password):
+        if not password or not verify_password(password, user.password):
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid password for updating username/email")
 
         # Check for uniqueness if changing username/email
@@ -115,9 +122,9 @@ async def update_user(UserUpdate, db: AsyncSession = Depends(get_db_session)):
             updated = True
 
     # Handle password update
-    if password:
-        if not old_password or not verify_password(old_password, user.password):
-            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid old password for updating password")
+    if new_password:
+        if not password or not verify_password(password, user.password):
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid password for updating password")
         user.password = hash_password(password)
         updated = True
 
