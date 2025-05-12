@@ -131,7 +131,7 @@ async def update_user(
     if new_password:
         if not password or not verify_password(password, user.password):
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid password for updating password")
-        user.password = hash_password(password)
+        user.password = hash_password(new_password)
         updated = True
 
     if not updated:
