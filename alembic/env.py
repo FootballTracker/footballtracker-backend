@@ -21,6 +21,7 @@ from models import (
     fixture_event,
     user_favorite_league,
     user,
+    user_favorite_player,
 )
 
 import asyncio

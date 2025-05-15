@@ -45,4 +45,5 @@ __all__ = [
     "FixturePlayerStat",
     "FixtureStatistic",
     "PlayerSeasonStat",
+    "UserFavoritePlayer",
 ]

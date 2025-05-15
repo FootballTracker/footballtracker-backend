@@ -34,17 +34,6 @@ class League(Base):
     fixtures = relationship("Fixture", back_populates="league")
     country = relationship("Country", back_populates="leagues")
 
-    user_favorite_associations = relationship(
-        "UserFavoriteLeague",
-        back_populates="league",
-        lazy="selectin",  # Optional: Use selectin loading for efficiency
-    )
-
-    favorited_by_users = association_proxy(
-        "user_favorite_associations",  # Relationship attribute name above
-        "user",  # Attribute name on UserFavoriteLeague pointing to User
-    )
-
     __table_args__ = (
         UniqueConstraint("api_id", "season", name="unique_league_season"),
     )
