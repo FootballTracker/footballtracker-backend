@@ -9,6 +9,7 @@ from routes import (
     link_teams,
     fetch_players,
     leagues,
+    fetch_classification_leagues,
 )
 
 
@@ -24,3 +25,4 @@ app.include_router(link_teams.router)
 app.include_router(fetch_fixtures.router)
 app.include_router(fetch_players.router)
 app.include_router(leagues.router)
+app.include_router(fetch_classification_leagues.router)
