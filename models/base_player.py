@@ -50,3 +50,9 @@ class BasePlayer(Base):
         back_populates="assist",
         foreign_keys=[FixtureEvent.assist_player_api_id],
     )
+    user_favorited_associations = relationship(
+        "UserFavoritePlayer",
+        back_populates="player",
+        cascade="all, delete-orphan",
+        lazy="selectin",
+    )
