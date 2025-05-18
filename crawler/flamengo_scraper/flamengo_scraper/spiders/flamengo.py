@@ -5,6 +5,7 @@ class FlamengoSpider(scrapy.Spider):
     allowed_domains = ['ogol.com.br']
     start_urls = ['https://www.ogol.com.br/equipe/flamengo']  # Keep the main page for players
     matches_url = 'https://www.ogol.com.br/equipe/flamengo/todos-os-jogos?grp=1' # New URL for matches
+    matches_url2 = 'https://www.ogol.com.br/equipe/flamengo/todos-os-jogos?grp=2' # New URL for matches
 
     def parse(self, response):
         # with open("flamengo_page.html", "wb") as f:
@@ -21,6 +22,7 @@ class FlamengoSpider(scrapy.Spider):
 
         # Request the matches URL and parse it with a different method
         yield scrapy.Request(self.matches_url, callback=self.parse_matches)
+        yield scrapy.Request(self.matches_url2, callback=self.parse_matches)
 
     def parse_matches(self, response):
         matches = []

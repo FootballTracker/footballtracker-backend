@@ -1,0 +1,360 @@
+[
+  {
+    "players": [
+      "Andrew",
+      "Agustín Rossi",
+      "Lucas Furtado",
+      "Matheus Cunha",
+      "Dyogo Alves",
+      "Léo Nannetti",
+      "Eduardo Jung",
+      "Guillermo Varela",
+      "Ayrton Lucas",
+      "Matías Viña",
+      "Zé Welinton",
+      "Guilherme Santos",
+      "Wesley Juan",
+      "Gusttavo Sousa",
+      "Wanderson Jr",
+      "Johnny Góes",
+      "Carbone",
+      "Daniel Sales",
+      "Wesley França",
+      "Léo Ortiz",
+      "Léo Pereira",
+      "Danilo",
+      "Pablo",
+      "Cleiton",
+      "Felipe Vieira",
+      "Pedro Fachinetti",
+      "Da Mata",
+      "Iago Teodoro",
+      "João Souza",
+      "Alex Sandro",
+      "Ainoã",
+      "Lucyan",
+      "Caio Garcia",
+      "Luiz Felipe",
+      "Rayan Lucas",
+      "Erick Pulgar",
+      "Allan",
+      "Evertton Araújo",
+      "Daniel Rogério",
+      "Fabiano",
+      "Pablo",
+      "De Arrascaeta",
+      "Lorran",
+      "Lucas Vieira",
+      "Joshua",
+      "Rafael Vargas",
+      "Gerson",
+      "Nicolás De La Cruz",
+      "Guilherme Gomes",
+      "João Alves",
+      "Carlos Alcaraz",
+      "Felipe Lima",
+      "Wallace Yan",
+      "Felipe Teresa",
+      "Ogundana Shola",
+      "Luiz Araújo",
+      "Matheus Gonçalves",
+      "Michael",
+      "Gonzalo Plata",
+      "Pedro",
+      "Juninho Vieira",
+      "Guilherme Sousa",
+      "Everton",
+      "Bruno Henrique",
+      "Carlinhos",
+      "Thiaguinho",
+      "Filipe Luís",
+      "Cleber dos Santos",
+      "Junior Bezerra",
+      "Alfredo Almeida",
+      "José Luiz Runco",
+      "Rodrigo Caio",
+      "Sandro Da Silva",
+      "Fabio Gomes",
+      "José Boto"
+    ]
+  },
+  {
+    "matches": [
+      {
+        "date": "2025-05-15",
+        "opponent": "LDU Quito",
+        "result": "-",
+        "championship": "Libertadores 2025"
+      },
+      {
+        "date": "2025-05-07",
+        "opponent": "Central Córdoba S.Estero",
+        "result": "1-1",
+        "championship": "Libertadores 2025"
+      },
+      {
+        "date": "2025-04-22",
+        "opponent": "LDU Quito",
+        "result": "0-0",
+        "championship": "Libertadores 2025"
+      },
+      {
+        "date": "2025-04-09",
+        "opponent": "Central Córdoba S.Estero",
+        "result": "1-2",
+        "championship": "Libertadores 2025"
+      },
+      {
+        "date": "2025-04-03",
+        "opponent": "Deportivo Táchira",
+        "result": "0-1",
+        "championship": "Libertadores 2025"
+      }
+    ]
+  },
+  {
+    "matches": [
+      {
+        "date": "2025-12-21",
+        "opponent": "Mirassol",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-12-17",
+        "opponent": "Ceará",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-12-13",
+        "opponent": "Atlético Mineiro",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-12-10",
+        "opponent": "Red Bull Bragantino",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-12-06",
+        "opponent": "Fluminense",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-12-03",
+        "opponent": "Santos",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-11-29",
+        "opponent": "São Paulo",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-11-22",
+        "opponent": "Sport",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-11-19",
+        "opponent": "Fortaleza",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-11-05",
+        "opponent": "Palmeiras",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-10-25",
+        "opponent": "Botafogo",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-10-16",
+        "opponent": "Bahia",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-10-01",
+        "opponent": "Cruzeiro",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-09-27",
+        "opponent": "Corinthians",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-09-20",
+        "opponent": "Vasco",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-09-13",
+        "opponent": "Juventude",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-08-30",
+        "opponent": "Grêmio",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-08-23",
+        "opponent": "Vitória",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-08-16",
+        "opponent": "Internacional",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-08-09",
+        "opponent": "Mirassol",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-08-02",
+        "opponent": "Ceará",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-07-26",
+        "opponent": "Atlético Mineiro",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-07-23",
+        "opponent": "Red Bull Bragantino",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-07-19",
+        "opponent": "Fluminense",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-07-16",
+        "opponent": "Santos",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-07-12",
+        "opponent": "São Paulo",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-06-24",
+        "opponent": "Club León",
+        "result": "-",
+        "championship": "Mundial de Clubes 2025"
+      },
+      {
+        "date": "2025-06-20",
+        "opponent": "Chelsea",
+        "result": "-",
+        "championship": "Mundial de Clubes 2025"
+      },
+      {
+        "date": "2025-06-16",
+        "opponent": "Espérance de Tunis",
+        "result": "-",
+        "championship": "Mundial de Clubes 2025"
+      },
+      {
+        "date": "2025-06-10",
+        "opponent": "Sport",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-06-01",
+        "opponent": "Fortaleza",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-05-28",
+        "opponent": "Deportivo Táchira",
+        "result": "-",
+        "championship": "Libertadores 2025"
+      },
+      {
+        "date": "2025-05-25",
+        "opponent": "Palmeiras",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-05-21",
+        "opponent": "Botafogo-PB",
+        "result": "-",
+        "championship": "Copa do Brasil 2025"
+      },
+      {
+        "date": "2025-05-18",
+        "opponent": "Botafogo",
+        "result": "-",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-05-15",
+        "opponent": "LDU Quito",
+        "result": "-",
+        "championship": "Libertadores 2025"
+      },
+      {
+        "date": "2025-05-10",
+        "opponent": "Bahia",
+        "result": "1-0",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-05-07",
+        "opponent": "Central Córdoba S.Estero",
+        "result": "1-1",
+        "championship": "Libertadores 2025"
+      },
+      {
+        "date": "2025-05-04",
+        "opponent": "Cruzeiro",
+        "result": "2-1",
+        "championship": "Brasileirão 2025"
+      },
+      {
+        "date": "2025-05-01",
+        "opponent": "Botafogo-PB",
+        "result": "0-1",
+        "championship": "Copa do Brasil 2025"
+      },
+      { "date": null, "opponent": null, "result": null, "championship": null }
+    ]
+  }
+]

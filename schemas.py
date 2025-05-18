@@ -14,6 +14,8 @@ class UserResponse(BaseModel):
     email: EmailStr
     favorite_team: int | None = None
 
+    class Config:
+        orm_mode = True
 
 class UserLogin(BaseModel):
     user_id: Optional[int] = None
@@ -23,10 +25,13 @@ class UserLogin(BaseModel):
 class LeagueResponse(BaseModel):
     id: int
     name: str
+    country_id: int
     season: int
+    start_date: datetime
+    end_date: datetime
     logo_url: str
-    is_favorite: bool = False
-    api_id: int
+    last_updated: datetime
+
 
 class TeamInfo(BaseModel):
     score: int
@@ -37,11 +42,11 @@ class MatchResponse(BaseModel):
     id: int
     home_team: TeamInfo
     away_team: TeamInfo
-    time: str
+    timestamp_match: datetime
 
 class UserUpdate(BaseModel):
-    id: int
-    username: Optional[str]
-    email: Optional[str]
-    password: Optional[str]
-    old_password: Optional[str]
+    user_id: int
+    username: Optional[str] = None
+    email: Optional[str] = None
+    password: str
+    new_password: Optional[str] = None

@@ -114,6 +114,7 @@ class TestUserUpdateFlow(unittest.TestCase):
             "username": new_username
         })
         self.assertEqual(res.status_code, 200)
+        print(res.json())
         self.assertEqual(res.json()["message"], "User updated successfully.")
 
         # Verify login still works with new username
