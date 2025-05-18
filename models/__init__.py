@@ -3,7 +3,7 @@
 # Este arquivo importa todos os modelos para que o SQLAlchemy/Alembic os descubra.
 
 from .country import Country  # Referenciado por BaseTeam, BasePlayer, League, Venue
-
+from .user_favorite_player import UserFavoritePlayer
 from .base_team import BaseTeam  # Referenciado por User, LeagueTeam
 from .base_player import BasePlayer  # Referenciado por FixtureEvent, PlayerSeasonStat
 from .venue import Venue  # Referenciado por Fixture, LeagueTeam
@@ -32,6 +32,7 @@ from .player_season_stat import PlayerSeasonStat  # Referencia BasePlayer, Leagu
 __all__ = [
     "Country",
     "BaseTeam",
+    "UserFavoritePlayer",
     "BasePlayer",
     "Venue",
     "League",
@@ -45,5 +46,4 @@ __all__ = [
     "FixturePlayerStat",
     "FixtureStatistic",
     "PlayerSeasonStat",
-    "UserFavoritePlayer",
 ]

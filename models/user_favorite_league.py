@@ -11,6 +11,13 @@ class UserFavoriteLeague(Base):
     api_league_id = Column(Integer, primary_key=True, name="id_api_league")
 
     user = relationship("User", back_populates="favorite_league_associations")
+    # Uso de lógica de aplicação
+    leagues = relationship(
+        "League",
+        primaryjoin="and_(foreign(UserFavoriteLeague.api_league_id) == League.api_id)",
+        viewonly=True,
+        lazy="select",
+    )
 
     def __repr__(self):
         return f"<UserFavoriteLeague(user_id={self.user_id}, api_league_id={self.api_league_id})>"

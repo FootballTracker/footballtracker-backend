@@ -39,6 +39,12 @@ class User(Base):
     )
 
     favorite_players = association_proxy("favorite_player_associations", "player")
+    favorite_league_associations = relationship(
+        "UserFavoriteLeague",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        lazy="dynamic",
+    )
 
     def __repr__(self):
         return f"<User(id={self.id}, username='{self.username}', email='{self.email}')>"

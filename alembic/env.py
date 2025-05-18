@@ -6,6 +6,7 @@ from alembic import context
 from database.database import Base, DATABASE_URL
 from models import (
     base_coach,
+    user_favorite_player,
     base_player,
     base_team,
     country,
@@ -21,7 +22,6 @@ from models import (
     fixture_event,
     user_favorite_league,
     user,
-    user_favorite_player,
 )
 
 import asyncio
