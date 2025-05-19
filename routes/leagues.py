@@ -25,7 +25,7 @@ async def get_leagues(
     if user_id:
         stmt = (
             select(League)
-            .join(UserFavoriteLeague)
+            .join(UserFavoriteLeague, League.api_id == UserFavoriteLeague.api_league_id)
             .where(UserFavoriteLeague.user_id == user_id)
         )
         result = await db.execute(stmt)
@@ -63,7 +63,7 @@ async def get_leagues(user_id: int, db: AsyncSession = Depends(get_db_session)):
 
     stmt = (
         select(League)
-        .join(UserFavoriteLeague)
+        .join(UserFavoriteLeague, League.api_id == UserFavoriteLeague.api_league_id)
         .where(UserFavoriteLeague.user_id == user_id)
     )
     result = await db.execute(stmt)
@@ -95,7 +95,7 @@ async def get_league(
     if user_id:
         stmt = (
             select(League)
-            .join(UserFavoriteLeague)
+            .join(UserFavoriteLeague, League.api_id == UserFavoriteLeague.api_league_id)
             .where(UserFavoriteLeague.user_id == user_id)
         )
         result = await db.execute(stmt)
