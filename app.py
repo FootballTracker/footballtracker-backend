@@ -15,6 +15,13 @@ from routes import (
 
 app = FastAPI()
 
+# ----- ADDING CONNECTION ERROR HANDLING -----
+@app.exception_handler(ConnectionDoesNotExistError)
+async def db_connection_error_handler(request: Request, exc: ConnectionDoesNotExistError):
+    return JSONResponse(
+        status_code=503,
+        content={"detail": "Conexão com o banco falhou."},
+    )
 
 app.include_router(auth.router)
 app.include_router(leagues.router)
