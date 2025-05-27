@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from routes import (
     auth,
     fetch_countries,
@@ -15,14 +15,6 @@ from routes import (
 
 
 app = FastAPI()
-
-# ----- ADDING CONNECTION ERROR HANDLING -----
-# @app.exception_handler(asyncpg.exceptions.CannotConnectNowError)
-# async def db_connection_error_handler(request: Request, exc: asyncpg.exceptions.CannotConnectNowError):
-#     return JSONResponse(
-#         status_code=503,
-#         content={"detail": "Conexão com o banco falhou."},
-#     )
 
 
 app.include_router(auth.router)

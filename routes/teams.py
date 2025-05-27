@@ -128,6 +128,7 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
 
     else: latest_players = []
 
+
     return {
         "team": {
             "id": team.api_id,
