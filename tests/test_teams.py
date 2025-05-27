@@ -15,5 +15,15 @@ class TesteTeamsEndpoints(unittest.TestCase):
         data = res.json()
         print(f"Reponse - {json.dumps(data, indent=4)}")
 
+    def teste_mock_teams(self):
+
+        print("\nTesting GET /teams ...")
+        res = requests.get(f"{BASE_URL}/teams-mock")
+        print("➡️ Status:", res.status_code)
+        self.assertEqual(res.status_code, 200)
+
+        data = res.json()
+        print(f"Reponse - {json.dumps(data, indent=4)}")
+
 if __name__ == "__main__":
     unittest.main()
