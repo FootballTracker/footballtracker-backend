@@ -37,7 +37,7 @@ class MatchResponse(BaseModel):
     id: int
     home_team: TeamInfo
     away_team: TeamInfo
-    time: str
+    date: datetime
 
 class UserUpdate(BaseModel):
     id: int
