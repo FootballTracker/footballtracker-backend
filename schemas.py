@@ -28,6 +28,10 @@ class LeagueResponse(BaseModel):
     is_favorite: bool = False
     api_id: int
 
+class SeasonResponse(BaseModel):
+    id: int
+    season: int
+
 class TeamInfo(BaseModel):
     score: int
     logo: str | None 

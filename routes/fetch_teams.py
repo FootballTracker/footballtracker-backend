@@ -3,7 +3,7 @@ from typing import Optional
 from integrations.save_json import fetch_and_save_to_json
 from integrations.teams_processor import process_teams_json_and_save_to_db
 
-router = APIRouter(prefix="/teams", tags=["Teams"])
+router = APIRouter(prefix="/teams", tags=["Teams Fetch"])
 
 
 @router.post("/fetch")

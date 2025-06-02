@@ -1,27 +1,28 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Query
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload, selectinload
 from models.league import League
-from models.user_favorite_league import UserFavoriteLeague
 from database.database import get_db_session
-from schemas import LeagueResponse, MatchResponse, TeamInfo
-from typing import List, Dict, Union
 from models.fixture import Fixture
 from models.league_team import LeagueTeam
 from models.base_team import BaseTeam
-from models.player_season_stat import PlayerSeasonStat
 from models.fixture_lineup import FixtureLineup
 from models.fixture_player_stat import FixturePlayerStat
-from datetime import date, timedelta
+from collections import defaultdict
 
 router = APIRouter(tags=["Teams"])
 
 @router.get("/teams/{team_id}")
 async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_session)):
+
     # Fetch basic team info
     result = await session.execute(
-        select(BaseTeam).where(BaseTeam.api_id == team_id)
+        select(BaseTeam)
+        .options(
+            joinedload(BaseTeam.country)
+        )
+        .where(BaseTeam.api_id == team_id)
     )
     team = result.scalar_one_or_none()
     print("Team: ", team)
@@ -135,32 +136,33 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
             "name": team.name,
             "logo": team.logo_url,
             "founded": team.founded,
+            "code": team.code,
+            "country": team.country.name,
+            "country_flag": team.country.flag_url,
         },
         "team_venue": {
-            "id": team_venue.api_id,
+            "address": team_venue.address,
             "name": team_venue.name,
             "city": team_venue.city,
             "capacity": team_venue.capacity,
             "surface": team_venue.surface,
             "image_url": team_venue.image_url,
         } if team_venue else None,
-        "leagues": [{"id": l.id, "name": l.name} for l in leagues],
+        "leagues": [{"id": l.id, "name": l.name, "season": l.season, "logo_url": l.logo_url} for l in leagues],
         "last_matches": [
             {
                 "id": f.api_id,
                 "date": f.date.isoformat() if f.date else None,
                 "home_team": {
-                    "id": f.home_team.team.api_id,
                     "name": f.home_team.team.name,
                     "logo": f.home_team.team.logo_url,
+                    "score": f.home_team_score_goals,
                 } if f.home_team and f.home_team.team else None,
                 "away_team": {
-                    "id": f.away_team.team.api_id,
                     "name": f.away_team.team.name,
                     "logo": f.away_team.team.logo_url,
+                    "score": f.away_team_score_goals,
                 } if f.away_team and f.away_team.team else None,
-                "home_score": f.home_team_score_goals,
-                "away_score": f.away_team_score_goals,
             }
             for f in fixtures
         ],

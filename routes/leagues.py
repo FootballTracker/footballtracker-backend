@@ -2,11 +2,11 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, case, literal_column
 from sqlalchemy.orm import joinedload
+from database.database import get_db_session
+from schemas import LeagueResponse, MatchResponse, TeamInfo, SeasonResponse
+from typing import List, Dict, Union
 from models.league import League
 from models.user_favorite_league import UserFavoriteLeague
-from database.database import get_db_session
-from schemas import LeagueResponse, MatchResponse, TeamInfo
-from typing import List, Dict, Union
 from models.fixture import Fixture
 from models.league_team import LeagueTeam
 
@@ -92,7 +92,7 @@ async def get_leagues(user_id: int, db: AsyncSession = Depends(get_db_session)):
 
     return favorite_leagues_response
 
-@router.get("/league", response_model=Dict[str, Union[List[int], LeagueResponse]])
+@router.get("/league", response_model=Dict[str, Union[List[SeasonResponse], LeagueResponse]])
 async def get_league(
     league_id: int,
     user_id: int | None = None,
@@ -123,11 +123,24 @@ async def get_league(
         is_favorite=is_favorite
     )
 
-    stmt = select(League.season).where(League.api_id == league.api_id)
+    stmt = select(League.id, League.season).where(League.api_id == league.api_id)
     result = await db.execute(stmt)
-    seasons = result.scalars().all()
+    league_seasons = result.all()
 
-    return {"league": league_response, "seasons": seasons}
+    seasons_response: List[SeasonResponse] = []
+
+    for s in league_seasons:
+        new_season = SeasonResponse(
+            id = s.id,
+            season = s.season
+        )
+
+        seasons_response.append(new_season)
+
+    return {
+        "league": league_response,
+        "seasons": seasons_response
+    }
 
 @router.get(
     "/matches",
