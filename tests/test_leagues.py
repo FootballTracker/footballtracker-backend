@@ -1,5 +1,6 @@
 import unittest
 import requests
+from datetime import datetime
 
 BASE_URL = "http://localhost:8000/"
 
@@ -39,26 +40,21 @@ class TestLeagueEndpoints(unittest.TestCase):
         print("➡️ Status:", res.status_code)
         self.assertEqual(res.status_code, 200)
 
-        matches_by_day = res.json()
-        self.assertIsInstance(matches_by_day, list)
+        matches = res.json()
+        self.assertIsInstance(matches, list)
 
-        for day_group in matches_by_day:
-            self.assertIn("day", day_group)
-            self.assertIn("matches", day_group)
-            self.assertIsInstance(day_group["matches"], list)
+        for match in matches:
+            self.assertIn("home_team", match)
+            self.assertIn("away_team", match)
+            self.assertIn("date", match)
 
-            for match in day_group["matches"]:
-                self.assertIn("home_team", match)
-                self.assertIn("away_team", match)
-                self.assertIn("time", match)
+            for team in ["home_team", "away_team"]:
+                self.assertIn("name", match[team])
+                self.assertIn("score", match[team])
+                self.assertIn("logo", match[team])
+                self.assertIsInstance(match[team]["name"], str)
 
-                for team in ["home_team", "away_team"]:
-                    self.assertIn("name", match[team])
-                    self.assertIn("score", match[team])
-                    self.assertIn("logo", match[team])
-                    self.assertIsInstance(match[team]["name"], str)
-
-                self.assertIsInstance(match["time"], str)
+            self.assertIsInstance(match["date"], str)
 
 
     #TODO: Missing the tests of the routes /league and /favorite_leagues
