@@ -49,3 +49,17 @@ class UserUpdate(BaseModel):
     email: Optional[str]
     password: Optional[str]
     old_password: Optional[str]
+
+class Standing(BaseModel):
+    teamId: int
+    teamName: str
+    teamLogo: str
+    rank: int
+    totalGames: int
+    victories: int
+    draws: int
+    loses: int
+    goalsFor: int
+    goalsAgainst: int
+    goalsDiff: int
+    points: int

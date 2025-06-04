@@ -3,12 +3,13 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, case, literal_column
 from sqlalchemy.orm import joinedload
 from database.database import get_db_session
-from schemas import LeagueResponse, MatchResponse, TeamInfo, SeasonResponse
+from schemas import LeagueResponse, MatchResponse, TeamInfo, Standing, SeasonResponse
 from typing import List, Dict, Union
 from models.league import League
 from models.user_favorite_league import UserFavoriteLeague
 from models.fixture import Fixture
 from models.league_team import LeagueTeam
+from models.league_classification import LeagueClassification
 
 router = APIRouter(tags=["Leagues"])
 
@@ -189,3 +190,40 @@ async def get_completed_matches(
         matches.append(match)
 
     return matches
+
+@router.get("/league/{league_id}/classification", response_model=List[Standing])
+async def get_classification(league_id: int, db: AsyncSession = Depends(get_db_session)):
+
+    stmt = (
+        select(LeagueClassification)
+        .options(
+            joinedload(LeagueClassification.team)
+        )
+        .where(LeagueClassification.league_id == league_id)
+        .order_by(LeagueClassification.rank)
+    )
+    result = await db.execute(stmt)
+    standings = result.scalars().all()
+
+    standings_response: List[Standing] = []
+
+    for st in standings:
+        new_standing = Standing(
+                teamId = st.base_team_api_id,
+                teamName = st.team.name,
+                teamLogo = st.team.logo_url,
+                rank = st.rank,
+                totalGames = st.all_played,
+                victories = st.all_win,
+                draws = st.all_draw,
+                loses = st.all_lose,
+                goalsFor = st.all_goals_for,
+                goalsAgainst = st.all_goals_against,
+                goalsDiff = st.all_goals_for - st.all_goals_against,
+                points = st.points,
+        )
+
+        standings_response.append(new_standing)
+
+    return standings_response
+    

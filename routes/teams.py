@@ -9,9 +9,51 @@ from models.league_team import LeagueTeam
 from models.base_team import BaseTeam
 from models.fixture_lineup import FixtureLineup
 from models.fixture_player_stat import FixturePlayerStat
+from models.user import User
 from collections import defaultdict
 
 router = APIRouter(tags=["Teams"])
+
+@router.get("/teams")
+async def get_teams(user_id: int | None = None, session: AsyncSession = Depends(get_db_session)):
+
+    favorite_team = None
+
+    if user_id:
+        result = await session.execute(
+            select(User)
+            .options(joinedload(User.favorite_team))
+            .where(User.id == user_id)
+        )
+
+        user = result.scalar_one_or_none()
+
+        favorite_team = user.favorite_team if user else None
+    
+    result = await session.execute(
+        select(BaseTeam).limit(15)
+    )
+
+    teams = result.scalars().all()
+
+    return {
+        "favorite_team": {
+            "id": favorite_team.api_id,
+            "name": favorite_team.name,
+            "logo": favorite_team.logo_url,
+            "is_favorite": True
+        } if favorite_team else [],
+        "teams": [
+            {
+                "id": team.api_id,
+                "name": team.name,
+                "logo": team.logo_url,
+                "is_favorite": favorite_team and team.api_id == favorite_team.api_id
+            }
+            for team in teams
+        ]
+    }
+
 
 @router.get("/teams/{team_id}")
 async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_session)):
@@ -89,27 +131,28 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
                         select(FixturePlayerStat)
                         .filter_by(fixture_id=latest_lineup.fixture_id, league_team_id=league_teams[0].id)
                         .options(joinedload(FixturePlayerStat.player))
-                        .all())
+                        )
 
-        players_stats = result.scalar().all()
+        players_stats = result.scalars().all()
         print("Player stats: ", players_stats)
 
         squad = defaultdict(list)
         for stat in players_stats:
             player = stat.player
             position = (stat.position or '').lower()
-            if 'keeper' in position:
+            if position == 'g':
                 key = 'goalkeeper'
-            elif 'defense' in position or 'back' in position or position == 'defender':
+            elif position == 'd':
                 key = 'defensor'
-            elif 'mid' in position:
+            elif position == 'm':
                 key = 'mid_field'
-            elif 'attack' in position or 'forward' in position or position == 'attacker':
+            elif position == 'f':
                 key = 'attacker'
             else:
                 key = 'mid_field'  # fallback to midfield if unclear
 
             squad[key].append({
+                "id": player.api_id,
                 "player": player.name,
                 "playerImage": player.photo_url
             })
