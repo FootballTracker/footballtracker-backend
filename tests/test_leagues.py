@@ -86,5 +86,39 @@ class TestLeagueEndpoints(unittest.TestCase):
             self.assertIn("id", season)
             self.assertIn("season", season)
 
+    def test_get_league_classification(self):
+        print("\nTesting GET /league/{league_id}/classification ...")
+        league_id = 1  # Use an ID that exists in your database with classification data
+        res = requests.get(f"{BASE_URL}/league/{league_id}/classification")
+        print("➡️ Status:", res.status_code)
+
+        self.assertEqual(res.status_code, 200)
+
+        standings = res.json()
+        print("➡️ Response:", standings)
+        self.assertIsInstance(standings, list)
+
+        if standings:  # Only validate fields if the list is not empty
+            for standing in standings:
+                for key in [
+                    "teamId", "teamName", "teamLogo", "rank",
+                    "totalGames", "victories", "draws", "loses",
+                    "goalsFor", "goalsAgainst", "goalsDiff", "points"
+                ]:
+                    self.assertIn(key, standing)
+
+                self.assertIsInstance(standing["teamId"], int)
+                self.assertIsInstance(standing["teamName"], str)
+                self.assertIsInstance(standing["teamLogo"], str)
+                self.assertIsInstance(standing["rank"], int)
+                self.assertIsInstance(standing["totalGames"], int)
+                self.assertIsInstance(standing["victories"], int)
+                self.assertIsInstance(standing["draws"], int)
+                self.assertIsInstance(standing["loses"], int)
+                self.assertIsInstance(standing["goalsFor"], int)
+                self.assertIsInstance(standing["goalsAgainst"], int)
+                self.assertIsInstance(standing["goalsDiff"], int)
+                self.assertIsInstance(standing["points"], int)
+
 if __name__ == "__main__":
     unittest.main()
