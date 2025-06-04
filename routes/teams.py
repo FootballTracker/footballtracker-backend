@@ -31,7 +31,7 @@ async def get_teams(user_id: int | None = None, session: AsyncSession = Depends(
         favorite_team = user.favorite_team if user else None
     
     result = await session.execute(
-        select(BaseTeam).limit(15)
+        select(BaseTeam)
     )
 
     teams = result.scalars().all()

@@ -5,6 +5,7 @@ from models.user import User
 from schemas import UserCreate, UserResponse, UserLogin, UserUpdate
 from database.database import get_db_session
 from utils.security import hash_password, verify_password
+from routes.user_image import image_exists
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -40,7 +41,8 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
     return {
         "id":  new_user.id,
         "username": new_user.username,
-        "email": new_user.email
+        "email": new_user.email,
+        "image": False
     }
 
 
@@ -51,7 +53,6 @@ async def signin(user_data: UserLogin, db: AsyncSession = Depends(get_db_session
         or_(User.username == user_data.username, User.email == user_data.username)
     )
 
-
     result = await db.execute(stmt)
     user = result.scalar_one_or_none()
 
@@ -59,11 +60,18 @@ async def signin(user_data: UserLogin, db: AsyncSession = Depends(get_db_session
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password"
         )
+    
+    ext = image_exists(f'{user.id}')
+    
+    image = False
+    if ext:
+        image = True
 
     return {
         "id": user.id,
         "username": user.username,
-        "email": user.email
+        "email": user.email,
+        "image": image
     }
 
 

@@ -13,6 +13,7 @@ from routes import (
     teams,
     fetch_coaches,
     fixture_routes,
+    user_image
 )
 
 
@@ -22,6 +23,7 @@ app = FastAPI()
 app.include_router(auth.router)
 app.include_router(leagues.router)
 app.include_router(teams.router)
+app.include_router(user_image.router)
 app.include_router(fetch_countries.router)
 app.include_router(fetch_venues.router)
 app.include_router(fetch_leagues.router)
