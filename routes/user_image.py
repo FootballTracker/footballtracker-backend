@@ -19,6 +19,10 @@ def remove_image(name: str):
     (image_directory / f'{name}').unlink()
     return
 
+@router.get("/{user_id}/has_image")
+async def user_has_image(user_id: int):
+    return bool(image_exists(f"{user_id}"))
+        
 
 @router.get("/{user_id}/image")
 async def get_user_image(user_id: int):
