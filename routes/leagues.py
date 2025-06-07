@@ -32,7 +32,11 @@ async def get_leagues(
         favorite_leagues = result.scalars().all()
         favorite_league_ids = {league.id for league in favorite_leagues}
 
-    stmt = select(League)
+    if favorite_league_ids:
+        stmt = select(League).where(~League.id.in_(favorite_league_ids))
+    else:
+        stmt = select(League)
+        
     result = await db.execute(stmt)
     leagues = result.scalars().all()
 
