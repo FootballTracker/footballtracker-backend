@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
+from sqlalchemy import select, case, literal_column
 from sqlalchemy.orm import joinedload, selectinload
 from models.league import League
 from database.database import get_db_session
@@ -30,9 +30,14 @@ async def get_teams(user_id: int | None = None, session: AsyncSession = Depends(
 
         favorite_team = user.favorite_team if user else None
     
-    result = await session.execute(
-        select(BaseTeam)
-    )
+    if(favorite_team):
+        result = await session.execute(
+            select(BaseTeam).where(BaseTeam.api_id != favorite_team.api_id)
+        )
+    else:
+        result = await session.execute(
+            select(BaseTeam)
+        )
 
     teams = result.scalars().all()
 
@@ -56,20 +61,38 @@ async def get_teams(user_id: int | None = None, session: AsyncSession = Depends(
 
 
 @router.get("/teams/{team_id}")
-async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_session)):
+async def get_team_details(team_id: int, user_id: int | None = None, session: AsyncSession = Depends(get_db_session)):
+
 
     # Fetch basic team info
-    result = await session.execute(
-        select(BaseTeam)
-        .options(
-            joinedload(BaseTeam.country)
+    if(user_id):
+        stmt = (
+            select(BaseTeam, case(
+                (User.id != None, True),
+                else_=False
+            ).label("is_favorite"))
+            .options(
+                joinedload(BaseTeam.country)
+            )
+            .outerjoin(User, (BaseTeam.api_id == User.favorite_team_api_id) & (User.id == user_id))
+            .where(BaseTeam.api_id == team_id)
         )
-        .where(BaseTeam.api_id == team_id)
-    )
-    team = result.scalar_one_or_none()
-    print("Team: ", team)
+    else:
+        stmt = (
+            select(BaseTeam, literal_column("false").label("is_favorite"))
+            .options(
+                joinedload(BaseTeam.country)
+            )
+            .where(BaseTeam.api_id == team_id)
+        )
+
+    result = await session.execute(stmt)
+    row = result.first()
+
+    team, is_favorite = row
+
     if not team:
-        raise HTTPException(status_code=404, detail="Team not found")
+        raise HTTPException(status_code=404, detail="Time não encontrado")
 
     # Get all league teams IDs for this base team
     result = await session.execute(
@@ -80,9 +103,9 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
         .order_by(League.season.desc())
     )
     league_teams = result.scalars().all()
-    print("League teams: ", league_teams)
+    
     if not league_teams:
-        raise HTTPException(status_code=404, detail="No league teams found for this team")
+        raise HTTPException(status_code=404, detail="Não foram encontradas competições para esse time")
 
     league_team_ids = [lt.id for lt in league_teams]
 
@@ -99,7 +122,6 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
         select(League).where(League.id.in_(league_ids))
     )
     leagues = result.scalars().all()
-    print("Leagues: ", leagues)
 
     # Fetch last 3 fixtures involving the team with eager loading for teams and base teams
     result = await session.execute(
@@ -115,7 +137,6 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
         .limit(3)
     )
     fixtures = result.scalars().all()
-    print("Fixtures: ", fixtures)
 
     # Fetch all PlayerSeasonStats for the team
     result = await session.execute(
@@ -125,7 +146,7 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
                         .order_by(Fixture.date.desc())
                         .options(joinedload(FixtureLineup.coach)))
     latest_lineup = result.scalars().first()
-    print("latest lineup: ",latest_lineup)
+
     if latest_lineup:
         result = await session.execute( 
                         select(FixturePlayerStat)
@@ -134,7 +155,6 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
                         )
 
         players_stats = result.scalars().all()
-        print("Player stats: ", players_stats)
 
         squad = defaultdict(list)
         for stat in players_stats:
@@ -159,8 +179,6 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
 
         coach = latest_lineup.coach
 
-        print("Coach: ", coach)
-
         latest_players = {
             "coach": coach.name if coach else None,
             "coach_imagem": coach.photo_url if coach else None,
@@ -182,6 +200,7 @@ async def get_team_details(team_id: int, session: AsyncSession = Depends(get_db_
             "code": team.code,
             "country": team.country.name,
             "country_flag": team.country.flag_url,
+            "is_favorite": is_favorite,
         },
         "team_venue": {
             "address": team_venue.address,
