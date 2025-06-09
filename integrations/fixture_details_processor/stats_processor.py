@@ -58,6 +58,7 @@ async def process_fixture_player_stats(session: AsyncSession, fixture_data: dict
             fouls_stats = stats.get("fouls", {})
             cards_stats = stats.get("cards", {})
             penalty_stats = stats.get("penalty", {})
+            rating_value = games_stats.get("rating")
 
             new_player_stat = FixturePlayerStat(
                 fixture_id=fixture_api_id,
@@ -68,7 +69,7 @@ async def process_fixture_player_stats(session: AsyncSession, fixture_data: dict
                 game_minute=games_stats.get("minutes"),
                 game_number=games_stats.get("number"),
                 position=games_stats.get("position"),
-                game_position=None,
+                rating=float(rating_value) if rating_value is not None else None,
                 game_captain=games_stats.get("captain", False),
                 game_substitute=games_stats.get("substitute", False),
                 offsides=stats.get("offsides"),
