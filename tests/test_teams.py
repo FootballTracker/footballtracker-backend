@@ -10,27 +10,24 @@ class TesteTeamsEndpoints(unittest.TestCase):
         print("\nTesting GET /teams ...")
         res = requests.get(f"{BASE_URL}/teams/118")
         print("➡️ Status:", res.status_code)
+        print("➡️ Response:", json.dumps(res.json(), indent=4))
         self.assertEqual(res.status_code, 200)
 
-        data = res.json()
-        print(f"Reponse - {json.dumps(data, indent=4)}")
 
     def teste_mock_teams(self):
 
         print("\nTesting GET /teams ...")
         res = requests.get(f"{BASE_URL}/teams-mock")
         print("➡️ Status:", res.status_code)
+        print("➡️ Response:", json.dumps(res.json(), indent=4))
         self.assertEqual(res.status_code, 200)
-
-        data = res.json()
-        print(f"Reponse - {json.dumps(data, indent=4)}")
 
     def test_get_team_details(self):
         print("\nTesting GET /teams/{team_id} ...")
         team_id = 118  # Ensure this ID exists in your test database
         res = requests.get(f"{BASE_URL}/teams/{team_id}")
         print("➡️ Status:", res.status_code)
-        print("➡️ Response:", res.json())
+        print("➡️ Response:", json.dumps(res.json(), indent=4))
 
         self.assertEqual(res.status_code, 200)
         data = res.json()

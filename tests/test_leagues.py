@@ -1,5 +1,6 @@
 import unittest
 import requests
+import json
 
 BASE_URL = "http://localhost:8000"
 
@@ -9,6 +10,7 @@ class TestLeagueEndpoints(unittest.TestCase):
         print("\nTesting GET /leagues ...")
         res = requests.get(f"{BASE_URL}/leagues", params={"user_id": 1})
         print("➡️ Status:", res.status_code)
+        print("➡️ Response:", json.dumps(res.json(), indent=4))
         self.assertEqual(res.status_code, 200)
 
         data = res.json()
@@ -34,6 +36,7 @@ class TestLeagueEndpoints(unittest.TestCase):
         }
         res = requests.get(f"{BASE_URL}/matches", params=params)
         print("➡️ Status:", res.status_code)
+        print("➡️ Response:", json.dumps(res.json(), indent=4))
         self.assertEqual(res.status_code, 200)
 
         matches = res.json()
@@ -47,6 +50,7 @@ class TestLeagueEndpoints(unittest.TestCase):
         print("\nTesting GET /favorite_leagues ...")
         res = requests.get(f"{BASE_URL}/favorite_leagues", params={"user_id": 1})
         print("➡️ Status:", res.status_code)
+        print("➡️ Response:", json.dumps(res.json(), indent=4))
         self.assertEqual(res.status_code, 200)
 
         favorite_leagues = res.json()
@@ -68,6 +72,8 @@ class TestLeagueEndpoints(unittest.TestCase):
         }
         res = requests.get(f"{BASE_URL}/league", params=params)
         print("➡️ Status:", res.status_code)
+        print("➡️ Response:", json.dumps(res.json(), indent=4))
+
         self.assertEqual(res.status_code, 200)
 
         data = res.json()
@@ -95,7 +101,7 @@ class TestLeagueEndpoints(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
 
         standings = res.json()
-        print("➡️ Response:", standings)
+        print("➡️ Response:", json.dumps(standings, indent=4))
         self.assertIsInstance(standings, list)
 
         if standings:  # Only validate fields if the list is not empty
