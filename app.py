@@ -14,7 +14,8 @@ from routes import (
     teams,
     fetch_coaches,
     fixture_routes,
-    user_image
+    user_image,
+    matches
 )
 
 origins = [
@@ -36,6 +37,7 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(leagues.router)
 app.include_router(teams.router)
+app.include_router(matches.router)
 app.include_router(user_image.router)
 app.include_router(fetch_countries.router)
 app.include_router(fetch_venues.router)

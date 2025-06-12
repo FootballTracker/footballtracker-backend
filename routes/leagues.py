@@ -59,7 +59,7 @@ async def get_leagues(
             season=league.season,
             logo_url=league.logo_url,
             api_id=league.api_id,
-            is_favorite=league.id in favorite_league_ids
+            is_favorite=False
         )
         for league in leagues
     ]
@@ -183,10 +183,10 @@ async def get_completed_matches(
         match = MatchResponse(
             id=fixture.api_id,
             home_team=TeamInfo(
-                score=fixture.home_team_score_goals, logo=home.logo_url, name=home.name
+                id=None, score=fixture.home_team_score_goals, logo=home.logo_url, name=home.name
             ),
             away_team=TeamInfo(
-                score=fixture.away_team_score_goals, logo=away.logo_url, name=away.name
+                id=None, score=fixture.away_team_score_goals, logo=away.logo_url, name=away.name
             ),
             date=fixture.date,
         )

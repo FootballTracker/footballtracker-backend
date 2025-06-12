@@ -53,7 +53,7 @@ async def get_teams(user_id: int | None = None, session: AsyncSession = Depends(
                 "id": team.api_id,
                 "name": team.name,
                 "logo": team.logo_url,
-                "is_favorite": favorite_team and team.api_id == favorite_team.api_id
+                "is_favorite": False
             }
             for team in teams
         ]
@@ -216,11 +216,13 @@ async def get_team_details(team_id: int, user_id: int | None = None, session: As
                 "id": f.api_id,
                 "date": f.date.isoformat() if f.date else None,
                 "home_team": {
+                    "id": None,
                     "name": f.home_team.team.name,
                     "logo": f.home_team.team.logo_url,
                     "score": f.home_team_score_goals,
                 } if f.home_team and f.home_team.team else None,
                 "away_team": {
+                    "id": None,
                     "name": f.away_team.team.name,
                     "logo": f.away_team.team.logo_url,
                     "score": f.away_team_score_goals,
