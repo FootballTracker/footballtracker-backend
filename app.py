@@ -15,7 +15,8 @@ from routes import (
     fetch_coaches,
     fixture_routes,
     user_image,
-    matches
+    matches,
+    stats_routes,
 )
 
 origins = [
@@ -27,11 +28,11 @@ origins = [
 app = FastAPI()
 
 app.add_middleware(
-  CORSMiddleware,
-  allow_origins=origins,
-  allow_credentials=True,
-  allow_methods=['*'],
-  allow_headers=['*']
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(auth.router)
@@ -49,3 +50,4 @@ app.include_router(fetch_players.router)
 app.include_router(fetch_classification_leagues.router)
 app.include_router(fetch_coaches.router)
 app.include_router(fixture_routes.router)
+app.include_router(stats_routes.router)
