@@ -33,6 +33,7 @@ class FixturePlayerStat(Base):
     game_number = Column(SmallInteger)
     position = Column(String(50))
     rating = Column(DECIMAL(4, 2))
+    grid = Column(String(10))
     game_captain = Column(Boolean)
     game_substitute = Column(Boolean)
     offsides = Column(SmallInteger)
