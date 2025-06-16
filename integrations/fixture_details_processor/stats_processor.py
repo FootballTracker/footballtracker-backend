@@ -11,11 +11,14 @@ async def process_fixture_player_stats(session: AsyncSession, fixture_data: dict
     fixture_api_id = fixture_data["fixture"]["id"]
     league_api_id = fixture_data["league"]["id"]
 
-    starter_ids = {
-        player["player"]["id"]
+    player_grid_map = {
+        player_info["player"]["id"]: player_info["player"].get("grid")
         for lineup in fixture_data.get("lineups", [])
-        for player in lineup.get("startXI", [])
+        for player_info in lineup.get("startXI", [])
+        if player_info.get("player")
     }
+
+    starter_ids = set(player_grid_map.keys())
 
     for team_players_data in fixture_data.get("players", []):
         team_api_id = team_players_data["team"]["id"]
@@ -37,7 +40,7 @@ async def process_fixture_player_stats(session: AsyncSession, fixture_data: dict
             continue
 
         for player_entry in team_players_data.get("players", []):
-            player_api_id = player_entry["player"]["id"]
+            player_api_id = player_entry.get("player", {}).get("id")
 
             if not player_api_id:
                 player_name = player_entry.get("player", {}).get("name", "N/A")
@@ -59,6 +62,7 @@ async def process_fixture_player_stats(session: AsyncSession, fixture_data: dict
             cards_stats = stats.get("cards", {})
             penalty_stats = stats.get("penalty", {})
             rating_value = games_stats.get("rating")
+            grid_position = player_grid_map.get(player_api_id)
 
             new_player_stat = FixturePlayerStat(
                 fixture_id=fixture_api_id,
@@ -70,6 +74,7 @@ async def process_fixture_player_stats(session: AsyncSession, fixture_data: dict
                 game_number=games_stats.get("number"),
                 position=games_stats.get("position"),
                 rating=float(rating_value) if rating_value is not None else None,
+                grid=grid_position,
                 game_captain=games_stats.get("captain", False),
                 game_substitute=games_stats.get("substitute", False),
                 offsides=stats.get("offsides"),
