@@ -5,10 +5,58 @@ import os
 from datetime import datetime
 from config import API_HOST, HEADERS
 from typing import Optional
+import httpx
+import asyncio
 
 
 JSON_DIR = "json"
 RATE_LIMIT_FILE = os.path.join(JSON_DIR, "rate_limit.json")
+REQUEST_INTERVAL_SECONDS = 20
+
+
+# Novas funções assincronadas
+async def get_rate_limit_status_async() -> Optional[int]:
+    """Versão assíncrona de get_rate_limit_status utilizando httpx."""
+    url = f"https://{API_HOST}/status"
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.get(url, headers=HEADERS, timeout=10.0)
+            response.raise_for_status()
+            data = response.json()
+            if "errors" in data and "requests" in data["errors"]:
+                error_msg = data["errors"]["requests"]
+                if "You have reached the request limit" in error_msg:
+                    print(
+                        "Limite de requisições detectado pela mensagem de erro da API."
+                    )
+                    return 100
+            return data.get("response", {}).get("requests", {}).get("current")
+        except Exception as e:
+            print(f"Erro ao obter o status da API (assíncrono): {e}")
+            return None
+
+
+async def wait_for_api_slot(last_page_processed: int = 0) -> bool:
+    rate_data = load_rate_limit_data()
+    current_requests = rate_data.get("current_requests", 0)
+    if current_requests >= 100:
+        print(
+            "ALERTA: Limite diário de 100 requisições atingido. Interrompendo processo."
+        )
+        return False
+
+    print(
+        f"Pausa de {REQUEST_INTERVAL_SECONDS} segundos para respeitar o rate limit..."
+    )
+    await asyncio.sleep(REQUEST_INTERVAL_SECONDS)
+
+    current_requests += 1
+    save_rate_limit_data(
+        current_requests=current_requests, last_page=last_page_processed
+    )
+    print(f"Requisição {current_requests}/100. Continuando...")
+
+    return True
 
 
 def is_rate_limit_reached():

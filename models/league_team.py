@@ -30,6 +30,12 @@ class LeagueTeam(Base):
     fixtures_away = relationship(
         "Fixture", back_populates="away_team", foreign_keys="[Fixture.away_team_id]"
     )
+    season_stats = relationship(
+        "TeamSeasonStat",
+        back_populates="league_team",
+        uselist=False,
+        cascade="all, delete-orphan",
+    )
 
     __table_args__ = (
         UniqueConstraint("league_id", "base_team_api_id", name="unique_league_team"),
