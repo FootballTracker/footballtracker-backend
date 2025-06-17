@@ -323,9 +323,6 @@ async def get_match_lineups(id: int, session: AsyncSession = Depends(get_db_sess
                 number=player_stat.jersey_number,
             ))
 
-        for line in initial_home_players:
-            line.reverse()
-
     else:
         initial_home_players.append([]) # defenders line
         initial_home_players.append([]) # midfielders line
@@ -346,7 +343,6 @@ async def get_match_lineups(id: int, session: AsyncSession = Depends(get_db_sess
                 number=player_stat.jersey_number,
             ))
         
-
     if match.lineups[away_team_lineup_index].formation:
         partial_initial_away_players.sort(key=lambda player: player.grid)
 
@@ -383,6 +379,8 @@ async def get_match_lineups(id: int, session: AsyncSession = Depends(get_db_sess
                 number=player_stat.jersey_number,
             ))
 
+
+    initial_home_players.reverse()
     initial_away_players.reverse()
 
     response: FullLineup = FullLineup(
