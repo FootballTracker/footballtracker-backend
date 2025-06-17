@@ -125,3 +125,22 @@ class MatchMinuteEvent(BaseModel):
     scoreboard: str | None
     home_team: List[MatchEvent]
     away_team: List[MatchEvent]
+
+class Coach(BaseModel):
+    id: int
+    name: str
+    image: str
+
+class LineupPlayer(BaseModel):
+    id: int
+    name: str
+    number: int
+
+class Lineup(BaseModel):
+    coach: Coach
+    initial: List[List[LineupPlayer]]
+    substitutes: List[LineupPlayer]
+
+class FullLineup(BaseModel):
+    home: Lineup
+    away: Lineup
