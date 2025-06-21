@@ -17,6 +17,8 @@ from routes import (
     user_image,
     matches,
     stats_routes,
+    players,
+    fixture
 )
 
 origins = [
@@ -51,3 +53,5 @@ app.include_router(fetch_classification_leagues.router)
 app.include_router(fetch_coaches.router)
 app.include_router(fixture_routes.router)
 app.include_router(stats_routes.router)
+app.include_router(players.router)
+app.include_router(fixture.router)
