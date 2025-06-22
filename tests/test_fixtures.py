@@ -86,13 +86,9 @@ class TestFixturesEndpoint(unittest.TestCase):
         for key in ["name", "logo_url", "score"]:
             self.assertIn(key, data["away_team"])
 
-        # player_stats should be a list with at least one item
-        self.assertIsInstance(data["player_stats"], list)
-        self.assertGreater(len(data["player_stats"]), 0)
-
         # Check keys in each player stat
         expected_player_stat_keys = {
-            "fixture_id", "name", "player_url",
+            "fixture_id", "name", "player_url", "team_logo",
             "jersey_number", "is_starter", "game_minute", "game_number",
             "position", "game_captain", "game_substitute", "offsides",
             "shots_total", "shots_on", "goals", "goals_conceded", "assists",
@@ -101,12 +97,11 @@ class TestFixturesEndpoint(unittest.TestCase):
             "duels_total", "duels_won", "dribbles_attempts", "dribbles_success",
             "fouls_drawn", "fouls_committed", "cards_yellow", "cards_red",
             "penalty_won", "penalty_commited", "penalty_scored", "penalty_missed",
-            "penalty_saved", "dribbles_past", "rating", "grid"
+            "penalty_saved", "dribbles_past", "rating", "grid",
         }
 
-        for player_stat in data["player_stats"]:
-            for key in expected_player_stat_keys:
-                self.assertIn(key, player_stat)
+        for key in expected_player_stat_keys:
+            self.assertIn(key, data["player_stats"])
 
 
 if __name__ == "__main__":

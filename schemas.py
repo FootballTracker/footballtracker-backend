@@ -223,6 +223,7 @@ class TeamSummarySchema(BaseModel):
 class PlayerStatSchema(BaseModel):
     name: str
     player_url: Optional[str]
+    team_logo: str
     fixture_id: int
     jersey_number: Optional[int]
     is_starter: Optional[bool]
@@ -264,4 +265,4 @@ class PlayerStatSchema(BaseModel):
 class FixturePlayerStatsResponse(BaseModel):
     home_team: TeamSummarySchema
     away_team: TeamSummarySchema
-    player_stats: List[PlayerStatSchema]
+    player_stats: PlayerStatSchema
