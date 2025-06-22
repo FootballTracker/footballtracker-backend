@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy import case, literal_column
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.orm import joinedload
@@ -11,28 +12,43 @@ from models.player_season_stat import PlayerSeasonStat
 from models.league_team import LeagueTeam
 from models.base_team import BaseTeam
 from models.league import League
+from models.user_favorite_player import UserFavoritePlayer
 from schemas import PlayerProfileResponse, TeamParticipation, PlayerTeamInfo, CountryInfo, TeamInfo, CompetitionInfo
 
 router = APIRouter(tags=["Players"])
 
 @router.get("/players/{player_id}", response_model=PlayerProfileResponse)
-
-@router.get("/players/{player_id}", response_model=PlayerProfileResponse)
-async def get_player_profile(player_id: int, db: AsyncSession = Depends(get_db_session)):
+async def get_player_profile(player_id: int, user_id: int | None = None, db: AsyncSession = Depends(get_db_session)):
     # Get player and their nationality/birth country
-    stmt = (
-        select(BasePlayer)
-        .options(
-            joinedload(BasePlayer.nationality),
-            joinedload(BasePlayer.birth_country),
+    if user_id:
+        stmt = (
+            select(BasePlayer, case(
+                (UserFavoritePlayer.user_id != None, True),
+                else_=False
+            ).label("is_favorite"))
+            .options(
+                joinedload(BasePlayer.nationality),
+                joinedload(BasePlayer.birth_country),
+            )
+            .outerjoin(UserFavoritePlayer, (BasePlayer.api_id == UserFavoritePlayer.player_api_id) & (UserFavoritePlayer.user_id == user_id))
+            .where(BasePlayer.api_id == player_id)
         )
-        .where(BasePlayer.api_id == player_id)
-    )
+    else:
+        stmt = (
+            select(BasePlayer, literal_column("false").label("is_favorite"))
+            .options(
+                joinedload(BasePlayer.nationality),
+                joinedload(BasePlayer.birth_country),
+            )
+            .where(BasePlayer.api_id == player_id)
+        )
     result = await db.execute(stmt)
-    player: BasePlayer | None = result.scalar_one_or_none()
+    row = result.first()
 
-    if not player:
+    if not row:
         raise HTTPException(status_code=404, detail="Player not found")
+    
+    player, is_favorite = row
 
     # Get all teams and competitions the player participated in
     stmt = (
@@ -72,15 +88,16 @@ async def get_player_profile(player_id: int, db: AsyncSession = Depends(get_db_s
         pos = (stat.position or '').lower()
         if pos in ['g', 'd', 'm', 'f']:
             position = (
-                'goalkeeper' if pos == 'g' else
-                'defensor' if pos == 'd' else
-                'mid_field' if pos == 'm' else
-                'attacker'
+                'Goleiro' if pos == 'g' else
+                'Defensor' if pos == 'd' else
+                'Meia' if pos == 'm' else
+                'Atacante'
             )
         break
 
     # Assemble response
     response = PlayerProfileResponse(
+        id=player.api_id,
         name=player.name,
         firstname=player.firstname,
         lastname=player.lastname,
@@ -99,7 +116,8 @@ async def get_player_profile(player_id: int, db: AsyncSession = Depends(get_db_s
             name=player.nationality.name,
             flag_url=player.nationality.flag_url
         ) if player.nationality else None,
-        teams=list(teams_dict.values())
+        teams=list(teams_dict.values()),
+        is_favorite=is_favorite
     )
 
     return response

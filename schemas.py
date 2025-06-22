@@ -167,6 +167,7 @@ class TeamParticipation(BaseModel):
     competitions: List[CompetitionInfo]
 
 class PlayerProfileResponse(BaseModel):
+    id: int
     name: str
     firstname: Optional[str]
     lastname: Optional[str]
@@ -180,6 +181,7 @@ class PlayerProfileResponse(BaseModel):
     birth_country: Optional[CountryInfo]
     nationality: Optional[CountryInfo]
     teams: List[TeamParticipation]
+    is_favorite: bool
 
 
 # Partidas 
