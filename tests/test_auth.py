@@ -38,7 +38,7 @@ class TestAuthEndpoints(unittest.TestCase):
         print("➡️ Status:", res.status_code)
         print("➡️ Response:", res.json())
         if res.status_code == 400:
-            self.assertEqual(res.json(), {"detail": "Username or email already exists"})
+            self.assertEqual(res.json(), {"detail": "Nome de usuário ou email já cadastrados"})
         else:
             self.assertEqual(res.status_code, 200)
 
@@ -48,7 +48,7 @@ class TestAuthEndpoints(unittest.TestCase):
         print("➡️ Status:", res.status_code)
         print("➡️ Response:", res.json())
         self.assertEqual(res.status_code, 400)
-        self.assertEqual(res.json(), {"detail": "Username or email already exists"})
+        self.assertEqual(res.json(), {"detail": "Nome de usuário ou email já cadastrados"})
 
     def test_signin_with_email(self):
         print("\nTesting signin with email only...")
@@ -80,7 +80,7 @@ class TestAuthEndpoints(unittest.TestCase):
         print("➡️ Status:", res.status_code)
         print("➡️ Response:", res.json())
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(res.json()["detail"], "Invalid email or password")
+        self.assertEqual(res.json()["detail"], "Email ou senha inválidos")
 
 
 # This test will create a user, try to update and than delete the user
@@ -114,7 +114,7 @@ class TestUserUpdateFlow(unittest.TestCase):
             "username": new_username
         })
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.json()["message"], "User updated successfully.")
+        self.assertEqual(res.json()["message"], "Dados atualizados com sucesso")
 
         # Verify login still works with new username
         login_res = requests.post(f"{BASE_URL}/signin", json={
@@ -137,7 +137,7 @@ class TestUserUpdateFlow(unittest.TestCase):
             "email": new_email
         })
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.json()["message"], "User updated successfully.")
+        self.assertEqual(res.json()["message"], "Dados atualizados com sucesso")
 
         # Verify login with new email
         login_res = requests.post(f"{BASE_URL}/signin", json={
@@ -160,7 +160,7 @@ class TestUserUpdateFlow(unittest.TestCase):
             "new_password": new_password
         })
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.json()["message"], "User updated successfully.")
+        self.assertEqual(res.json()["message"], "Dados atualizados com sucesso")
 
         # Verify login with new password
         login_res = requests.post(f"{BASE_URL}/signin", json={
@@ -180,7 +180,7 @@ class TestUserUpdateFlow(unittest.TestCase):
             "password": self.original_user["password"]
         })
         self.assertEqual(res.status_code, 200)
-        self.assertIn("deleted successfully", res.json()["message"])
+        self.assertIn("excluído com sucesso", res.json()["message"])
 
 
 
