@@ -268,3 +268,19 @@ class FixturePlayerStatsResponse(BaseModel):
     home_team: TeamSummarySchema
     away_team: TeamSummarySchema
     player_stats: PlayerStatSchema
+
+
+# Rankings
+
+
+class Rank(BaseModel):
+    id: str  # player id
+    name: str
+    value: float
+    teamId: str
+
+
+class Rankings(BaseModel):
+    goals: List[Rank]
+    assists: List[Rank]
+    avgScores: List[Rank]
