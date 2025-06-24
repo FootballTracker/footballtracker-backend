@@ -9,54 +9,112 @@ from models.league_team import LeagueTeam
 from models.base_team import BaseTeam
 from models.fixture_lineup import FixtureLineup
 from models.fixture_player_stat import FixturePlayerStat
+from schemas import UserFavoriteTeamData
 from models.user import User
 from collections import defaultdict
 
 router = APIRouter(tags=["Teams"])
 
 @router.get("/teams")
-async def get_teams(user_id: int | None = None, session: AsyncSession = Depends(get_db_session)):
-
-    favorite_team = None
-
-    if user_id:
-        result = await session.execute(
-            select(User)
-            .options(joinedload(User.favorite_team))
-            .where(User.id == user_id)
-        )
-
-        user = result.scalar_one_or_none()
-
-        favorite_team = user.favorite_team if user else None
+async def get_teams(user_id: int | None = None, text: str | None = None, session: AsyncSession = Depends(get_db_session)):
     
-    if(favorite_team):
-        result = await session.execute(
-            select(BaseTeam).where(BaseTeam.api_id != favorite_team.api_id)
-        )
-    else:
-        result = await session.execute(
-            select(BaseTeam)
-        )
 
-    teams = result.scalars().all()
+    if text:
+        stmt = select(BaseTeam).where(BaseTeam.name.icontains(text.lower()))
+
+        result = await session.execute(stmt)
+        teams = result.scalars().all()
+
+        response = {
+            "all_teams": [
+                {
+                    "id": team.api_id,
+                    "name": team.name,
+                    "logo": team.logo_url,
+                    "is_favorite": False
+                }
+                for team in teams
+            ]
+        }
+
+    else:
+        favorite_team = None
+
+        if user_id:
+            result = await session.execute(
+                select(User)
+                .options(joinedload(User.favorite_team))
+                .where(User.id == user_id)
+            )
+
+            user = result.scalar_one_or_none()
+
+            favorite_team = user.favorite_team if user else None
+        
+        if(favorite_team):
+            result = await session.execute(
+                select(BaseTeam).where(BaseTeam.api_id != favorite_team.api_id)
+            )
+        else:
+            result = await session.execute(
+                select(BaseTeam)
+            )
+
+        teams = result.scalars().all()
+
+        response = {
+            "favorite_team": [{
+                "id": favorite_team.api_id,
+                "name": favorite_team.name,
+                "logo": favorite_team.logo_url,
+                "is_favorite": True
+            }] if favorite_team else [],
+            "all_teams": [
+                {
+                    "id": team.api_id,
+                    "name": team.name,
+                    "logo": team.logo_url,
+                    "is_favorite": False
+                }
+                for team in teams
+            ]
+        }
+
+    return response
+
+@router.post("/team/favorite")
+async def favorite_team(data: UserFavoriteTeamData, session: AsyncSession = Depends(get_db_session)):
+
+    result = await session.execute(
+        select(User)
+        .where(User.id == data.user_id)
+    )
+
+    user = result.scalar_one_or_none()
+
+    if not user:
+        raise HTTPException(404, detail="Usuário não encontrado")
+    
+    result = await session.execute(
+        select(BaseTeam)
+        .where(BaseTeam.api_id == data.team_id)
+    )
+
+    team = result.scalar_one_or_none()
+
+    if not team:
+        raise HTTPException(404, detail="Time não encontrado")
+
+
+    if user.favorite_team_api_id == data.team_id:
+        user.favorite_team_api_id = None
+    else:
+        user.favorite_team_api_id = data.team_id
+
+    await session.commit()
 
     return {
-        "favorite_team": {
-            "id": favorite_team.api_id,
-            "name": favorite_team.name,
-            "logo": favorite_team.logo_url,
-            "is_favorite": True
-        } if favorite_team else [],
-        "teams": [
-            {
-                "id": team.api_id,
-                "name": team.name,
-                "logo": team.logo_url,
-                "is_favorite": False
-            }
-            for team in teams
-        ]
+        "message": "Time favoritado/desfavoritado"
     }
 
 
