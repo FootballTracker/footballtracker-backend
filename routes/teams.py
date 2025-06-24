@@ -446,13 +446,11 @@ async def get_team_leagues(team_id: int, league_api_id: int, season: int, sessio
         total=round((avg_home+avg_away)/2, 2)
     ))
 
-    season: TeamSeasonStat = league_team.season_stats
-
-    split = season.biggest_win.split(" ")
+    split = league_team.season_stats.biggest_win.split(" ")
     biggest_win_home = split[0] if len(split) > 4 else "Desconhecida"
     biggest_win_away = split[3] if len(split) > 4 else "Desconhecida"
 
-    split = season.biggest_loss.split(" ")
+    split = league_team.season_stats.biggest_loss.split(" ")
     biggest_loss_home = split[0] if len(split) > 4 else "Desconhecida"
     biggest_loss_away = split[3] if len(split) > 4 else "Desconhecida"
     general_stats = TeamLeagueGeneralStats(
@@ -460,26 +458,28 @@ async def get_team_leagues(team_id: int, league_api_id: int, season: int, sessio
         biggestWinAway=biggest_win_away,
         biggestLoseHome=biggest_loss_home,
         biggestLoseAway=biggest_loss_away,
-        mostDrawsSeq=season.biggest_streak_draws,
+        mostDrawsSeq=league_team.season_stats.biggest_streak_draws,
         mostGoalsAgainstAway=most_goals_against_away,
         mostGoalsAgainstHome=most_goals_against_home,
         mostGoalsForAway=most_goals_for_away,
         mostGoalsForHome=most_goals_for_home,
-        mostLosesSeq=season.biggest_streak_loses,
-        mostWinsSeq=season.biggest_streak_wins,
-        penaltyGoals=season.penalty_scored,
-        penaltyMisses=season.penalty_missed
+        mostLosesSeq=league_team.season_stats.biggest_streak_loses,
+        mostWinsSeq=league_team.season_stats.biggest_streak_wins,
+        penaltyGoals=league_team.season_stats.penalty_scored,
+        penaltyMisses=league_team.season_stats.penalty_missed
     )
 
     formations: List[TeamLeagueFormations] = [
         TeamLeagueFormations(
             formation=lineup["formation"],
             times=lineup["played"]
-        ) for lineup in season.lineups
+        ) for lineup in league_team.season_stats.lineups
     ]
 
+    form = league_team.season_stats.form.upper().replace('W', 'V').replace('D', 'E').replace('L', 'D')
+
     return TeamLeagueStatistics(
-        form=season.form,
+        form=form,
         formations=formations,
         infos=infos,
         statistics=general_stats
