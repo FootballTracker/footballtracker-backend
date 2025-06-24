@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, case, literal_column
+from sqlalchemy import func, select, case, literal_column
 from sqlalchemy.orm import joinedload, selectinload
 from models.league import League
 from database.database import get_db_session
@@ -326,158 +326,164 @@ async def get_team_leagues(team_id: int, session: AsyncSession = Depends(get_db_
 
 @router.get("/team/{team_id}/league/{league_api_id}", response_model=TeamLeagueStatistics)
 async def get_team_leagues(team_id: int, league_api_id: int, season: int, session: AsyncSession = Depends(get_db_session)):
-    result = await session.execute(
-        select(LeagueTeam)
-        .join(League, League.id == LeagueTeam.league_id)
-        .options(
-            joinedload(LeagueTeam.season_stats),
-            selectinload(LeagueTeam.fixtures_home),
-            selectinload(LeagueTeam.fixtures_away)
-        )
-        .where((League.api_id == league_api_id) & (League.season == season) & (LeagueTeam.base_team_api_id == team_id))
+    home_query = select(
+        func.count().label("matches"),
+        func.sum(case((Fixture.home_team_score_goals > Fixture.away_team_score_goals, 1), else_=0)).label("wins"),
+        func.sum(case((Fixture.home_team_score_goals == Fixture.away_team_score_goals, 1), else_=0)).label("draws"),
+        func.sum(case((Fixture.home_team_score_goals < Fixture.away_team_score_goals, 1), else_=0)).label("losses"),
+        func.sum(Fixture.home_team_score_goals).label("goals_for"),
+        func.sum(Fixture.away_team_score_goals).label("goals_against"),
+        func.max(Fixture.home_team_score_goals).label("most_goals_for"),
+        func.max(Fixture.away_team_score_goals).label("most_goals_against")
+    ).join(League, Fixture.league_id == League.id).where(
+        Fixture.home_team_id == LeagueTeam.id,
+        League.api_id == league_api_id,
+        League.season == season,
+        LeagueTeam.base_team_api_id == team_id
     )
 
-    league_team = result.scalar_one_or_none()
+    away_query = select(
+        func.count().label("matches"),
+        func.sum(case((Fixture.away_team_score_goals > Fixture.home_team_score_goals, 1), else_=0)).label("wins"),
+        func.sum(case((Fixture.away_team_score_goals == Fixture.home_team_score_goals, 1), else_=0)).label("draws"),
+        func.sum(case((Fixture.away_team_score_goals < Fixture.home_team_score_goals, 1), else_=0)).label("losses"),
+        func.sum(Fixture.away_team_score_goals).label("goals_for"),
+        func.sum(Fixture.home_team_score_goals).label("goals_against"),
+        func.max(Fixture.away_team_score_goals).label("most_goals_for"),
+        func.max(Fixture.home_team_score_goals).label("most_goals_against")
+    ).join(League, Fixture.league_id == League.id).where(
+        Fixture.away_team_id == LeagueTeam.id,
+        League.api_id == league_api_id,
+        League.season == season,
+        LeagueTeam.base_team_api_id == team_id
+    )
 
-    if not league_team:
+    stats_query = select(
+        TeamSeasonStat
+    ).join(
+        LeagueTeam, TeamSeasonStat.league_team_id == LeagueTeam.id
+    ).join(
+        League, League.id == LeagueTeam.league_id
+    ).where(
+        (League.api_id == league_api_id) & (League.season == season) & (LeagueTeam.base_team_api_id == team_id)
+    )
+    
+
+    home_result = await session.execute(home_query)
+    home_stats = home_result.one_or_none()
+
+    away_result = await session.execute(away_query)
+    away_stats = away_result.one_or_none()
+
+    stats_result = await session.execute(stats_query)
+    stats = stats_result.scalar_one_or_none()
+
+    if not home_stats and not away_stats and not stats_result:
         raise HTTPException(404, detail={
             "message": "Estatísticas do time indisponíveis para essa liga",
             "ok": True
         })
 
-    matches = [0, 0]
-    victories = [0, 0]
-    draws = [0, 0]
-    loses = [0, 0]
-    gp = [0, 0]
-    gc = [0, 0]
-    most_goals_for_home = 0
-    most_goals_for_away = 0
-    most_goals_against_home = 0
-    most_goals_against_away = 0
-
-    for match in league_team.fixtures_home:
-        matches[0] += 1
-        if match.home_team_score_goals > match.away_team_score_goals:
-            victories[0] += 1
-        elif match.home_team_score_goals == match.away_team_score_goals:
-            draws[0] += 1
-        else:
-            loses[0] += 1
-        gp[0] += match.home_team_score_goals
-        gc[0] += match.away_team_score_goals
-
-        if match.home_team_score_goals > most_goals_for_home: most_goals_for_home = match.home_team_score_goals
-        if match.away_team_score_goals > most_goals_against_home: most_goals_against_home = match.away_team_score_goals
-
-    for match in league_team.fixtures_away:
-        matches[1] += 1
-        if match.home_team_score_goals < match.away_team_score_goals:
-            victories[1] += 1
-        elif match.home_team_score_goals == match.away_team_score_goals:
-            draws[1] += 1
-        else:
-            loses[1] += 1
-        gp[1] += match.away_team_score_goals
-        gc[1] += match.home_team_score_goals
-
-        if match.home_team_score_goals > most_goals_against_away: most_goals_against_away = match.home_team_score_goals
-        if match.away_team_score_goals > most_goals_for_away: most_goals_for_away = match.away_team_score_goals
-
     infos = []
 
-    infos.append(TeamLeagueStat(
-        name="Partidas",
-        home=matches[0],
-        away=matches[1],
-        total=matches[0]+matches[1]
-    ))
+    if home_stats and away_stats:
+        infos.append(TeamLeagueStat(
+            name="Partidas",
+            home=home_stats.matches,
+            away=away_stats.matches,
+            total=home_stats.matches+away_stats.matches
+        ))
 
-    infos.append(TeamLeagueStat(
-        name="Vitórias",
-        home=victories[0],
-        away=victories[1],
-        total=victories[0]+victories[1]
-    ))
+        infos.append(TeamLeagueStat(
+            name="Vitórias",
+            home=home_stats.wins,
+            away=away_stats.wins,
+            total=home_stats.wins+away_stats.wins
+        ))
 
-    infos.append(TeamLeagueStat(
-        name="Empates",
-        home=draws[0],
-        away=draws[1],
-        total=draws[0]+draws[1]
-    ))
+        infos.append(TeamLeagueStat(
+            name="Empates",
+            home=home_stats.draws,
+            away=away_stats.draws,
+            total=home_stats.draws+away_stats.draws
+        ))
 
-    infos.append(TeamLeagueStat(
-        name="Derrotas",
-        home=loses[0],
-        away=loses[1],
-        total=loses[0]+loses[1]
-    ))
+        infos.append(TeamLeagueStat(
+            name="Derrotas",
+            home=home_stats.losses,
+            away=away_stats.losses,
+            total=home_stats.losses+away_stats.losses
+        ))
 
-    infos.append(TeamLeagueStat(
-        name="GP",
-        home=gp[0],
-        away=gp[1],
-        total=gp[0]+gp[1]
-    ))
+        infos.append(TeamLeagueStat(
+            name="GP",
+            home=home_stats.goals_for,
+            away=away_stats.goals_for,
+            total=home_stats.goals_for+away_stats.goals_for
+        ))
 
-    avg_home = round(gp[0]/matches[0], 2) if matches[0] > 0 else 0
-    avg_away = round(gp[1]/matches[1], 2) if matches[1] > 0 else 0
-    infos.append(TeamLeagueStat(
-        name="Média GP",
-        home=avg_home,
-        away=avg_away,
-        total=round((avg_home+avg_away)/2, 2)
-    ))
+        avg_home = round(home_stats.goals_for/home_stats.matches, 2) if home_stats.matches > 0 else 0
+        avg_away = round(away_stats.goals_for/away_stats.matches, 2) if away_stats.matches > 0 else 0
+        infos.append(TeamLeagueStat(
+            name="Média GP",
+            home=avg_home,
+            away=avg_away,
+            total=round((avg_home+avg_away)/2, 2)
+        ))
 
-    infos.append(TeamLeagueStat(
-        name="GC",
-        home=gc[0],
-        away=gc[1],
-        total=gc[0]+gc[1]
-    ))
+        infos.append(TeamLeagueStat(
+            name="GC",
+            home=home_stats.goals_against,
+            away=away_stats.goals_against,
+            total=home_stats.goals_against+away_stats.goals_against
+        ))
 
-    avg_home = round(gc[0]/matches[0], 2) if matches[0] > 0 else 0
-    avg_away = round(gc[1]/matches[1], 2) if matches[1] > 0 else 0
-    infos.append(TeamLeagueStat(
-        name="Média GC",
-        home=avg_home,
-        away=avg_away,
-        total=round((avg_home+avg_away)/2, 2)
-    ))
+        avg_home = round(home_stats.goals_against/home_stats.matches, 2) if home_stats.matches > 0 else 0
+        avg_away = round(away_stats.goals_against/away_stats.matches, 2) if away_stats.matches > 0 else 0
+        infos.append(TeamLeagueStat(
+            name="Média GC",
+            home=avg_home,
+            away=avg_away,
+            total=round((avg_home+avg_away)/2, 2)
+        ))
 
-    split = league_team.season_stats.biggest_win.split(" ")
-    biggest_win_home = split[0] if len(split) > 4 else "Desconhecida"
-    biggest_win_away = split[3] if len(split) > 4 else "Desconhecida"
 
-    split = league_team.season_stats.biggest_loss.split(" ")
-    biggest_loss_home = split[0] if len(split) > 4 else "Desconhecida"
-    biggest_loss_away = split[3] if len(split) > 4 else "Desconhecida"
-    general_stats = TeamLeagueGeneralStats(
-        biggestWinHome=biggest_win_home,
-        biggestWinAway=biggest_win_away,
-        biggestLoseHome=biggest_loss_home,
-        biggestLoseAway=biggest_loss_away,
-        mostDrawsSeq=league_team.season_stats.biggest_streak_draws,
-        mostGoalsAgainstAway=most_goals_against_away,
-        mostGoalsAgainstHome=most_goals_against_home,
-        mostGoalsForAway=most_goals_for_away,
-        mostGoalsForHome=most_goals_for_home,
-        mostLosesSeq=league_team.season_stats.biggest_streak_loses,
-        mostWinsSeq=league_team.season_stats.biggest_streak_wins,
-        penaltyGoals=league_team.season_stats.penalty_scored,
-        penaltyMisses=league_team.season_stats.penalty_missed
-    )
+    form = ""
+    formations = []
+    general_stats = None
+    if stats:
+        split = stats.biggest_win.split(" ")
+        biggest_win_home = split[0] if len(split) > 4 else "Desconhecida"
+        biggest_win_away = split[3] if len(split) > 4 else "Desconhecida"
 
-    formations: List[TeamLeagueFormations] = [
-        TeamLeagueFormations(
-            formation=lineup["formation"],
-            times=lineup["played"]
-        ) for lineup in league_team.season_stats.lineups
-    ]
+        split = stats.biggest_loss.split(" ")
+        biggest_loss_home = split[0] if len(split) > 4 else "Desconhecida"
+        biggest_loss_away = split[3] if len(split) > 4 else "Desconhecida"
+        general_stats = TeamLeagueGeneralStats(
+            biggestWinHome=biggest_win_home,
+            biggestWinAway=biggest_win_away,
+            biggestLoseHome=biggest_loss_home,
+            biggestLoseAway=biggest_loss_away,
+            mostDrawsSeq=stats.biggest_streak_draws,
+            mostGoalsAgainstAway=away_stats.most_goals_against,
+            mostGoalsAgainstHome=home_stats.most_goals_against,
+            mostGoalsForAway=away_stats.most_goals_for,
+            mostGoalsForHome=home_stats.most_goals_for,
+            mostLosesSeq=stats.biggest_streak_loses,
+            mostWinsSeq=stats.biggest_streak_wins,
+            penaltyGoals=stats.penalty_scored,
+            penaltyMisses=stats.penalty_missed
+        )
 
-    form = league_team.season_stats.form.upper().replace('W', 'V').replace('D', 'E').replace('L', 'D')
+        formations: List[TeamLeagueFormations] = [
+            TeamLeagueFormations(
+                formation=lineup["formation"],
+                times=lineup["played"]
+            ) for lineup in stats.lineups
+        ]
 
+        form = stats.form.upper().replace('W', 'V').replace('D', 'E').replace('L', 'D')
+    
     return TeamLeagueStatistics(
         form=form,
         formations=formations,

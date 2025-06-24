@@ -97,7 +97,7 @@ class TeamLeagueFormations(BaseModel):
 class TeamLeagueStatistics(BaseModel):
     infos: List[TeamLeagueStat]
     form: str
-    statistics: TeamLeagueGeneralStats
+    statistics: TeamLeagueGeneralStats | None
     formations: List[TeamLeagueFormations]
 
 # Players schemas
