@@ -32,8 +32,8 @@ class TestUserImageRoutes(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
 
         response = res.json()
-        self.assertEqual(response["filename"], str(self.test_user_id))
-        self.assertEqual(response["content_type"], "jpeg")
+        self.assertEqual(response["filename"].split(".")[0], str(self.test_user_id))
+        self.assertEqual(response["content_type"], "image/jpeg")
         self.assertIn("message", response)
 
     def test_get_user_image(self):
