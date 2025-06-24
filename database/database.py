@@ -15,7 +15,7 @@ DATABASE_URL = (
 )
 
 
-ssl_context = ssl.create_default_context(cafile="database/ca.pem")
+# ssl_context = ssl.create_default_context(cafile="database/ca.pem")
 
 Base = declarative_base()
 
