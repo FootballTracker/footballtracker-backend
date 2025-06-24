@@ -5,6 +5,7 @@ from models.user import User
 from schemas import UserCreate, UserResponse, UserLogin, UserUpdate
 from database.database import get_db_session
 from utils.security import hash_password, verify_password
+from routes.user_image import image_exists
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -21,7 +22,7 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
     if existing_user:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Username or email already exists",
+            detail="Nome de usuário ou email já cadastrados",
         )
 
     hashed_pw = hash_password(user_data.password)
@@ -40,7 +41,8 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
     return {
         "id":  new_user.id,
         "username": new_user.username,
-        "email": new_user.email
+        "email": new_user.email,
+        "image": False
     }
 
 
@@ -51,19 +53,25 @@ async def signin(user_data: UserLogin, db: AsyncSession = Depends(get_db_session
         or_(User.username == user_data.username, User.email == user_data.username)
     )
 
-
     result = await db.execute(stmt)
     user = result.scalar_one_or_none()
 
     if not user or not verify_password(user_data.password, user.password):
         raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password"
+            status_code=status.HTTP_401_UNAUTHORIZED, detail="Email ou senha inválidos"
         )
+    
+    ext = image_exists(f'{user.id}')
+    
+    image = False
+    if ext:
+        image = True
 
     return {
         "id": user.id,
         "username": user.username,
-        "email": user.email
+        "email": user.email,
+        "image": image
     }
 
 
@@ -77,13 +85,13 @@ async def user_delete(user_data: UserLogin, db: AsyncSession = Depends(get_db_se
 
     # TO BE DECIDED IF MAKES SENSE
     if not user or not verify_password(user_data.password, user.password):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid user_id or password")
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Senha ou id inválidos")
 
 
     await db.delete(user)
     await db.commit()
 
-    return {"message": f"User {user.username} has been deleted successfully."}
+    return {"message": f"Usuário {user.username} excluído com sucesso."}
 
 @router.put("/update_user")
 async def update_user(
@@ -101,21 +109,21 @@ async def update_user(
     user = result.scalar_one_or_none()
 
     if not user:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Usuário não encontrado")
 
     updated = False
 
     # Handle username or email update
     if username or email:
         if not password or not verify_password(password, user.password):
-            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid password for updating username/email")
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Senha inválida")
 
         # Check for uniqueness if changing username/email
         if username and username != user.username:
             stmt = select(User).where(User.username == username)
             res = await db.execute(stmt)
             if res.scalar_one_or_none():
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Username already taken")
+                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Nome de usuário já utilizado")
             user.username = username
             updated = True
 
@@ -123,21 +131,21 @@ async def update_user(
             stmt = select(User).where(User.email == email)
             res = await db.execute(stmt)
             if res.scalar_one_or_none():
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email already taken")
+                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email já utilizado")
             user.email = email
             updated = True
 
     # Handle password update
     if new_password:
         if not password or not verify_password(password, user.password):
-            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid password for updating password")
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Senha inválida")
         user.password = hash_password(new_password)
         updated = True
 
     if not updated:
-        return {"message": "No updates were made."}
+        return {"message": "Nenhuma atualização feita"}
 
     await db.commit()
     await db.refresh(user)
 
-    return {"message": "User updated successfully."}
+    return {"message": "Dados atualizados com sucesso"}

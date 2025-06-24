@@ -22,6 +22,7 @@ from models import (
     fixture_event,
     user_favorite_league,
     user,
+    team_season_stat,
 )
 
 import asyncio

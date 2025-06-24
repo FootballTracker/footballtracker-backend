@@ -28,6 +28,7 @@ from .fixture_player_stat import FixturePlayerStat  # Referencia Fixture
 from .fixture_statistic import FixtureStatistic  # Referencia Fixture
 
 from .player_season_stat import PlayerSeasonStat  # Referencia BasePlayer, League
+from .team_season_stat import TeamSeasonStat  # Referencia LeagueTeam
 
 __all__ = [
     "Country",
@@ -46,4 +47,6 @@ __all__ = [
     "FixturePlayerStat",
     "FixtureStatistic",
     "PlayerSeasonStat",
+    "TeamSeasonStat",
+    "UserFavoritePlayer",
 ]

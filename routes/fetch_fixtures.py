@@ -5,7 +5,7 @@ import json
 from integrations.save_json import fetch_and_save_to_json, is_rate_limit_reached
 from integrations.fixtures_processor import process_fixtures_json_and_save_to_db
 
-router = APIRouter(prefix="/fixtures", tags=["Fixtures"])
+router = APIRouter(prefix="/fixtures", tags=["Fixtures Fetch"])
 
 
 @router.post("/fetch")
