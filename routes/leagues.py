@@ -1,74 +1,99 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, case, literal_column
+from sqlalchemy import select, case, literal_column, insert
 from sqlalchemy.orm import joinedload
 from database.database import get_db_session
-from schemas import LeagueResponse, MatchResponse, TeamInfo, Standing, SeasonResponse
+from schemas import LeagueResponse, MatchResponse, TeamInfo, Standing, SeasonResponse, UserFavoriteLeagueData
 from typing import List, Dict, Union
 from models.league import League
 from models.user_favorite_league import UserFavoriteLeague
 from models.fixture import Fixture
 from models.league_team import LeagueTeam
 from models.league_classification import LeagueClassification
+from models.user import User
 
 router = APIRouter(tags=["Leagues"])
 
 
 @router.get("/leagues", response_model=Dict[str, List[LeagueResponse]])
 async def get_leagues(
-    user_id: int | None = None, db: AsyncSession = Depends(get_db_session)
+    user_id: int | None = None, text: str | None = None, db: AsyncSession = Depends(get_db_session)
 ):
 
-    favorite_league_ids = set()
-    favorite_leagues: list[League] = []
+    if text:
+        stmt = select(League).where(League.name.icontains(text.lower()))
 
-    if user_id:
-        stmt = (
-            select(League)
-            .join(UserFavoriteLeague, League.api_id == UserFavoriteLeague.api_league_id)
-            .where(UserFavoriteLeague.user_id == user_id)
-        )
         result = await db.execute(stmt)
-        favorite_leagues = result.scalars().all()
-        favorite_league_ids = {league.id for league in favorite_leagues}
+        leagues = result.scalars().all()
 
-    if favorite_league_ids:
-        stmt = select(League).where(~League.id.in_(favorite_league_ids))
-    else:
-        stmt = select(League)
+        all_leagues_response = [
+            LeagueResponse(
+                id=league.id,
+                name=league.name,
+                season=league.season,
+                logo_url=league.logo_url,
+                api_id=league.api_id,
+                is_favorite=False
+            )
+            for league in leagues
+        ]
+
+        response = {
+            "all_leagues": all_leagues_response
+        }
         
-    result = await db.execute(stmt)
-    leagues = result.scalars().all()
+    else:
+        favorite_league_ids = set()
+        favorite_leagues: list[League] = []
 
-    favorite_leagues_response = [
-        LeagueResponse(
-            id=league.id,
-            name=league.name,
-            season=league.season,
-            logo_url=league.logo_url,
-            api_id=league.api_id,
-            is_favorite=True
-        )
-        for league in favorite_leagues
-    ]
+        if user_id:
+            stmt = (
+                select(League)
+                .join(UserFavoriteLeague, League.api_id == UserFavoriteLeague.api_league_id)
+                .where(UserFavoriteLeague.user_id == user_id)
+            )
+            result = await db.execute(stmt)
+            favorite_leagues = result.scalars().all()
+            favorite_league_ids = {league.id for league in favorite_leagues}
+            
+        if favorite_league_ids:
+            stmt = select(League).where(~League.id.in_(favorite_league_ids))
+        else:
+            stmt = select(League)
+            
+        result = await db.execute(stmt)
+        leagues = result.scalars().all()
 
-    all_leagues_response = [
-        LeagueResponse(
-            id=league.id,
-            name=league.name,
-            season=league.season,
-            logo_url=league.logo_url,
-            api_id=league.api_id,
-            is_favorite=False
-        )
-        for league in leagues
-    ]
+        favorite_leagues_response = [
+            LeagueResponse(
+                id=league.id,
+                name=league.name,
+                season=league.season,
+                logo_url=league.logo_url,
+                api_id=league.api_id,
+                is_favorite=True
+            )
+            for league in favorite_leagues
+        ]
 
-    return {
-        "favorite_leagues": favorite_leagues_response,
-        "all_leagues": all_leagues_response,
-    }
+        all_leagues_response = [
+            LeagueResponse(
+                id=league.id,
+                name=league.name,
+                season=league.season,
+                logo_url=league.logo_url,
+                api_id=league.api_id,
+                is_favorite=False
+            )
+            for league in leagues
+        ]
 
+        response = {
+            "favorite_leagues": favorite_leagues_response,
+            "all_leagues": all_leagues_response
+        }
+
+    return response
 
 @router.get("/favorite_leagues", response_model=List[LeagueResponse])
 async def get_leagues(user_id: int, db: AsyncSession = Depends(get_db_session)):
@@ -96,6 +121,49 @@ async def get_leagues(user_id: int, db: AsyncSession = Depends(get_db_session)):
     ]
 
     return favorite_leagues_response
+
+@router.post("/league/favorite")
+async def favorite_league(data: UserFavoriteLeagueData, session: AsyncSession = Depends(get_db_session)):
+
+    result = await session.execute(
+        select(User)
+        .where(User.id == data.user_id)
+    )
+
+    user = result.scalar_one_or_none()
+
+    if not user:
+        raise HTTPException(404, detail="Usuário não encontrado")
+    
+    result = await session.execute(
+        select(League)
+        .where(League.api_id == data.api_league_id)
+    )
+
+    league = result.scalar_one_or_none()
+
+    if not league:
+        raise HTTPException(404, detail="Liga não encontrada")
+    
+
+    result = await session.execute(
+        select(UserFavoriteLeague)
+        .where((UserFavoriteLeague.user_id == data.user_id) & (UserFavoriteLeague.api_league_id == data.api_league_id))
+    )
+
+    favorite_league = result.scalars().all()
+
+    if favorite_league:
+        await session.delete(favorite_league[0])
+    else:
+        await session.execute(
+            insert(UserFavoriteLeague).values(user_id = data.user_id, api_league_id = data.api_league_id)
+        )
+    await session.commit()
+
+    return {
+        "message": "Liga favoritada/desfavoritada"
+    }
 
 @router.get("/league", response_model=Dict[str, Union[List[SeasonResponse], LeagueResponse]])
 async def get_league(
