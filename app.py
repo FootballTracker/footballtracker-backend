@@ -7,6 +7,7 @@ from routes import (
     fetch_leagues,
     fetch_teams,
     fetch_venues,
+    items,
     link_teams,
     fetch_players,
     leagues,
@@ -15,7 +16,6 @@ from routes import (
     fetch_coaches,
     fixture_routes,
     user_image,
-    matches,
     stats_routes,
     players,
     fixture
@@ -29,18 +29,20 @@ origins = [
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# app.add_middleware(
+#   CORSMiddleware,
+#   allow_origins=origins,
+#   allow_credentials=True,
+#   allow_methods=["*"],
+#   allow_headers=["*"]
+# )
 
+app.include_router(items.router)
 app.include_router(auth.router)
 app.include_router(leagues.router)
 app.include_router(teams.router)
-app.include_router(matches.router)
+app.include_router(players.router)
+app.include_router(fixture.router)
 app.include_router(user_image.router)
 app.include_router(fetch_countries.router)
 app.include_router(fetch_venues.router)
@@ -53,5 +55,3 @@ app.include_router(fetch_classification_leagues.router)
 app.include_router(fetch_coaches.router)
 app.include_router(fixture_routes.router)
 app.include_router(stats_routes.router)
-app.include_router(players.router)
-app.include_router(fixture.router)
