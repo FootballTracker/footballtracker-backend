@@ -2,6 +2,8 @@ from pydantic import BaseModel, EmailStr
 from typing import Optional, Union, List, Literal, Dict
 from datetime import datetime
 
+# User
+
 class UserCreate(BaseModel):
     username: str
     email: EmailStr
@@ -20,6 +22,28 @@ class UserLogin(BaseModel):
     username: Optional[Union[EmailStr, str]] = None
     password: str
 
+class UserUpdate(BaseModel):
+    id: int
+    username: Optional[str]
+    email: Optional[str]
+    password: Optional[str]
+    old_password: Optional[str]
+
+class UserFavoriteLeagueData(BaseModel):
+    user_id: int
+    api_league_id: int
+
+class UserFavoriteTeamData(BaseModel):
+    user_id: int
+    team_id: int
+
+class UserFavoritePlayerData(BaseModel):
+    user_id: int
+    player_id: int
+
+
+# League
+
 class LeagueResponse(BaseModel):
     id: int
     name: str
@@ -32,24 +56,129 @@ class SeasonResponse(BaseModel):
     id: int
     season: int
 
+# Team
+
 class TeamInfo(BaseModel):
     id: int | None
     score: int
     logo: str | None 
     name: str
 
+class TeamLeagues(BaseModel):
+    api_id: str
+    name: str
+    seasons: List[int]
+
+class TeamLeagueStat(BaseModel):
+    name: str
+    home: float
+    away: float
+    total: float
+
+class TeamLeagueGeneralStats(BaseModel):
+    mostWinsSeq: int
+    mostDrawsSeq: int
+    mostLosesSeq: int
+    biggestWinHome: str
+    biggestWinAway: str
+    biggestLoseHome: str
+    biggestLoseAway: str
+    mostGoalsForHome: int
+    mostGoalsForAway: int
+    mostGoalsAgainstHome: int
+    mostGoalsAgainstAway: int
+    penaltyGoals: int
+    penaltyMisses: int
+
+class TeamLeagueFormations(BaseModel):
+    formation: str
+    times: int
+
+class TeamLeagueStatistics(BaseModel):
+    infos: List[TeamLeagueStat]
+    form: str
+    statistics: TeamLeagueGeneralStats
+    formations: List[TeamLeagueFormations]
+
+# Players schemas
+
+class PlayerResponse(BaseModel):
+    id: int
+    name: str
+    is_favorite: bool
+    photo: str
+
+class CountryInfo(BaseModel):
+    name: str
+    flag_url: Optional[str] = None
+
+class PlayerTeamInfo(BaseModel):
+    id: int
+    name: str
+    logo: str | None
+
+class CompetitionInfo(BaseModel):
+    id: int
+    name: str
+    logo: str
+
+class TeamParticipation(BaseModel):
+    team: PlayerTeamInfo
+    competitions: List[CompetitionInfo]
+
+class PlayerProfileResponse(BaseModel):
+    id: int
+    name: str
+    firstname: Optional[str]
+    lastname: Optional[str]
+    birth_date: Optional[datetime]
+    birth_place: Optional[str]
+    height: Optional[str]
+    weight: Optional[str]
+    injured: Optional[bool]
+    photo_url: Optional[str]
+    position: str
+    birth_country: Optional[CountryInfo]
+    nationality: Optional[CountryInfo]
+    teams: List[TeamParticipation]
+    is_favorite: bool
+
+
+# Partidas 
+
+class CountrySchema(BaseModel):
+    name: str
+    flag_url: Optional[str]
+
+class LeagueSchema(BaseModel):
+    name: str
+    logo_url: Optional[str]
+    season: str
+    round: str
+    country: CountrySchema
+
+class MatchInfoSchema(BaseModel):
+    referee: Optional[str]
+    stadium: Optional[str]
+    city: Optional[str]
+    status: Optional[str]
+    date: Optional[str]
+    league: LeagueSchema
+
+class TeamStatsSchema(BaseModel):
+    name: str
+    logo_url: Optional[str]
+    stats: Dict[str, Optional[int | str | float]]
+
+class MatchStatisticsResponse(BaseModel):
+    information: MatchInfoSchema
+    statistics: Dict[str, TeamStatsSchema]
+
 class MatchResponse(BaseModel):
     id: int
     home_team: TeamInfo
     away_team: TeamInfo
     date: datetime
-
-class UserUpdate(BaseModel):
-    id: int
-    username: Optional[str]
-    email: Optional[str]
-    password: Optional[str]
-    old_password: Optional[str]
 
 class Standing(BaseModel):
     teamId: int
@@ -144,93 +273,6 @@ class Lineup(BaseModel):
 class FullLineup(BaseModel):
     home: Lineup
     away: Lineup
-
-class UserFavoriteLeagueData(BaseModel):
-    user_id: int
-    api_league_id: int
-
-class UserFavoriteTeamData(BaseModel):
-    user_id: int
-    team_id: int
-
-class UserFavoritePlayerData(BaseModel):
-    user_id: int
-    player_id: int
-
-
-# Players schemas
-
-class PlayerResponse(BaseModel):
-    id: int
-    name: str
-    is_favorite: bool
-    photo: str
-
-class CountryInfo(BaseModel):
-    name: str
-    flag_url: Optional[str] = None
-
-class PlayerTeamInfo(BaseModel):
-    id: int
-    name: str
-    logo: str | None
-
-class CompetitionInfo(BaseModel):
-    id: int
-    name: str
-    logo: str
-
-class TeamParticipation(BaseModel):
-    team: PlayerTeamInfo
-    competitions: List[CompetitionInfo]
-
-class PlayerProfileResponse(BaseModel):
-    id: int
-    name: str
-    firstname: Optional[str]
-    lastname: Optional[str]
-    birth_date: Optional[datetime]
-    birth_place: Optional[str]
-    height: Optional[str]
-    weight: Optional[str]
-    injured: Optional[bool]
-    photo_url: Optional[str]
-    position: str
-    birth_country: Optional[CountryInfo]
-    nationality: Optional[CountryInfo]
-    teams: List[TeamParticipation]
-    is_favorite: bool
-
-
-# Partidas 
-
-class CountrySchema(BaseModel):
-    name: str
-    flag_url: Optional[str]
-
-class LeagueSchema(BaseModel):
-    name: str
-    logo_url: Optional[str]
-    season: str
-    round: str
-    country: CountrySchema
-
-class MatchInfoSchema(BaseModel):
-    referee: Optional[str]
-    stadium: Optional[str]
-    city: Optional[str]
-    status: Optional[str]
-    date: Optional[str]
-    league: LeagueSchema
-
-class TeamStatsSchema(BaseModel):
-    name: str
-    logo_url: Optional[str]
-    stats: Dict[str, Optional[int | str | float]]
-
-class MatchStatisticsResponse(BaseModel):
-    information: MatchInfoSchema
-    statistics: Dict[str, TeamStatsSchema]
 
 
 # Player match stats

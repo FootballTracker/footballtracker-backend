@@ -9,9 +9,19 @@ from models.league_team import LeagueTeam
 from models.base_team import BaseTeam
 from models.fixture_lineup import FixtureLineup
 from models.fixture_player_stat import FixturePlayerStat
-from schemas import UserFavoriteTeamData
 from models.user import User
+from models.team_season_stat import TeamSeasonStat
+from schemas import (
+    UserFavoriteTeamData,
+    TeamLeagues,
+    TeamLeagues,
+    TeamLeagueStat,
+    TeamLeagueGeneralStats,
+    TeamLeagueFormations,
+    TeamLeagueStatistics
+) 
 from collections import defaultdict
+from typing import List
 
 router = APIRouter(tags=["Teams"])
 
@@ -290,6 +300,191 @@ async def get_team_details(team_id: int, user_id: int | None = None, session: As
         ],
         "players": latest_players,
     }
+
+@router.get("/team/{team_id}/leagues")
+async def get_team_leagues(team_id: int, session: AsyncSession = Depends(get_db_session)):
+    result = await session.execute(
+        select(League)
+        .join(LeagueTeam, League.id == LeagueTeam.league_id)
+        .where(LeagueTeam.base_team_api_id == team_id)
+    )
+
+    all_leagues = result.scalars().all()
+
+    team_leagues = {}
+    for league in all_leagues:
+        if league.api_id not in team_leagues:
+            team_leagues[league.api_id] = TeamLeagues(
+                api_id=f"{league.api_id}", name=league.name, seasons=[]
+            )
+        team_leagues[league.api_id].seasons.append(league.season)
+
+    for key in team_leagues.keys():
+        team_leagues[key].seasons.sort()
+
+    return list(team_leagues.values())
+
+@router.get("/team/{team_id}/league/{league_api_id}", response_model=TeamLeagueStatistics)
+async def get_team_leagues(team_id: int, league_api_id: int, season: int, session: AsyncSession = Depends(get_db_session)):
+    result = await session.execute(
+        select(LeagueTeam)
+        .join(League, League.id == LeagueTeam.league_id)
+        .options(
+            joinedload(LeagueTeam.season_stats),
+            selectinload(LeagueTeam.fixtures_home),
+            selectinload(LeagueTeam.fixtures_away)
+        )
+        .where((League.api_id == league_api_id) & (League.season == season) & (LeagueTeam.base_team_api_id == team_id))
+    )
+
+    league_team = result.scalar_one_or_none()
+
+    if not league_team:
+        raise HTTPException(404, detail={
+            "message": "Estatísticas do time indisponíveis para essa liga",
+            "ok": True
+        })
+
+    matches = [0, 0]
+    victories = [0, 0]
+    draws = [0, 0]
+    loses = [0, 0]
+    gp = [0, 0]
+    gc = [0, 0]
+    most_goals_for_home = 0
+    most_goals_for_away = 0
+    most_goals_against_home = 0
+    most_goals_against_away = 0
+
+    for match in league_team.fixtures_home:
+        matches[0] += 1
+        if match.home_team_score_goals > match.away_team_score_goals:
+            victories[0] += 1
+        elif match.home_team_score_goals == match.away_team_score_goals:
+            draws[0] += 1
+        else:
+            loses[0] += 1
+        gp[0] += match.home_team_score_goals
+        gc[0] += match.away_team_score_goals
+
+        if match.home_team_score_goals > most_goals_for_home: most_goals_for_home = match.home_team_score_goals
+        if match.away_team_score_goals > most_goals_against_home: most_goals_against_home = match.away_team_score_goals
+
+    for match in league_team.fixtures_away:
+        matches[1] += 1
+        if match.home_team_score_goals < match.away_team_score_goals:
+            victories[1] += 1
+        elif match.home_team_score_goals == match.away_team_score_goals:
+            draws[1] += 1
+        else:
+            loses[1] += 1
+        gp[1] += match.away_team_score_goals
+        gc[1] += match.home_team_score_goals
+
+        if match.home_team_score_goals > most_goals_against_away: most_goals_against_away = match.home_team_score_goals
+        if match.away_team_score_goals > most_goals_for_away: most_goals_for_away = match.away_team_score_goals
+
+    infos = []
+
+    infos.append(TeamLeagueStat(
+        name="Partidas",
+        home=matches[0],
+        away=matches[1],
+        total=matches[0]+matches[1]
+    ))
+
+    infos.append(TeamLeagueStat(
+        name="Vitórias",
+        home=victories[0],
+        away=victories[1],
+        total=victories[0]+victories[1]
+    ))
+
+    infos.append(TeamLeagueStat(
+        name="Empates",
+        home=draws[0],
+        away=draws[1],
+        total=draws[0]+draws[1]
+    ))
+
+    infos.append(TeamLeagueStat(
+        name="Derrotas",
+        home=loses[0],
+        away=loses[1],
+        total=loses[0]+loses[1]
+    ))
+
+    infos.append(TeamLeagueStat(
+        name="GP",
+        home=gp[0],
+        away=gp[1],
+        total=gp[0]+gp[1]
+    ))
+
+    avg_home = round(gp[0]/matches[0], 2) if matches[0] > 0 else 0
+    avg_away = round(gp[1]/matches[1], 2) if matches[1] > 0 else 0
+    infos.append(TeamLeagueStat(
+        name="Média GP",
+        home=avg_home,
+        away=avg_away,
+        total=round((avg_home+avg_away)/2, 2)
+    ))
+
+    infos.append(TeamLeagueStat(
+        name="GC",
+        home=gc[0],
+        away=gc[1],
+        total=gc[0]+gc[1]
+    ))
+
+    avg_home = round(gc[0]/matches[0], 2) if matches[0] > 0 else 0
+    avg_away = round(gc[1]/matches[1], 2) if matches[1] > 0 else 0
+    infos.append(TeamLeagueStat(
+        name="Média GC",
+        home=avg_home,
+        away=avg_away,
+        total=round((avg_home+avg_away)/2, 2)
+    ))
+
+    season: TeamSeasonStat = league_team.season_stats
+
+    split = season.biggest_win.split(" ")
+    biggest_win_home = split[0] if len(split) > 4 else "Desconhecida"
+    biggest_win_away = split[3] if len(split) > 4 else "Desconhecida"
+
+    split = season.biggest_loss.split(" ")
+    biggest_loss_home = split[0] if len(split) > 4 else "Desconhecida"
+    biggest_loss_away = split[3] if len(split) > 4 else "Desconhecida"
+    general_stats = TeamLeagueGeneralStats(
+        biggestWinHome=biggest_win_home,
+        biggestWinAway=biggest_win_away,
+        biggestLoseHome=biggest_loss_home,
+        biggestLoseAway=biggest_loss_away,
+        mostDrawsSeq=season.biggest_streak_draws,
+        mostGoalsAgainstAway=most_goals_against_away,
+        mostGoalsAgainstHome=most_goals_against_home,
+        mostGoalsForAway=most_goals_for_away,
+        mostGoalsForHome=most_goals_for_home,
+        mostLosesSeq=season.biggest_streak_loses,
+        mostWinsSeq=season.biggest_streak_wins,
+        penaltyGoals=season.penalty_scored,
+        penaltyMisses=season.penalty_missed
+    )
+
+    formations: List[TeamLeagueFormations] = [
+        TeamLeagueFormations(
+            formation=lineup["formation"],
+            times=lineup["played"]
+        ) for lineup in season.lineups
+    ]
+
+    return TeamLeagueStatistics(
+        form=season.form,
+        formations=formations,
+        infos=infos,
+        statistics=general_stats
+    )
+
 
 @router.get("/teams-mock")
 async def get_mock_team():
