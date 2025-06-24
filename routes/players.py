@@ -249,7 +249,7 @@ async def get_player_profile(player_id: int, user_id: int | None = None, db: Asy
                 competitions=[]
             )
 
-        competition = CompetitionInfo(id=league.id, name=league.name, logo=league.logo_url)
+        competition = CompetitionInfo(id=league.id, name=league.name, logo=league.logo_url, season=league.season)
         if competition not in teams_dict[key].competitions:
             teams_dict[key].competitions.append(competition)
 
@@ -293,7 +293,47 @@ async def get_player_profile(player_id: int, user_id: int | None = None, db: Asy
 
     return response
 
-@router.get("match//missing/players")
+@router.get("/player/{player_id}/team/{team_id}/league/{league_id}/stats")
+async def get_player_stats(player_id: int, team_id: int, league_id: int, session: AsyncSession = Depends(get_db_session)):
+    result = await session.execute(
+        select(
+            PlayerSeasonStat, League, BaseTeam
+        ).join(
+            LeagueTeam, PlayerSeasonStat.league_team_id == LeagueTeam.id
+        ).join(
+            League, LeagueTeam.league_id == League.id
+        ).join_from(
+            LeagueTeam, BaseTeam, LeagueTeam.base_team_api_id == BaseTeam.api_id
+        ).where(
+            (PlayerSeasonStat.base_player_api_id == player_id) & (LeagueTeam.league_id == league_id) & (LeagueTeam.base_team_api_id == team_id)
+        )
+    )
+
+    player_stats, league, team = result.one_or_none()
+
+    if not player_stats:
+        raise HTTPException(404, {
+            "message": "Estatísticas do jogador não disponíveis para essa liga",
+            "ok": True
+        })
+    
+    player_stats.position = player_stats.position.upper()
+    if player_stats.position == "F":
+        player_stats.position = "Atacante"
+    elif player_stats.position == "D":
+        player_stats.position = "Defensor"
+    elif player_stats.position == "G":
+        player_stats.position = "Goleiro"
+    else:
+        player_stats.position = "Meia"
+
+    return {
+        "player_stats": player_stats,
+        "league": league,
+        "team": team
+    }
+
+@router.get("/match/missing/players")
 async def get_missing_players_from_match(session: AsyncSession = Depends(get_db_session)):
 
     result = await session.execute(

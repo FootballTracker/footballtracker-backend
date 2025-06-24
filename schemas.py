@@ -121,6 +121,7 @@ class CompetitionInfo(BaseModel):
     id: int
     name: str
     logo: str
+    season: int
 
 class TeamParticipation(BaseModel):
     team: PlayerTeamInfo
