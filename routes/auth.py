@@ -2,12 +2,11 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, or_
 from models.user import User 
-from schemas import UserCreate, UserResponse, UserLogin
+from schemas import UserCreate, UserResponse, UserLogin, UserUpdate
 from database.database import get_db_session
 from utils.security import hash_password, verify_password, create_access_token, get_current_user
 from .. import schemas
 
-router = APIRouter()
 
 @router.post("/signup", response_model=UserResponse)
 async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_session)):
@@ -19,7 +18,10 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
     existing_user = result.scalar_one_or_none()
 
     if existing_user:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Username or email already exists")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Nome de usuário ou email já cadastrados",
+        )
 
     hashed_pw = hash_password(user_data.password)
 
@@ -27,14 +29,19 @@ async def signup(user_data: UserCreate, db: AsyncSession = Depends(get_db_sessio
         username=user_data.username,
         email=user_data.email,
         password=hashed_pw,
-        favorite_team=user_data.favorite_team
+        favorite_team=user_data.favorite_team,
     )
 
     db.add(new_user)
     await db.commit()
     await db.refresh(new_user)
 
-    return new_user
+    return {
+        "id":  new_user.id,
+        "username": new_user.username,
+        "email": new_user.email,
+        "image": False
+    }
 
 
 @router.post("/signin", response_model=schemas.Token)

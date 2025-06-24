@@ -1,0 +1,301 @@
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select, case, literal_column, insert
+from sqlalchemy.orm import joinedload
+from database.database import get_db_session
+from schemas import LeagueResponse, MatchResponse, TeamInfo, Standing, SeasonResponse, UserFavoriteLeagueData
+from typing import List, Dict, Union
+from models.league import League
+from models.user_favorite_league import UserFavoriteLeague
+from models.fixture import Fixture
+from models.league_team import LeagueTeam
+from models.league_classification import LeagueClassification
+from models.user import User
+
+router = APIRouter(tags=["Leagues"])
+
+
+@router.get("/leagues", response_model=Dict[str, List[LeagueResponse]])
+async def get_leagues(
+    user_id: int | None = None, text: str | None = None, db: AsyncSession = Depends(get_db_session)
+):
+
+    if text:
+        stmt = select(League).where(League.name.icontains(text.lower()))
+
+        result = await db.execute(stmt)
+        leagues = result.scalars().all()
+
+        all_leagues_response = [
+            LeagueResponse(
+                id=league.id,
+                name=league.name,
+                season=league.season,
+                logo_url=league.logo_url,
+                api_id=league.api_id,
+                is_favorite=False
+            )
+            for league in leagues
+        ]
+
+        response = {
+            "all_leagues": all_leagues_response
+        }
+        
+    else:
+        favorite_league_ids = set()
+        favorite_leagues: list[League] = []
+
+        if user_id:
+            stmt = (
+                select(League)
+                .join(UserFavoriteLeague, League.api_id == UserFavoriteLeague.api_league_id)
+                .where(UserFavoriteLeague.user_id == user_id)
+            )
+            result = await db.execute(stmt)
+            favorite_leagues = result.scalars().all()
+            favorite_league_ids = {league.id for league in favorite_leagues}
+            
+        if favorite_league_ids:
+            stmt = select(League).where(~League.id.in_(favorite_league_ids))
+        else:
+            stmt = select(League)
+            
+        result = await db.execute(stmt)
+        leagues = result.scalars().all()
+
+        favorite_leagues_response = [
+            LeagueResponse(
+                id=league.id,
+                name=league.name,
+                season=league.season,
+                logo_url=league.logo_url,
+                api_id=league.api_id,
+                is_favorite=True
+            )
+            for league in favorite_leagues
+        ]
+
+        all_leagues_response = [
+            LeagueResponse(
+                id=league.id,
+                name=league.name,
+                season=league.season,
+                logo_url=league.logo_url,
+                api_id=league.api_id,
+                is_favorite=False
+            )
+            for league in leagues
+        ]
+
+        response = {
+            "favorite_leagues": favorite_leagues_response,
+            "all_leagues": all_leagues_response
+        }
+
+    return response
+
+@router.get("/favorite_leagues", response_model=List[LeagueResponse])
+async def get_leagues(user_id: int, db: AsyncSession = Depends(get_db_session)):
+
+    favorite_leagues: list[League] = []
+
+    stmt = (
+        select(League)
+        .join(UserFavoriteLeague, League.api_id == UserFavoriteLeague.api_league_id)
+        .where(UserFavoriteLeague.user_id == user_id)
+    )
+    result = await db.execute(stmt)
+    favorite_leagues = result.scalars().all()
+
+    favorite_leagues_response = [
+        LeagueResponse(
+            id=league.id,
+            name=league.name,
+            season=league.season,
+            logo_url=league.logo_url,
+            api_id=league.api_id,
+            is_favorite=True
+        )
+        for league in favorite_leagues
+    ]
+
+    return favorite_leagues_response
+
+@router.post("/league/favorite")
+async def favorite_league(data: UserFavoriteLeagueData, session: AsyncSession = Depends(get_db_session)):
+
+    result = await session.execute(
+        select(User)
+        .where(User.id == data.user_id)
+    )
+
+    user = result.scalar_one_or_none()
+
+    if not user:
+        raise HTTPException(404, detail="Usuário não encontrado")
+    
+    result = await session.execute(
+        select(League)
+        .where(League.api_id == data.api_league_id)
+    )
+
+    league = result.scalar_one_or_none()
+
+    if not league:
+        raise HTTPException(404, detail="Liga não encontrada")
+    
+
+    result = await session.execute(
+        select(UserFavoriteLeague)
+        .where((UserFavoriteLeague.user_id == data.user_id) & (UserFavoriteLeague.api_league_id == data.api_league_id))
+    )
+
+    favorite_league = result.scalars().all()
+
+    if favorite_league:
+        await session.delete(favorite_league[0])
+    else:
+        await session.execute(
+            insert(UserFavoriteLeague).values(user_id = data.user_id, api_league_id = data.api_league_id)
+        )
+    await session.commit()
+
+    return {
+        "message": "Liga favoritada/desfavoritada"
+    }
+
+@router.get("/league", response_model=Dict[str, Union[List[SeasonResponse], LeagueResponse]])
+async def get_league(
+    league_id: int,
+    user_id: int | None = None,
+    db: AsyncSession = Depends(get_db_session),
+):
+
+    if(user_id):
+        stmt = select(League, case(
+                    (UserFavoriteLeague.user_id != None, True),
+                    else_=False
+                ).label("is_favorite")
+            ).outerjoin(UserFavoriteLeague, (League.api_id == UserFavoriteLeague.api_league_id) & (UserFavoriteLeague.user_id == user_id)
+            ).where(League.id == league_id)
+    else:
+        stmt = select(League, literal_column("false").label("is_favorite")).where(League.id == league_id)
+
+    result = await db.execute(stmt)
+    row = result.first()
+
+    league, is_favorite = row
+
+    league_response = LeagueResponse(
+        id=league.id,
+        name=league.name,
+        season=league.season,
+        logo_url=league.logo_url,
+        api_id=league.api_id,
+        is_favorite=is_favorite
+    )
+
+    stmt = select(League.id, League.season).where(League.api_id == league.api_id)
+    result = await db.execute(stmt)
+    league_seasons = result.all()
+
+    seasons_response: List[SeasonResponse] = []
+
+    for s in league_seasons:
+        new_season = SeasonResponse(
+            id = s.id,
+            season = s.season
+        )
+
+        seasons_response.append(new_season)
+
+    return {
+        "league": league_response,
+        "seasons": seasons_response
+    }
+
+@router.get(
+    "/matches",
+    response_model=List[MatchResponse]
+)
+async def get_completed_matches(
+    round: str | None, id: int, season: int, db: AsyncSession = Depends(get_db_session)
+):
+
+    if not round:
+        round = "1"
+
+    round = f"Regular Season - {round}"
+
+    stmt = (
+        select(Fixture)
+        .where(
+            Fixture.league_id == id, Fixture.season == season, Fixture.round == round
+        )
+        .options(
+            joinedload(Fixture.home_team).joinedload(LeagueTeam.team),
+            joinedload(Fixture.away_team).joinedload(LeagueTeam.team),
+        )
+        .order_by(Fixture.date)
+    )
+
+    result = await db.execute(stmt)
+    fixtures = result.scalars().all()
+
+    matches = []
+    for fixture in fixtures:
+        home = fixture.home_team.team
+        away = fixture.away_team.team
+
+        match = MatchResponse(
+            id=fixture.api_id,
+            home_team=TeamInfo(
+                id=None, score=fixture.home_team_score_goals, logo=home.logo_url, name=home.name
+            ),
+            away_team=TeamInfo(
+                id=None, score=fixture.away_team_score_goals, logo=away.logo_url, name=away.name
+            ),
+            date=fixture.date,
+        )
+
+        matches.append(match)
+
+    return matches
+
+@router.get("/league/{league_id}/classification", response_model=List[Standing])
+async def get_classification(league_id: int, db: AsyncSession = Depends(get_db_session)):
+
+    stmt = (
+        select(LeagueClassification)
+        .options(
+            joinedload(LeagueClassification.team)
+        )
+        .where(LeagueClassification.league_id == league_id)
+        .order_by(LeagueClassification.rank)
+    )
+    result = await db.execute(stmt)
+    standings = result.scalars().all()
+
+    standings_response: List[Standing] = []
+
+    for st in standings:
+        new_standing = Standing(
+                teamId = st.base_team_api_id,
+                teamName = st.team.name,
+                teamLogo = st.team.logo_url,
+                rank = st.rank,
+                totalGames = st.all_played,
+                victories = st.all_win,
+                draws = st.all_draw,
+                loses = st.all_lose,
+                goalsFor = st.all_goals_for,
+                goalsAgainst = st.all_goals_against,
+                goalsDiff = st.all_goals_for - st.all_goals_against,
+                points = st.points,
+        )
+
+        standings_response.append(new_standing)
+
+    return standings_response
+    

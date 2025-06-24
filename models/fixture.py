@@ -48,3 +48,4 @@ class Fixture(Base):
     player_stats = relationship("FixturePlayerStat", back_populates="fixture")
     venue = relationship("Venue", back_populates="fixtures")
     statistics = relationship("FixtureStatistic", back_populates="fixture")
+    events = relationship("FixtureEvent", back_populates="fixture")
