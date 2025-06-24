@@ -145,9 +145,26 @@ class FullLineup(BaseModel):
     home: Lineup
     away: Lineup
 
+class UserFavoriteLeagueData(BaseModel):
+    user_id: int
+    api_league_id: int
+
+class UserFavoriteTeamData(BaseModel):
+    user_id: int
+    team_id: int
+
+class UserFavoritePlayerData(BaseModel):
+    user_id: int
+    player_id: int
 
 
 # Players schemas
+
+class PlayerResponse(BaseModel):
+    id: int
+    name: str
+    is_favorite: bool
+    photo: str
 
 class CountryInfo(BaseModel):
     name: str
@@ -161,6 +178,7 @@ class PlayerTeamInfo(BaseModel):
 class CompetitionInfo(BaseModel):
     id: int
     name: str
+    logo: str
 
 class TeamParticipation(BaseModel):
     team: PlayerTeamInfo
