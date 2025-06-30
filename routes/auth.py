@@ -5,7 +5,9 @@ from models.user import User
 from schemas import UserCreate, UserResponse, UserLogin, UserUpdate
 from database.database import get_db_session
 from utils.security import hash_password, verify_password, create_access_token, get_current_user
-from .. import schemas
+import schemas
+
+router = APIRouter(prefix="/auth", tags=["auth"])
 
 
 @router.post("/signup", response_model=UserResponse)

@@ -10,7 +10,7 @@ signup_data = {
 }
 
 signin_email = {
-    "username": "test@example.com",
+    "email": "test@example.com",
     "password": "securepassword"
 }
 
@@ -19,13 +19,8 @@ signin_username = {
     "password": "securepassword"
 }
 
-signin_both = {
-    "username": "testuser",
-    "password": "securepassword"
-}
-
 signin_wrong_password = {
-    "username": "test@example.com",
+    "email": "test@example.com",
     "password": "wrongpassword"
 }
 
@@ -33,7 +28,7 @@ signin_wrong_password = {
 class TestAuthEndpoints(unittest.TestCase):
 
     def test_signup(self):
-        print("\nTesting initial signup...")
+        print("\n➡️ Testing initial signup...")
         res = requests.post(f"{BASE_URL}/signup", json=signup_data)
         print("➡️ Status:", res.status_code)
         print("➡️ Response:", res.json())
@@ -41,9 +36,10 @@ class TestAuthEndpoints(unittest.TestCase):
             self.assertEqual(res.json(), {"detail": "Nome de usuário ou email já cadastrados"})
         else:
             self.assertEqual(res.status_code, 200)
+            self.assertEqual(res.json()["username"], signup_data["username"])
 
     def test_signup_duplicate(self):
-        print("\nTesting duplicate signup...")
+        print("\n➡️ Testing duplicate signup...")
         res = requests.post(f"{BASE_URL}/signup", json=signup_data)
         print("➡️ Status:", res.status_code)
         print("➡️ Response:", res.json())
@@ -51,137 +47,116 @@ class TestAuthEndpoints(unittest.TestCase):
         self.assertEqual(res.json(), {"detail": "Nome de usuário ou email já cadastrados"})
 
     def test_signin_with_email(self):
-        print("\nTesting signin with email only...")
+        print("\n➡️ Testing signin with email...")
         res = requests.post(f"{BASE_URL}/signin", json=signin_email)
         print("➡️ Status:", res.status_code)
         print("➡️ Response:", res.json())
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.json()["username"], "testuser")
+        self.assertIn("access_token", res.json())
 
     def test_signin_with_username(self):
-        print("\nTesting signin with username only...")
+        print("\n➡️ Testing signin with username...")
         res = requests.post(f"{BASE_URL}/signin", json=signin_username)
         print("➡️ Status:", res.status_code)
         print("➡️ Response:", res.json())
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.json()["username"], "testuser")
-
-    def test_signin_with_both(self):
-        print("\nTesting signin with both email and username...")
-        res = requests.post(f"{BASE_URL}/signin", json=signin_both)
-        print("➡️ Status:", res.status_code)
-        print("➡️ Response:", res.json())
-        self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.json()["username"], "testuser")
+        self.assertIn("access_token", res.json())
 
     def test_signin_wrong_password(self):
-        print("\nTesting signin with wrong password...")
+        print("\n➡️ Testing signin with wrong password...")
         res = requests.post(f"{BASE_URL}/signin", json=signin_wrong_password)
         print("➡️ Status:", res.status_code)
         print("➡️ Response:", res.json())
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(res.json()["detail"], "Email ou senha inválidos")
+        self.assertEqual(res.json()["detail"], "Invalid credentials")
 
+import unittest
+import requests
 
-# This test will create a user, try to update and than delete the user
+BASE_URL = "http://localhost:8000/auth"
+
 class TestUserUpdateFlow(unittest.TestCase):
 
     def setUp(self):
-        self.original_user = {
+        self.user = {
             "username": "updateuser",
             "email": "update@example.com",
             "password": "originalpass"
         }
-        # Register the user
-        res = requests.post(f"{BASE_URL}/signup", json=self.original_user)
-        if res.status_code == 200:
-            self.user_id = res.json()["id"]
-        else:
-            # Assume user already exists, log in to get user_id
-            signin_res = requests.post(f"{BASE_URL}/signin", json={
-                "username": self.original_user["email"],
-                "password": self.original_user["password"]
-            })
-            self.user_id = signin_res.json()["id"]
+
+        # Try signup
+        response = requests.post(f"{BASE_URL}/signup", json=self.user)
+        print(response.text)
+
+        # Initial login
+        self.refresh_token_and_headers()
+
+    def refresh_token_and_headers(self):
+        res = requests.post(f"{BASE_URL}/signin", json={
+            "email": self.user["email"],
+            "password": self.user["password"]
+        })
+        assert res.status_code == 200, "Could not sign in"
+        self.token = res.json()["access_token"]
+        self.headers = {"Authorization": f"Bearer {self.token}"}
 
     def test_update_username(self):
         print("\n➡️ Updating username...")
-        new_username = "updatedusername"
-
-        res = requests.put(f"{BASE_URL}/update_user", params={
-            "user_id": self.user_id,
-            "password": self.original_user["password"],
+        new_username = "updateduser"
+        res = requests.put(f"{BASE_URL}/users/me", json={
+            "current_password": self.user["password"],
             "username": new_username
-        })
+        }, headers=self.headers)
+        print("➡️ Response:", res.json())
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.json()["message"], "Dados atualizados com sucesso")
-
-        # Verify login still works with new username
-        login_res = requests.post(f"{BASE_URL}/signin", json={
-            "username": new_username,
-            "password": self.original_user["password"]
-        })
-        self.assertEqual(login_res.status_code, 200)
-        self.assertEqual(login_res.json()["username"], new_username)
-
-        # Save for tearDown cleanup
-        self.original_user["username"] = new_username
+        self.assertEqual(res.json()["username"], new_username)
+        self.user["username"] = new_username  # Update internal state
 
     def test_update_email(self):
         print("\n➡️ Updating email...")
         new_email = "newemail@example.com"
-
-        res = requests.put(f"{BASE_URL}/update_user", params={
-            "user_id": self.user_id,
-            "password": self.original_user["password"],
+        res = requests.put(f"{BASE_URL}/users/me", json={
+            "current_password": self.user["password"],
             "email": new_email
-        })
+        }, headers=self.headers)
+        print("➡️ Response:", res.json())
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.json()["message"], "Dados atualizados com sucesso")
+        self.assertEqual(res.json()["email"], new_email)
+        self.user["email"] = new_email  # Update internal state
 
-        # Verify login with new email
-        login_res = requests.post(f"{BASE_URL}/signin", json={
-            "username": new_email,
-            "password": self.original_user["password"]
-        })
-        self.assertEqual(login_res.status_code, 200)
-        self.assertEqual(login_res.json()["email"], new_email)
-
-        # Save for tearDown cleanup
-        self.original_user["email"] = new_email
+        # Re-authenticate with new email
+        self.refresh_token_and_headers()
 
     def test_update_password(self):
         print("\n➡️ Updating password...")
-        new_password = "newsecurepassword"
-
-        res = requests.put(f"{BASE_URL}/update_user", params={
-            "user_id": self.user_id,
-            "password": self.original_user["password"],
+        new_password = "newsecurepass"
+        res = requests.put(f"{BASE_URL}/users/me", json={
+            "current_password": self.user["password"],
             "new_password": new_password
-        })
+        }, headers=self.headers)
+        print("➡️ Response:", res.json())
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.json()["message"], "Dados atualizados com sucesso")
 
-        # Verify login with new password
-        login_res = requests.post(f"{BASE_URL}/signin", json={
-            "username": self.original_user["email"],
-            "password": new_password
-        })
-        self.assertEqual(login_res.status_code, 200)
-        self.assertEqual(login_res.json()["email"], self.original_user["email"])
-
-        # Save for tearDown cleanup
-        self.original_user["password"] = new_password
+        # Update password and re-authenticate
+        self.user["password"] = new_password
+        self.refresh_token_and_headers()
 
     def tearDown(self):
-        print("\n➡️ Cleaning up: deleting user...")
-        res = requests.post(f"{BASE_URL}/user_delete", json={
-            "user_id": self.user_id,
-            "password": self.original_user["password"]
-        })
-        self.assertEqual(res.status_code, 200)
-        self.assertIn("excluído com sucesso", res.json()["message"])
+        print("\n➡️ Deleting user...")
 
+        # Re-authenticate (in case credentials changed)
+        try:
+            self.refresh_token_and_headers()
+        except AssertionError:
+            print("⚠️ Could not re-authenticate in tearDown. Skipping deletion.")
+            return
+
+        # Attempt deletion
+        res = requests.delete(f"{BASE_URL}/users/me", json={
+            "password": self.user["password"]
+        }, headers=self.headers)
+        print("➡️ Deletion status:", res.status_code)
+        self.assertIn(res.status_code, (204, 200))
 
 
 if __name__ == "__main__":

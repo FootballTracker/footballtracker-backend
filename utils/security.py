@@ -8,8 +8,8 @@ from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
-from ..database.database import get_db_session
-from ..models.user import User
+from database.database import get_db_session
+from models.user import User
 
 # --- CRIPTOGRAFIA DA SENHA ---
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

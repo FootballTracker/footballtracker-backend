@@ -45,12 +45,12 @@ class UserDelete(BaseModel):
     username: Optional[Union[EmailStr, str]] = None
     password: str
 
-class UserUpdate(BaseModel):
-    id: int
-    username: Optional[str]
-    email: Optional[str]
-    password: Optional[str]
-    old_password: Optional[str]
+# class UserUpdate(BaseModel):
+#     id: int
+#     username: Optional[str]
+#     email: Optional[str]
+#     password: Optional[str]
+#     old_password: Optional[str]
 
 class UserFavoriteLeagueData(BaseModel):
     user_id: int
