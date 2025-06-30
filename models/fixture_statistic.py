@@ -6,6 +6,7 @@ from sqlalchemy import (
     String,
     DateTime,
     UniqueConstraint,
+    Float,
 )
 from sqlalchemy.orm import relationship
 from database.database import Base
@@ -41,6 +42,7 @@ class FixtureStatistic(Base):
     total_passes = Column(SmallInteger)
     passes_accurate = Column(SmallInteger)
     passes_percentage = Column(String(10))
+    expected_goals = Column(Float)
     last_updated = Column(DateTime)
 
     fixture = relationship("Fixture", back_populates="statistics")
