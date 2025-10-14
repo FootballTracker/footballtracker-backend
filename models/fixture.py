@@ -1,4 +1,12 @@
-from sqlalchemy import Column, Integer, DateTime, String, ForeignKey, SmallInteger
+from sqlalchemy import (
+    Column,
+    Integer,
+    DateTime,
+    String,
+    ForeignKey,
+    SmallInteger,
+    Float,
+)
 from sqlalchemy.orm import relationship
 from database.database import Base
 from models.fixture_lineup import FixtureLineup
@@ -32,6 +40,8 @@ class Fixture(Base):
     )
     home_team_score_goals = Column(SmallInteger)
     away_team_score_goals = Column(SmallInteger)
+    home_team_elo_before = Column(Float, nullable=True)
+    away_team_elo_before = Column(Float, nullable=True)
     elapsed = Column(SmallInteger)
     timezone = Column(String(50))
     round = Column(String(50), nullable=False)
